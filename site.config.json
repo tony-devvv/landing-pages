@@ -1,0 +1,102 @@
+{
+  "_info": "Configurazione del prototipo. Per adattarlo a un cliente: cambia varianti (titoli, colori, font, tema), note di strategia ed email che riceve i feedback. Il copy delle sezioni resta in index.html.",
+  "project": "Headphone (1) Pro — prototipo landing",
+  "feedbackEmail": "",
+  "variants": {
+    "headlines": [
+      "Ascolta quello che ti stavi perdendo.",
+      "Precisione da studio. Ovunque tu sia.",
+      "Più dettagli da ascoltare. Meno rumore da sopportare.",
+      "Il suono come dovrebbe essere ascoltato."
+    ],
+    "accents": [
+      { "name": "Giallo (brand)", "value": "#FFC700" },
+      { "name": "Rosso", "value": "#D71921" },
+      { "name": "Blu cliente (esempio)", "value": "#3D5AFE" },
+      { "name": "Verde (esempio)", "value": "#00C853" }
+    ],
+    "titleFonts": [
+      { "name": "Dot-matrix (brand)", "value": "\"Doto\", monospace", "upper": true },
+      { "name": "Sans pulito", "value": "\"Inter\", Arial, sans-serif", "upper": false },
+      { "name": "Mono tecnico", "value": "\"Space Mono\", monospace", "upper": true }
+    ],
+    "themes": [
+      { "name": "Alternato chiaro/scuro", "value": "alt" },
+      { "name": "Tutto scuro", "value": "dark" }
+    ]
+  },
+  "strategy": {
+    "attenzione": {
+      "step": "01 · Attenzione",
+      "role": "Fermare lo scroll in 3 secondi con una promessa chiara e un dettaglio che incuriosisce.",
+      "why": "Titolo orientato al beneficio, prova tecnica subito sotto (tre driver, 46 dB), CTA visibile senza scorrere e rassicurazioni sul rischio (consegna, resi, rate).",
+      "client": "Foto o render reali del prodotto, scelta tra le 4 varianti di titolo, prezzo confermato."
+    },
+    "problema": {
+      "step": "02 · Problema",
+      "role": "Far riconoscere al lettore un fastidio che vive ogni giorno.",
+      "why": "Cinque dolori concreti e quotidiani: chi li riconosce si sente capito e continua a leggere.",
+      "client": "Conferma dei problemi reali del target (recensioni, assistenza clienti, sondaggi)."
+    },
+    "suono": {
+      "step": "03 · Transizione",
+      "role": "Fare da ponte tra problema e soluzione senza vendere ancora.",
+      "why": "Una storia di autorità (Metropolis Studios) rende credibile la soluzione prima di mostrarla.",
+      "client": "La storia del prodotto: partner, origine, perché esiste."
+    },
+    "offerta": {
+      "step": "04 · Offer",
+      "role": "Dire esattamente cosa si compra e perché conviene comprarlo qui.",
+      "why": "Prezzo, contenuto della confezione e garanzie nello stesso blocco riducono i dubbi pratici.",
+      "client": "Prezzo, eventuali promozioni reali, colori disponibili, condizioni di spedizione e reso."
+    },
+    "perche": {
+      "step": "05 · USP",
+      "role": "I motivi unici per scegliere questo prodotto e non un altro.",
+      "why": "Ogni USP è dimostrata da una demo interattiva: il prodotto si vede funzionare invece di essere descritto.",
+      "client": "Le 3–5 differenze che il cliente considera davvero uniche, con i dati a supporto."
+    },
+    "ecosistema": {
+      "step": "05b · Compatibilità",
+      "role": "Rispondere in anticipo a 'funziona con quello che ho?'.",
+      "why": "Un diagramma visivo toglie un'obiezione tecnica senza far leggere una scheda.",
+      "client": "Lista ufficiale di dispositivi, app e standard supportati."
+    },
+    "soluzione": {
+      "step": "06 · Soluzione",
+      "role": "Riprendere uno per uno i problemi della sezione 2 e chiuderli.",
+      "why": "Lo schema prima/dopo collega ogni dolore alla risposta tecnica: il lettore spunta mentalmente i suoi dubbi.",
+      "client": "Verifica dei dati tecnici e delle note legali collegate."
+    },
+    "comandi": {
+      "step": "06b · Prova del prodotto",
+      "role": "Far 'toccare' il prodotto prima di averlo in mano.",
+      "why": "L'interazione aumenta il tempo sulla pagina e rende concreto un vantaggio difficile da spiegare a parole.",
+      "client": "Render o foto ravvicinate dei comandi."
+    },
+    "numeri": {
+      "step": "06c · Riepilogo in numeri",
+      "role": "Fissare in memoria i 4 numeri più forti prima delle obiezioni.",
+      "why": "Pochi numeri grandi si ricordano meglio di una scheda tecnica.",
+      "client": "Quali numeri contano di più per il loro pubblico."
+    },
+    "obiezioni": {
+      "step": "07 · Obiezioni",
+      "role": "Sciogliere i dubbi che bloccano l'acquisto.",
+      "why": "Le obiezioni scritte come le pensa il cliente ('€349 sono tanti') e risposte dirette aumentano la fiducia.",
+      "client": "Le domande più frequenti ricevute da vendite e assistenza."
+    },
+    "cta": {
+      "step": "08 · CTA",
+      "role": "Chiudere con un'unica azione e rischio percepito zero.",
+      "why": "Riepilogo in una riga, un solo pulsante evidenziato, garanzie ripetute sotto.",
+      "client": "Destinazione finale del pulsante (checkout, carrello, pre-ordine)."
+    },
+    "faq": {
+      "step": "09 · FAQ",
+      "role": "Rispondere ai dubbi residui e a quelli di ricerca (SEO).",
+      "why": "Domande brevi e risposte da scheda tecnica per chi decide con calma.",
+      "client": "FAQ reali dall'assistenza clienti e link ufficiale dell'app."
+    }
+  }
+}

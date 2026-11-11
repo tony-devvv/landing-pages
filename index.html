@@ -6,6 +6,14 @@
 <title>Headphone (1) Pro — Landing</title>
 <meta name="description" content="Tre driver. Messa a punto con Metropolis Studios. Fino a 46 dB di silenzio.">
 <meta name="theme-color" content="#F4F4F4">
+<!-- Prototipo con un marchio di terzi: non deve finire su Google. Togliere solo nella versione finale del cliente. -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Headphone (1) Pro — Landing">
+<meta property="og:description" content="Tre driver. Messa a punto con Metropolis Studios. Fino a 46 dB di silenzio.">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="present/present.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Doto:wght@600;800&family=Inter:wght@400;500&family=Space+Mono&display=swap" rel="stylesheet">
@@ -62,7 +70,7 @@ p{max-width:62ch}
 /* header */
 .top{position:fixed;inset:0 0 auto;z-index:50;padding:12px var(--gut);pointer-events:none}
 .top .bar{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:8px 8px 8px 16px;border-radius:var(--r-lg);background:rgba(255,255,255,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);pointer-events:auto;box-shadow:0 0 0 1px rgba(0,0,0,.04)}
-.logo{font-family:var(--font-dot);font-weight:800;font-size:20px;letter-spacing:.06em}
+.logo{font-family:"Ndot","Doto",monospace;font-weight:800;font-size:20px;letter-spacing:.06em}
 .top nav{display:flex;gap:24px}
 .top nav a{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--g600)}
 .top nav a:hover{color:var(--ink)}
@@ -316,6 +324,12 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
   .marquee{-webkit-mask-image:none;mask-image:none}
 }
 
+/* accessibilità: salto al contenuto e focus visibile da tastiera */
+.skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--accent);color:var(--ink);padding:10px 14px;border-radius:var(--r-sm);font-size:14px;transition:top .2s}
+.skip:focus{top:12px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--white)}
+
 /* comparsa */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
@@ -346,6 +360,7 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
 </style>
 </head>
 <body>
+<a class="skip" href="#attenzione">Vai al contenuto</a>
 
 <header class="top">
   <div class="bar">
@@ -365,7 +380,7 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
   <div class="wrap grid">
     <div class="rv">
       <span class="pill"><i></i>Headphone (1) Pro — Precisione da studio</span>
-      <h1 class="dot" style="margin-top:20px">Ascolta quello che ti stavi perdendo.</h1>
+      <h1 class="dot" id="hero-title" style="margin-top:20px">Ascolta quello che ti stavi perdendo.</h1>
       <p class="lead">Tre driver. Messa a punto con Metropolis Studios di Londra. Fino a 46&nbsp;dB di silenzio.<sup>1</sup> Le nostre cuffie più avanzate di sempre.</p>
       <div class="btns">
         <a href="#offerta" class="btn btn-primary">Acquista — €349</a>
@@ -761,6 +776,8 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<!-- Strumenti di presentazione (Strategia, Feedback, Varianti). Per la versione finale: rimuovere questo tag e il <link> di present.css -->
+<script src="present/present.js" defer></script>
 <script>
   /* Link della card app: sostituire con il link ufficiale di Nothing X quando disponibile */
   const APP_URL = 'https://play.google.com/store/search?q=Nothing%20X&c=apps';
