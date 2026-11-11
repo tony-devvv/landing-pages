@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "meta": {
+    "brand": "Nothing",
+    "document": "Brand Guidelines (reverse-engineered)",
+    "version": "1.0.0",
+    "date": "2026-11-11",
+    "source": "https://it.nothing.tech/",
+    "method": "Analisi degli stili calcolati (computed styles) della homepage italiana",
+    "disclaimer": "Documento non ufficiale, ricavato dall'analisi pubblica del sito. Nome, logo e font Nothing sono proprietà di Nothing Technology Ltd. Usare solo come riferimento di studio."
+  },
+  "brand": {
+    "mission": "Costruire un mondo in cui la tech torna divertente.",
+    "tagline_it": "Ricordi quando ogni nuovo prodotto entusiasmava? Vogliamo farlo tornare.",
+    "personality": ["minimale", "tecnico", "trasparente", "giocoso", "culturale"],
+    "design_principles": [
+      {
+        "name": "Monocromia prima di tutto",
+        "description": "L'interfaccia è quasi interamente in bianco, nero e grigi. Il colore arriva dalla fotografia di prodotto, non dalla UI."
+      },
+      {
+        "name": "Dot-matrix come firma",
+        "description": "Il carattere a puntini (Ndot) e le icone a griglia di punti richiamano display LED e le interfacce Glyph dei prodotti."
+      },
+      {
+        "name": "Spigoli netti",
+        "description": "La maggior parte degli elementi ha raggio 0. Arrotondamenti piccoli (4–8px) solo su pulsanti e card."
+      },
+      {
+        "name": "Dettaglio tecnico in mono",
+        "description": "Etichette, prezzi e metadati in carattere monospace maiuscolo, come una scheda tecnica."
+      },
+      {
+        "name": "Un solo accento",
+        "description": "Il giallo (#FFC700) è usato con parsimonia per una singola call-to-action chiave."
+      }
+    ]
+  },
+  "logo": {
+    "wordmark": "NOTHING (R) — wordmark in carattere dot-matrix",
+    "usage": [
+      "Sempre monocromatico: nero su chiaro, bianco su scuro",
+      "Non applicare colori, gradienti, ombre o contorni",
+      "Non deformare né ricostruire i puntini",
+      "Lasciare spazio libero attorno pari almeno all'altezza di una lettera"
+    ],
+    "icon_style": "Icone costruite su griglia 16×16 con punti di diametro 2px, colore currentColor"
+  },
+  "colors": {
+    "core": {
+      "black": { "hex": "#000000", "rgb": "0, 0, 0", "role": "Testo principale, pulsanti primari" },
+      "ink": { "hex": "#040404", "rgb": "4, 4, 4", "role": "Testo e superfici scure (nero 'morbido')" },
+      "white": { "hex": "#FFFFFF", "rgb": "255, 255, 255", "role": "Testo su scuro, card, pulsanti secondari" },
+      "paper": { "hex": "#F4F4F4", "rgb": "244, 244, 244", "role": "Sfondo pagina, theme-color" }
+    },
+    "neutrals": {
+      "grey-50": { "hex": "#EEEEEE", "rgb": "238, 238, 238", "role": "Pulsanti terziari, campi" },
+      "grey-100": { "hex": "#D8D9D9", "rgb": "216, 217, 217", "role": "Bordi, divisori" },
+      "grey-300": { "hex": "#B1B3B3", "rgb": "177, 179, 179", "role": "Testo disabilitato" },
+      "grey-600": { "hex": "#595A5A", "rgb": "89, 90, 90", "role": "Testo secondario" },
+      "grey-700": { "hex": "#3C3C3C", "rgb": "60, 60, 60", "role": "Overlay scuri" },
+      "grey-800": { "hex": "#333333", "rgb": "51, 51, 51", "role": "Testo su grigio" }
+    },
+    "accent": {
+      "yellow": { "hex": "#FFC700", "rgb": "255, 199, 0", "role": "CTA chiave (es. Iscriviti). Testo sopra: #040404" }
+    },
+    "support": {
+      "slate": { "hex": "#526E7A", "rgb": "82, 110, 122", "role": "Link e info secondarie" },
+      "deep-blue": { "hex": "#265974", "rgb": "38, 89, 116", "role": "Link in testi legali" }
+    },
+    "alpha": {
+      "glass-light": "rgba(255, 255, 255, 0.8)",
+      "tint-light": "rgba(255, 255, 255, 0.05)",
+      "tint-grey": "rgba(89, 90, 90, 0.05)",
+      "overlay-dark": "rgba(60, 60, 60, 0.6)",
+      "border-soft": "rgba(216, 217, 217, 0.5)"
+    },
+    "proportion": { "neutrals": "90%", "black_white": "8%", "accent": "2%" }
+  },
+  "typography": {
+    "families": {
+      "display-dot": {
+        "family": "Ndot",
+        "weights": ["Regular 55", "Bold 57"],
+        "role": "Titoli d'impatto, numeri, wordmark",
+        "fallback": "\"Doto\", \"Space Mono\", monospace",
+        "license": "Proprietario Nothing"
+      },
+      "primary": {
+        "family": "NType 82",
+        "weights": ["Regular 400", "Headline 400"],
+        "role": "Titoli, testo, pulsanti — font principale (≈80% del testo)",
+        "fallback": "\"Inter\", \"Helvetica Neue\", Arial, sans-serif",
+        "license": "Proprietario Nothing"
+      },
+      "mono": {
+        "family": "Lettera Mono LL",
+        "weights": ["Regular 400"],
+        "role": "Etichette, prezzi, specifiche tecniche, sempre MAIUSCOLO",
+        "fallback": "\"Geist Mono\", \"Space Mono\", monospace",
+        "license": "Lineto (commerciale)"
+      },
+      "ui-system": {
+        "family": "Geist / Geist Mono",
+        "role": "Componenti UI secondari (chat, widget)",
+        "license": "SIL Open Font License"
+      }
+    },
+    "scale": [
+      { "token": "display", "size": "48px", "line_height": "1.1", "family": "primary", "weight": 400 },
+      { "token": "h1", "size": "40px", "line_height": "1.1", "family": "primary | display-dot", "weight": 400 },
+      { "token": "h2", "size": "32px", "line_height": "1.2", "family": "primary", "weight": 400 },
+      { "token": "h3", "size": "24px", "line_height": "1.25", "family": "primary", "weight": 400 },
+      { "token": "dot-number", "size": "20px", "line_height": "1.2", "family": "display-dot", "weight": 57 },
+      { "token": "lead", "size": "18px", "line_height": "1.4", "family": "primary", "weight": 400 },
+      { "token": "body", "size": "16px", "line_height": "1.5", "family": "primary", "weight": 400 },
+      { "token": "small", "size": "14px", "line_height": "1.4", "family": "mono", "weight": 400 },
+      { "token": "caption", "size": "12px", "line_height": "1.3", "family": "mono", "weight": 400 },
+      { "token": "label", "size": "11px", "line_height": "1.2", "family": "mono", "weight": 400, "transform": "uppercase" }
+    ],
+    "rules": [
+      "Un solo peso (Regular): la gerarchia si fa con dimensione e famiglia, non col grassetto",
+      "Etichette e metadati sempre in mono maiuscolo",
+      "Ndot solo per titoli brevi e numeri, mai per paragrafi"
+    ]
+  },
+  "layout": {
+    "radius": { "none": "0px", "xs": "3px", "sm": "4px", "md": "6px", "lg": "8px", "xl": "18px", "pill": "9999px" },
+    "radius_default": "0px",
+    "spacing_base": "4px",
+    "spacing": { "1": "4px", "2": "8px", "3": "12px", "4": "16px", "6": "24px", "8": "32px", "12": "48px", "16": "64px" },
+    "grid": "Card di prodotto a griglia, immagini a tutta larghezza, molto spazio bianco",
+    "imagery": "Prodotti su fondo neutro, materiali trasparenti, ritratti editoriali di artisti"
+  },
+  "components": {
+    "button-primary": { "background": "#040404", "color": "#FFFFFF", "radius": "4px", "padding": "12px 16px", "font": "primary 16px" },
+    "button-secondary": { "background": "#FFFFFF", "color": "#040404", "radius": "4px", "padding": "12px 16px", "font": "primary 16px" },
+    "button-accent": { "background": "#FFC700", "color": "#040404", "radius": "4px", "padding": "12px 16px", "font": "primary 16px", "note": "Massimo uno per vista" },
+    "card": { "background": "#FFFFFF", "radius": "8px", "border": "none" },
+    "label": { "font": "mono 11px", "transform": "uppercase", "color": "#595A5A" }
+  },
+  "voice": {
+    "tone": ["diretto", "ironico", "sicuro", "culturale"],
+    "do": [
+      "Frasi brevi e affermative",
+      "Leggerezza e un pizzico di ironia (\"Si vira al rosa?\")",
+      "Raccontare cultura e collaborazioni, non solo specifiche",
+      "Usare il 'noi' del brand e il 'tu' verso il lettore"
+    ],
+    "dont": [
+      "Superlativi vuoti e gergo da marketing",
+      "Punti esclamativi multipli",
+      "Testi lunghi nei titoli"
+    ],
+    "examples": [
+      "Precisione da studio per le nostre cuffie più avanzate di sempre.",
+      "Porta con te il tuo suono",
+      "Entra nella community"
+    ]
+  },
+  "css_variables": {
+    "--color-black": "#000000",
+    "--color-ink": "#040404",
+    "--color-white": "#FFFFFF",
+    "--color-paper": "#F4F4F4",
+    "--color-grey-50": "#EEEEEE",
+    "--color-grey-100": "#D8D9D9",
+    "--color-grey-300": "#B1B3B3",
+    "--color-grey-600": "#595A5A",
+    "--color-grey-800": "#333333",
+    "--color-accent": "#FFC700",
+    "--font-dot": "\"Ndot\", \"Doto\", monospace",
+    "--font-primary": "\"NType 82\", \"Inter\", Arial, sans-serif",
+    "--font-mono": "\"Lettera Mono LL\", \"Geist Mono\", monospace",
+    "--radius-sm": "4px",
+    "--radius-lg": "8px"
+  }
+}

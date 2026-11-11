@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Nothing — Brand Guidelines</title>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@500;800&family=Inter:wght@400;500&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root{
+    --black:#000; --ink:#040404; --white:#fff; --paper:#F4F4F4;
+    --g50:#EEEEEE; --g100:#D8D9D9; --g300:#B1B3B3; --g600:#595A5A; --g800:#333;
+    --accent:#FFC700;
+    --dot:"Doto", monospace; --sans:"Inter", Arial, sans-serif; --mono:"Space Mono", monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:210mm;height:297mm;padding:18mm 16mm;position:relative;overflow:hidden;page-break-after:always;background:var(--paper)}
+  .page:last-child{page-break-after:auto}
+  .dark{background:var(--ink);color:var(--white)}
+  .foot{position:absolute;left:16mm;right:16mm;bottom:10mm;display:flex;justify-content:space-between;font-family:var(--mono);font-size:8pt;text-transform:uppercase;color:var(--g600)}
+  .dark .foot{color:var(--g300)}
+  .label{font-family:var(--mono);font-size:8.5pt;text-transform:uppercase;letter-spacing:.04em;color:var(--g600)}
+  .dark .label{color:var(--g300)}
+  h1{font-family:var(--dot);font-weight:800;font-size:64pt;line-height:.95;letter-spacing:.02em}
+  h2{font-family:var(--dot);font-weight:800;font-size:34pt;line-height:1;margin:6mm 0 8mm}
+  h3{font-weight:400;font-size:14pt;margin-bottom:2mm}
+  p{font-size:10.5pt;line-height:1.55}
+  .grid{display:grid;gap:5mm}
+  .g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+  .card{background:var(--white);border-radius:8px;padding:6mm}
+  .rule{border-top:1px solid var(--g100);padding-top:4mm}
+  .dotgrid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.12) 1px,transparent 1.4px);background-size:5mm 5mm}
+  .sw{border-radius:8px;overflow:hidden;background:var(--white)}
+  .sw .c{height:30mm}
+  .sw .i{padding:3mm 4mm}
+  .sw .i b{display:block;font-weight:500;font-size:10pt}
+  .sw .i span{font-family:var(--mono);font-size:7.5pt;color:var(--g600);display:block;margin-top:1mm}
+  .btn{display:inline-block;font-size:11pt;padding:12px 16px;border-radius:4px}
+  .num{font-family:var(--dot);font-weight:800;font-size:22pt}
+  ul{list-style:none}
+  li{font-size:10.5pt;line-height:1.5;padding:2mm 0;border-bottom:1px solid var(--g100)}
+  .dark li{border-color:#222}
+  .do li::before{content:"● ";color:var(--ink)} .dont li::before{content:"✕ ";color:var(--g300)}
+  .tbl{width:100%;border-collapse:collapse}
+  .tbl td{padding:2.6mm 0;border-bottom:1px solid var(--g100);vertical-align:baseline}
+  .tbl td:first-child{font-family:var(--mono);font-size:8pt;text-transform:uppercase;color:var(--g600);width:28mm}
+  .tbl td:last-child{font-family:var(--mono);font-size:7.5pt;color:var(--g600);text-align:right;width:40mm}
+</style>
+</head>
+<body>
+
+<!-- 1. Cover -->
+<section class="page dark">
+  <div class="dotgrid"></div>
+  <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:space-between">
+    <div class="label">Brand Guidelines — v1.0 — 11.11.2026</div>
+    <div>
+      <h1>NOTHING<br>BRAND<br>GUIDE</h1>
+      <p style="margin-top:8mm;max-width:120mm;color:var(--g300)">Colori, tipografia, componenti e tono di voce, ricavati dall'analisi del sito it.nothing.tech.</p>
+    </div>
+    <div class="label" style="max-width:150mm;line-height:1.5">Documento non ufficiale a scopo di studio. Nome, logo e font Nothing sono proprietà di Nothing Technology Ltd.</div>
+  </div>
+</section>
+
+<!-- 2. Brand -->
+<section class="page">
+  <div class="label">01 — Il brand</div>
+  <h2>TECH CHE<br>TORNA DIVERTENTE</h2>
+  <p style="font-size:15pt;line-height:1.4;max-width:150mm;margin-bottom:12mm">Noi di Nothing costruiamo un mondo in cui la tech torna divertente. Ricordi quando ogni nuovo prodotto entusiasmava? Vogliamo farlo tornare.</p>
+  <div class="label" style="margin-bottom:4mm">Principi di design</div>
+  <div class="grid g2">
+    <div class="card"><div class="num">01</div><h3>Monocromia prima di tutto</h3><p>UI quasi interamente in bianco, nero e grigi. Il colore arriva dalla fotografia di prodotto, non dall'interfaccia.</p></div>
+    <div class="card"><div class="num">02</div><h3>Dot-matrix come firma</h3><p>Caratteri e icone a griglia di punti richiamano i display LED e le interfacce Glyph.</p></div>
+    <div class="card"><div class="num">03</div><h3>Spigoli netti</h3><p>Raggio 0 come regola. Piccoli arrotondamenti (4–8px) solo su pulsanti e card.</p></div>
+    <div class="card"><div class="num">04</div><h3>Dettaglio tecnico in mono</h3><p>Etichette, prezzi e metadati in monospace maiuscolo, come una scheda tecnica.</p></div>
+  </div>
+  <div class="label" style="margin-top:8mm">Personalità — minimale · tecnico · trasparente · giocoso · culturale</div>
+  <div class="foot"><span>Nothing — Brand Guidelines</span><span>02</span></div>
+</section>
+
+<!-- 3. Logo -->
+<section class="page">
+  <div class="label">02 — Logo e iconografia</div>
+  <h2>WORDMARK</h2>
+  <div class="grid g2" style="margin-bottom:8mm">
+    <div style="background:var(--white);border-radius:8px;height:60mm;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--dot);font-weight:800;font-size:30pt;letter-spacing:.06em">NOTHING (R)</span></div>
+    <div style="background:var(--ink);color:#fff;border-radius:8px;height:60mm;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--dot);font-weight:800;font-size:30pt;letter-spacing:.06em">NOTHING (R)</span></div>
+  </div>
+  <p class="label" style="margin-bottom:6mm">Rappresentazione indicativa. Usare sempre il file logo ufficiale.</p>
+  <div class="grid g2">
+    <div><div class="label" style="margin-bottom:2mm">Regole</div><ul class="do">
+      <li>Sempre monocromatico: nero su chiaro, bianco su scuro</li>
+      <li>Spazio di rispetto pari all'altezza di una lettera</li>
+      <li>Posizionarlo centrato o allineato a sinistra</li></ul></div>
+    <div><div class="label" style="margin-bottom:2mm">Da evitare</div><ul class="dont">
+      <li>Colori, gradienti, ombre o contorni</li>
+      <li>Deformare o ricostruire i puntini</li>
+      <li>Posarlo su foto troppo contrastate</li></ul></div>
+  </div>
+  <div class="label" style="margin:10mm 0 3mm">Icone — griglia 16×16, punti Ø 2px, colore currentColor</div>
+  <div style="display:flex;gap:8mm;align-items:center">
+    <svg width="64" height="64" viewBox="0 0 16 16"><g fill="#040404"><circle cx="3" cy="3" r="1"/><circle cx="5" cy="3" r="1"/><circle cx="7" cy="3" r="1"/><circle cx="9" cy="3" r="1"/><circle cx="11" cy="3" r="1"/><circle cx="13" cy="3" r="1"/><circle cx="3" cy="8" r="1"/><circle cx="5" cy="8" r="1"/><circle cx="7" cy="8" r="1"/><circle cx="9" cy="8" r="1"/><circle cx="11" cy="8" r="1"/><circle cx="13" cy="8" r="1"/><circle cx="3" cy="13" r="1"/><circle cx="5" cy="13" r="1"/><circle cx="7" cy="13" r="1"/><circle cx="9" cy="13" r="1"/><circle cx="11" cy="13" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>
+    <svg width="64" height="64" viewBox="0 0 16 16"><g fill="#040404"><circle cx="8" cy="3" r="1"/><circle cx="8" cy="5" r="1"/><circle cx="8" cy="7" r="1"/><circle cx="8" cy="9" r="1"/><circle cx="8" cy="11" r="1"/><circle cx="8" cy="13" r="1"/><circle cx="3" cy="8" r="1"/><circle cx="5" cy="8" r="1"/><circle cx="11" cy="8" r="1"/><circle cx="13" cy="8" r="1"/></g></svg>
+    <svg width="64" height="64" viewBox="0 0 16 16"><g fill="#040404"><circle cx="3" cy="8" r="1"/><circle cx="5" cy="8" r="1"/><circle cx="7" cy="8" r="1"/><circle cx="9" cy="8" r="1"/><circle cx="11" cy="8" r="1"/><circle cx="13" cy="8" r="1"/><circle cx="11" cy="6" r="1"/><circle cx="9" cy="4" r="1"/><circle cx="11" cy="10" r="1"/><circle cx="9" cy="12" r="1"/></g></svg>
+  </div>
+  <div class="foot"><span>Nothing — Brand Guidelines</span><span>03</span></div>
+</section>
+
+<!-- 4. Colori -->
+<section class="page">
+  <div class="label">03 — Colore</div>
+  <h2>PALETTE</h2>
+  <div class="label" style="margin-bottom:3mm">Core</div>
+  <div class="grid g4" style="margin-bottom:6mm">
+    <div class="sw"><div class="c" style="background:#000"></div><div class="i"><b>Black</b><span>#000000<br>Testo, CTA primarie</span></div></div>
+    <div class="sw"><div class="c" style="background:#040404"></div><div class="i"><b>Ink</b><span>#040404<br>Superfici scure</span></div></div>
+    <div class="sw"><div class="c" style="background:#fff;border-bottom:1px solid #D8D9D9"></div><div class="i"><b>White</b><span>#FFFFFF<br>Card, testo su scuro</span></div></div>
+    <div class="sw"><div class="c" style="background:#F4F4F4;border-bottom:1px solid #D8D9D9"></div><div class="i"><b>Paper</b><span>#F4F4F4<br>Sfondo pagina</span></div></div>
+  </div>
+  <div class="label" style="margin-bottom:3mm">Neutri</div>
+  <div class="grid g4" style="margin-bottom:6mm;grid-template-columns:repeat(5,1fr)">
+    <div class="sw"><div class="c" style="height:18mm;background:#EEEEEE"></div><div class="i"><b>Grey 50</b><span>#EEEEEE</span></div></div>
+    <div class="sw"><div class="c" style="height:18mm;background:#D8D9D9"></div><div class="i"><b>Grey 100</b><span>#D8D9D9</span></div></div>
+    <div class="sw"><div class="c" style="height:18mm;background:#B1B3B3"></div><div class="i"><b>Grey 300</b><span>#B1B3B3</span></div></div>
+    <div class="sw"><div class="c" style="height:18mm;background:#595A5A"></div><div class="i"><b>Grey 600</b><span>#595A5A</span></div></div>
+    <div class="sw"><div class="c" style="height:18mm;background:#333333"></div><div class="i"><b>Grey 800</b><span>#333333</span></div></div>
+  </div>
+  <div class="grid g2" style="grid-template-columns:2fr 1fr 1fr;margin-bottom:8mm">
+    <div class="sw"><div class="c" style="background:#FFC700"></div><div class="i"><b>Accent Yellow</b><span>#FFC700 — una sola CTA chiave per vista</span></div></div>
+    <div class="sw"><div class="c" style="background:#526E7A"></div><div class="i"><b>Slate</b><span>#526E7A — link</span></div></div>
+    <div class="sw"><div class="c" style="background:#265974"></div><div class="i"><b>Deep Blue</b><span>#265974 — legali</span></div></div>
+  </div>
+  <div class="label" style="margin-bottom:3mm">Proporzione d'uso</div>
+  <div style="display:flex;height:9mm;border-radius:4px;overflow:hidden">
+    <div style="flex:90;background:#D8D9D9"></div><div style="flex:8;background:#040404"></div><div style="flex:2;background:#FFC700"></div>
+  </div>
+  <div style="display:flex;justify-content:space-between;margin-top:2mm" class="label"><span>Neutri 90%</span><span>Nero / bianco 8% · Accento 2%</span></div>
+  <div class="foot"><span>Nothing — Brand Guidelines</span><span>04</span></div>
+</section>
+
+<!-- 5. Tipografia -->
+<section class="page">
+  <div class="label">04 — Tipografia</div>
+  <h2>CARATTERI</h2>
+  <div class="grid g3" style="margin-bottom:8mm">
+    <div class="card"><div class="label">Display dot</div><div style="font-family:var(--dot);font-weight:800;font-size:36pt;margin:3mm 0">Aa</div><h3>Ndot</h3><p style="font-size:9pt">Titoli brevi, numeri, wordmark. Mai per paragrafi.</p></div>
+    <div class="card"><div class="label">Primario</div><div style="font-size:36pt;margin:3mm 0">Aa</div><h3>NType 82</h3><p style="font-size:9pt">Titoli, testo e pulsanti. Circa l'80% del testo.</p></div>
+    <div class="card"><div class="label">Mono</div><div style="font-family:var(--mono);font-size:36pt;margin:3mm 0">Aa</div><h3>Lettera Mono LL</h3><p style="font-size:9pt">Etichette, prezzi, specifiche. Sempre maiuscolo.</p></div>
+  </div>
+  <div class="label" style="margin-bottom:2mm">Scala</div>
+  <table class="tbl">
+    <tr><td>Display</td><td style="font-size:30pt;line-height:1.1">Porta con te il suono</td><td>48px / 1.1</td></tr>
+    <tr><td>H1 dot</td><td style="font-family:var(--dot);font-weight:800;font-size:26pt">HEADPHONE (1)</td><td>40px / Ndot</td></tr>
+    <tr><td>H2</td><td style="font-size:20pt">Acquista per categoria</td><td>32px / 1.2</td></tr>
+    <tr><td>H3</td><td style="font-size:15pt">Entra nella community</td><td>24px / 1.25</td></tr>
+    <tr><td>Lead</td><td style="font-size:12pt">Precisione da studio per le nostre cuffie.</td><td>18px / 1.4</td></tr>
+    <tr><td>Body</td><td style="font-size:10.5pt">Testo corrente, frasi brevi e dirette.</td><td>16px / 1.5</td></tr>
+    <tr><td>Label</td><td style="font-family:var(--mono);font-size:8pt;text-transform:uppercase">€ 299 — Disponibile ora</td><td>11px mono upper</td></tr>
+  </table>
+  <p class="label" style="margin-top:6mm;line-height:1.5">Un solo peso: la gerarchia si fa con dimensione e famiglia, non col grassetto. In questo PDF: Doto, Inter e Space Mono come sostituti dei font proprietari.</p>
+  <div class="foot"><span>Nothing — Brand Guidelines</span><span>05</span></div>
+</section>
+
+<!-- 6. Componenti -->
+<section class="page">
+  <div class="label">05 — Componenti e layout</div>
+  <h2>UI</h2>
+  <div class="label" style="margin-bottom:3mm">Pulsanti — raggio 4px, padding 12×16px</div>
+  <div style="display:flex;gap:4mm;margin-bottom:3mm">
+    <span class="btn" style="background:#040404;color:#fff">Scopri Headphone (a)</span>
+    <span class="btn" style="background:#fff;color:#040404">Scopri</span>
+    <span class="btn" style="background:#FFC700;color:#040404">Iscriviti</span>
+  </div>
+  <div style="display:flex;gap:4mm;margin-bottom:10mm" class="label"><span style="width:52mm">Primario</span><span style="width:24mm">Secondario</span><span>Accento (max 1)</span></div>
+  <div class="label" style="margin-bottom:3mm">Card prodotto — raggio 8px, fondo bianco, nessun bordo</div>
+  <div class="grid g3" style="margin-bottom:10mm">
+    <div class="card" style="padding:0;overflow:hidden"><div style="height:34mm;background:#EEEEEE"></div><div style="padding:4mm"><div class="label">Audio</div><h3 style="margin-top:1mm">CMF Speaker M</h3></div></div>
+    <div class="card" style="padding:0;overflow:hidden"><div style="height:34mm;background:#EEEEEE"></div><div style="padding:4mm"><div class="label">Audio</div><h3 style="margin-top:1mm">CMF Speaker S</h3></div></div>
+    <div class="card" style="padding:0;overflow:hidden"><div style="height:34mm;background:#040404"></div><div style="padding:4mm"><div class="label">Nuovo</div><h3 style="margin-top:1mm">Headphone (1) Pro</h3></div></div>
+  </div>
+  <div class="grid g2">
+    <div><div class="label" style="margin-bottom:2mm">Raggi</div>
+      <div style="display:flex;gap:4mm;align-items:end">
+        <div style="text-align:center"><div style="width:16mm;height:16mm;background:#040404"></div><div class="label" style="margin-top:1mm">0</div></div>
+        <div style="text-align:center"><div style="width:16mm;height:16mm;background:#040404;border-radius:4px"></div><div class="label" style="margin-top:1mm">4</div></div>
+        <div style="text-align:center"><div style="width:16mm;height:16mm;background:#040404;border-radius:8px"></div><div class="label" style="margin-top:1mm">8</div></div>
+        <div style="text-align:center"><div style="width:16mm;height:16mm;background:#040404;border-radius:9999px"></div><div class="label" style="margin-top:1mm">Pill</div></div>
+      </div></div>
+    <div><div class="label" style="margin-bottom:2mm">Spaziatura — base 4px</div>
+      <div style="display:flex;gap:2mm;align-items:end">
+        <div style="width:1mm;height:4mm;background:#040404"></div><div style="width:2mm;height:8mm;background:#040404"></div><div style="width:3mm;height:12mm;background:#040404"></div><div style="width:4mm;height:16mm;background:#040404"></div><div style="width:6mm;height:24mm;background:#040404"></div><div style="width:8mm;height:32mm;background:#040404"></div>
+      </div><div class="label" style="margin-top:1mm">4 · 8 · 12 · 16 · 24 · 32 · 48 · 64</div></div>
+  </div>
+  <div class="foot"><span>Nothing — Brand Guidelines</span><span>06</span></div>
+</section>
+
+<!-- 7. Voce -->
+<section class="page dark">
+  <div class="dotgrid"></div>
+  <div style="position:relative">
+    <div class="label">06 — Tono di voce</div>
+    <h2>DIRETTO.<br>IRONICO.<br>CULTURALE.</h2>
+    <div class="grid g2" style="margin-bottom:10mm">
+      <div><div class="label" style="margin-bottom:2mm">Sì</div><ul>
+        <li>Frasi brevi e affermative</li><li>Un pizzico di ironia: «Si vira al rosa?»</li><li>Cultura e collaborazioni, non solo specifiche</li><li>Il «noi» del brand, il «tu» al lettore</li></ul></div>
+      <div><div class="label" style="margin-bottom:2mm">No</div><ul>
+        <li>Superlativi vuoti e gergo da marketing</li><li>Punti esclamativi multipli</li><li>Titoli lunghi</li><li>Tono freddo o burocratico</li></ul></div>
+    </div>
+    <div class="label" style="margin-bottom:3mm">Esempi dal sito</div>
+    <p style="font-size:17pt;line-height:1.35;margin-bottom:4mm">«Precisione da studio per le nostre cuffie più avanzate di sempre.»</p>
+    <p style="font-size:17pt;line-height:1.35;margin-bottom:4mm">«Porta con te il tuo suono.»</p>
+    <p style="font-size:17pt;line-height:1.35">«Entra nella community.»</p>
+  </div>
+  <div class="foot"><span>Nothing — Brand Guidelines</span><span>07</span></div>
+</section>
+
+</body>
+</html>
