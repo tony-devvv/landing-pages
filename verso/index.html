@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vèrso One — Cuffie over-ear progettate a Bologna</title>
+<meta name="description" content="Vèrso One: cancellazione del rumore fino a 42 dB, 38 ore con ANC acceso, 268 g. Progettate e accordate a Bologna, riparabili.">
+<meta name="theme-color" content="#14161A">
+<!-- Prototipo per un cliente simulato: niente indicizzazione finché non è la versione finale -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vèrso One — Più dettagli da ascoltare. Meno rumore da sopportare.">
+<meta property="og:description" content="42 dB di cancellazione del rumore, 38 ore con ANC acceso, 268 g. Progettate a Bologna.">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Sostituti gratuiti dei font del cliente (Söhne Breit / Söhne / Söhne Mono): da sostituire con i WOFF2 con licenza -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../present/present.css">
+<style>
+/* ===== Token di brand — Vèrso Audio (brief §3) ===== */
+:root{
+  --grafite:#14161A; --grafite-2:#1D2026; --grafite-3:#2A2D33;
+  --carta:#F5F2EC; --carta-2:#ECE7DE; --pietra:#C9C4BA; --pietra-d:#6E6A63;
+  --accent:#FF5A1F; --salvia:#8FA89A; --white:#FFFFFF;
+  --font-title:"Söhne Breit","Archivo",Arial,sans-serif;
+  --font-text:"Söhne","Inter",Arial,sans-serif;
+  --font-mono:"Söhne Mono","IBM Plex Mono",monospace;
+  --r:12px; --r-sm:8px;
+  --max:1200px; --gut:clamp(16px,4vw,40px);
+  --fg:var(--grafite); --muted:var(--pietra-d); --line:#DDD7CC; --card:var(--white); --bg:var(--carta);
+}
+.dark{--fg:var(--carta); --muted:var(--pietra); --line:#2C3037; --card:var(--grafite-2); --bg:var(--grafite)}
+.light{--bg:var(--carta)}
+.white{--bg:var(--carta-2); --card:var(--carta)}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--carta);color:var(--grafite);font-family:var(--font-text);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+/* grana "materica" leggera su tutta la pagina */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:120;opacity:.06;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+section{background:var(--bg);color:var(--fg);padding:clamp(72px,11vw,136px) 0;position:relative;overflow:hidden}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut);position:relative}
+[hidden]{display:none!important}
+
+.label{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.title,h2{font-family:var(--font-title);font-stretch:112%;font-weight:600;letter-spacing:-.02em;line-height:1.04}
+h1.title{font-size:clamp(40px,6vw,80px);max-width:15ch}
+h2{font-size:clamp(30px,4.2vw,52px);max-width:20ch}
+h3{font-family:var(--font-title);font-stretch:108%;font-weight:600;font-size:clamp(19px,1.8vw,23px);line-height:1.2;letter-spacing:-.01em}
+.lead{font-size:clamp(17px,1.5vw,20px);line-height:1.5;color:var(--muted);max-width:56ch}
+p{max-width:62ch}
+sup{font-family:var(--font-mono);font-size:.6em;color:var(--muted)}
+.head{display:grid;gap:18px;margin-bottom:clamp(40px,6vw,72px)}
+.head.split{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);column-gap:clamp(32px,6vw,96px);align-items:end}
+.head.split>div{display:grid;gap:18px}
+.head.split .lead{font-size:16px}
+.ph{border:1.5px dashed var(--line);border-radius:var(--r);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;line-height:1.5}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-text);font-weight:500;font-size:16px;padding:14px 20px;border-radius:999px;border:0;cursor:pointer;transition:transform .2s,opacity .2s,background .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);opacity:.9}
+.btn-accent{background:var(--accent);color:var(--grafite)}
+.btn-primary{background:var(--grafite);color:var(--carta)}
+.dark .btn-primary{background:var(--carta);color:var(--grafite)}
+.btn-secondary{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.ticks{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--font-mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.ticks span::before{content:"✓ ";color:var(--accent)}
+.card{background:var(--card);border-radius:var(--r);padding:clamp(22px,3vw,36px)}
+
+/* header */
+.top{position:fixed;inset:0 0 auto;z-index:50;padding:12px var(--gut);pointer-events:none}
+.top .bar{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(245,242,236,.92);pointer-events:auto;box-shadow:0 0 0 1px rgba(20,22,26,.06);transition:background .4s,box-shadow .4s,-webkit-backdrop-filter .4s,backdrop-filter .4s}
+.logo{font-family:var(--font-title);font-stretch:112%;font-weight:600;font-size:22px;letter-spacing:-.03em;transition:color .4s}
+.logo b{color:var(--accent);font-weight:600}
+.top nav{display:flex;gap:26px}
+.top nav a{font-size:14px;color:var(--pietra-d);transition:color .4s}
+.top nav a:hover{color:var(--grafite)}
+.top .btn{padding:10px 16px;font-size:14px}
+.top.scrolled .bar{background:rgba(245,242,236,.12);-webkit-backdrop-filter:blur(20px) saturate(170%);backdrop-filter:blur(20px) saturate(170%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 1px 0 rgba(255,255,255,.25),0 10px 40px rgba(0,0,0,.22)}
+.top.scrolled.on-light .bar{background:rgba(245,242,236,.5);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 10px 40px rgba(20,22,26,.08)}
+.top.scrolled.on-dark .logo{color:var(--carta)}
+.top.scrolled.on-dark nav a{color:rgba(245,242,236,.72)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.top.scrolled .bar{background:rgba(20,22,26,.9)}.top.scrolled.on-light .bar{background:rgba(245,242,236,.95)}}
+.short{display:none}
+
+/* 1 · hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding-top:120px}
+.hero::before{content:"";position:absolute;width:70vmax;height:70vmax;right:-22vmax;top:-18vmax;border-radius:50%;background:radial-gradient(circle,rgba(255,90,31,.22),transparent 62%);pointer-events:none}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;padding:7px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px #3A3E46;color:var(--carta)}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.hero .lead{margin:26px 0 34px}
+.hero .ticks{margin-top:22px}
+.product{width:100%;max-width:480px;margin-left:auto;aspect-ratio:1;position:relative;will-change:transform}
+.product svg{width:100%;height:100%}
+.ph-tag{position:absolute;right:0;bottom:0;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--pietra);opacity:.8}
+.stat-chip{position:absolute;font-family:var(--font-mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;padding:8px 13px;border-radius:999px;background:rgba(29,32,38,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px #343842;color:var(--carta);animation:float 8s ease-in-out infinite}
+.stat-chip b{color:var(--accent);font-weight:500}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,-9px)}}
+
+/* striscia */
+.strip{padding:20px 0;background:var(--grafite);color:var(--carta);border-top:1px solid #23262C;border-bottom:1px solid #23262C}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.track{display:flex;gap:10px;width:max-content;animation:scroll 40s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;padding:8px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px #30343B;color:var(--pietra);white-space:nowrap}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* 2 · problema */
+.pain{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;list-style:none}
+.pain li{background:var(--card);border-radius:var(--r);padding:24px 20px;display:grid;gap:10px;align-content:start}
+.pain .n{font-family:var(--font-mono);font-size:12px;color:var(--accent)}
+.pain b{font-family:var(--font-title);font-stretch:108%;font-weight:600;font-size:17px;line-height:1.25}
+.pain span{color:var(--muted);font-size:14.5px}
+.source{margin-top:22px}
+
+/* 3 · laboratorio */
+.lab .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.lab .body p{color:var(--muted);font-size:18px}
+.lab .body p+p{margin-top:16px}
+.lab .body strong{color:var(--fg);font-weight:500}
+.lab .ph{aspect-ratio:4/5;border-color:#3A3E46;background:radial-gradient(circle at 30% 20%,#23262C,#16181C)}
+.coords{display:flex;gap:18px;margin-top:28px}
+
+/* 4 · offer */
+.offer .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.shot{background:var(--card);border-radius:var(--r);display:grid;place-items:center;position:relative;min-height:420px;padding:28px}
+.shot svg{width:min(380px,90%)}
+.colors{display:flex;align-items:center;gap:12px;margin:22px 0 6px}
+.sw{width:34px;height:34px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18);transition:transform .2s}
+.sw[aria-pressed="true"]{outline:2px solid var(--grafite);outline-offset:3px}
+.price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:18px 0 6px}
+.price .now{font-family:var(--font-title);font-stretch:112%;font-weight:600;font-size:clamp(48px,6vw,72px);letter-spacing:-.03em;line-height:1}
+.price s{font-size:24px;color:var(--muted)}
+.price-note{color:var(--muted);font-size:15px}
+.ship{margin-top:12px;display:inline-flex;gap:8px;align-items:center;font-family:var(--font-mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;padding:7px 12px;border-radius:999px;background:var(--carta-2)}
+.ship::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.box{list-style:none;margin-top:24px}
+.box li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+.box li span:last-child{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+.offer .btns{margin-top:26px}
+.perks{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:20px}
+.perks div{background:var(--card);border-radius:var(--r);padding:18px;display:grid;gap:6px}
+.perks p{font-size:14px;color:var(--muted)}
+
+/* 5 · USP con demo */
+.usp{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.usp .card{grid-column:span 2;display:grid;gap:14px;align-content:start}
+.usp .card:nth-child(4),.usp .card:nth-child(5){grid-column:span 3}
+.usp .n{font-family:var(--font-mono);font-size:12px;color:var(--accent)}
+.usp p{color:var(--muted);font-size:15px}
+.demo{background:var(--grafite);color:var(--carta);border-radius:var(--r-sm);height:160px;padding:14px 16px;position:relative;overflow:hidden;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;display:flex;flex-direction:column}
+.demo .bar{display:flex;justify-content:space-between;align-items:center;color:var(--pietra)}
+.demo .big{font-family:var(--font-title);font-stretch:112%;font-weight:600;font-size:40px;letter-spacing:-.03em;text-transform:none;line-height:1}
+.demo .row{display:flex;justify-content:space-between;align-items:end;margin-top:auto}
+.demo .chips{display:flex;gap:6px;flex-wrap:wrap}
+.demo .chips span{padding:4px 8px;border-radius:999px;box-shadow:inset 0 0 0 1px #3A3E46;color:var(--pietra)}
+.tgl{font:inherit;letter-spacing:inherit;text-transform:inherit;border:0;cursor:pointer;border-radius:999px;padding:6px 11px;background:#2A2D33;color:var(--pietra)}
+.tgl[aria-pressed="true"]{background:var(--accent);color:var(--grafite)}
+.cells{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;margin:12px 0 10px}
+.cells b{height:12px;border-radius:2px;background:#2A2D33;transition:background .3s}
+.cells b.on{background:var(--carta)}
+.cup-demo{flex:1;display:grid;place-items:center}
+.cup-demo svg{height:92px;width:auto}
+.cushion{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.off .cushion{transform:translateX(46px)}
+.scan{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.scan i{position:absolute;width:70px;height:70px;border-radius:50%;box-shadow:0 0 0 1px var(--accent);animation:pulse 2.4s ease-out infinite}
+.scan i:nth-child(2){animation-delay:1.2s}
+@keyframes pulse{from{transform:scale(.3);opacity:1}to{transform:scale(2.2);opacity:0}}
+.chat{display:grid;gap:6px;margin-top:10px;text-transform:none;letter-spacing:0;font-family:var(--font-text);font-size:12.5px}
+.msg{max-width:85%;padding:7px 11px;border-radius:12px;opacity:0;transform:translateY(6px);transition:all .5s}
+.msg.in{opacity:1;transform:none}
+.msg.me{background:#2A2D33;justify-self:end;border-bottom-right-radius:4px}
+.msg.us{background:var(--carta);color:var(--grafite);border-bottom-left-radius:4px}
+
+/* 5b · ecosistema */
+.eco .grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,80px);align-items:center}
+.eco .body{color:var(--muted);font-size:17px;margin:22px 0 30px}
+.orbit{position:relative;width:min(520px,100%);aspect-ratio:1;margin:0 auto;container-type:inline-size}
+.ring{position:absolute;inset:var(--in);border-radius:50%;border:1px dashed #343842;animation:spin var(--t) linear infinite}
+.ring.rev{animation-direction:reverse}
+.node{position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(var(--a)) translateX(var(--r)) rotate(calc(-1 * var(--a)))}
+.node span{position:absolute;transform:translate(-50%,-50%);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:6px 11px;border-radius:999px;background:var(--grafite-2);box-shadow:inset 0 0 0 1px #3A3E46;color:var(--carta);white-space:nowrap;animation:spin var(--t) linear infinite reverse}
+.ring.rev .node span{animation-direction:normal}
+.core{position:absolute;inset:40%;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(255,90,31,.12),0 0 70px rgba(255,90,31,.35)}
+.core span{font-family:var(--font-title);font-stretch:112%;font-weight:600;color:var(--grafite);font-size:clamp(14px,3.4cqw,19px);letter-spacing:-.03em}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* 6 · soluzione */
+.sol .row{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,4vw,64px);padding:clamp(22px,3vw,34px) 0;border-top:1px solid var(--line)}
+.sol .from{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--accent)}
+.sol .to{font-family:var(--font-title);font-stretch:108%;font-weight:600;font-size:clamp(20px,2vw,26px);margin-top:6px;letter-spacing:-.01em}
+.sol p{color:var(--muted)}
+
+/* 6b · comandi */
+.ctl .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.cupx{position:relative;width:min(420px,100%);aspect-ratio:1;margin:0 auto}
+.cupx svg{width:100%;height:100%}
+.hot{position:absolute;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;border:0;cursor:pointer;background:rgba(245,242,236,.1);box-shadow:inset 0 0 0 1px #5A5F68;color:var(--carta);font-family:var(--font-mono);font-size:11px}
+.hot.on{background:var(--accent);color:var(--grafite);box-shadow:none}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:22px 0}
+.tabs button{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--pietra);background:transparent;border:0;box-shadow:inset 0 0 0 1px #3A3E46;border-radius:999px;padding:8px 13px;cursor:pointer}
+.tabs button.on{background:var(--carta);color:var(--grafite)}
+.ctl-panel h3{font-size:clamp(22px,2.4vw,30px);margin-bottom:8px}
+.tbc{display:inline-block;margin-top:14px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--grafite);background:var(--accent);padding:5px 10px;border-radius:999px}
+
+/* 6c · numeri */
+.statement{font-family:var(--font-title);font-stretch:112%;font-weight:600;font-size:clamp(26px,3.4vw,44px);line-height:1.12;letter-spacing:-.02em;max-width:24ch;margin-bottom:clamp(34px,5vw,54px)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stats .card{display:grid;gap:16px}
+.stats .v{font-family:var(--font-title);font-stretch:112%;font-weight:600;font-size:clamp(46px,5.4vw,72px);letter-spacing:-.04em;line-height:1;display:flex;align-items:baseline;gap:6px}
+.stats .v small{font-size:.38em;color:var(--accent);letter-spacing:0}
+.stats .label{padding-top:12px;border-top:1px solid var(--line)}
+
+/* riparabilità */
+.rep .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,80px);align-items:center}
+.explode svg{width:100%;height:auto}
+.part{cursor:pointer;transition:opacity .3s,transform .5s cubic-bezier(.2,.7,.2,1)}
+.explode.focus .part{opacity:.28}
+.explode.focus .part.on{opacity:1}
+.parts{list-style:none}
+.parts li button{width:100%;display:grid;grid-template-columns:28px 1fr auto;gap:14px;align-items:center;text-align:left;padding:16px 0;border:0;border-top:1px solid var(--line);background:none;color:inherit;font:inherit;cursor:pointer}
+.parts li:last-child button{border-bottom:1px solid var(--line)}
+.parts .k{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-mono);font-size:11px;box-shadow:inset 0 0 0 1px #4A4F58}
+.parts button.on .k{background:var(--accent);color:var(--grafite);box-shadow:none}
+.parts .pr{font-family:var(--font-mono);font-size:12px;color:var(--muted);text-transform:uppercase}
+.parts .pr.tbd{color:var(--accent)}
+.rep-note{margin-top:22px;color:var(--muted);font-size:15px}
+
+/* recensioni */
+.rev .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:stretch}
+.score .v{font-family:var(--font-title);font-stretch:112%;font-weight:600;font-size:clamp(64px,8vw,104px);letter-spacing:-.04em;line-height:1;margin:14px 0 8px}
+.stars{color:var(--accent);font-size:22px;letter-spacing:3px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.quotes .ph{min-height:180px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.facts .card{padding:20px;display:grid;gap:4px}
+.facts b{font-family:var(--font-title);font-stretch:112%;font-weight:600;font-size:26px;letter-spacing:-.03em}
+
+/* 7 · obiezioni */
+.obj{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.obj .card{display:grid;gap:12px;align-content:start}
+.obj q{font-family:var(--font-title);font-stretch:108%;font-weight:600;font-size:20px;line-height:1.25;letter-spacing:-.01em;quotes:"«" "»"}
+.obj p{color:var(--muted);font-size:15px}
+
+/* 8 · CTA + lista d'attesa */
+.cta{text-align:center}
+.cta .wrap{display:grid;justify-items:center;gap:22px}
+.cta h2{max-width:16ch;font-size:clamp(36px,5.6vw,72px)}
+.cta .lead{text-align:center}
+.cta .btns,.cta .ticks{justify-content:center}
+.wl{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.form{background:var(--card);border-radius:var(--r);padding:clamp(22px,3vw,34px);display:grid;gap:14px}
+.form label{display:grid;gap:6px;font-size:14px}
+.form input[type=email]{font:inherit;font-size:16px;padding:14px 16px;border-radius:var(--r-sm);border:1.5px solid var(--line);background:var(--carta);color:var(--grafite)}
+.form input[type=email]:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.consent{display:flex!important;grid-template-columns:none;gap:10px!important;align-items:flex-start;color:var(--muted);font-size:13.5px!important}
+.consent input{margin-top:3px;accent-color:var(--accent);width:16px;height:16px;flex:none}
+.form .msg-ok{font-size:14px;color:var(--grafite);background:var(--carta-2);border-radius:var(--r-sm);padding:12px 14px}
+.form .err{color:#B3261E;font-size:13.5px}
+
+/* 9 · FAQ */
+.faq .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,96px)}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:20px 0;font-size:17px;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--font-mono);font-size:18px;color:var(--accent);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;color:var(--muted);font-size:15px}
+.tbd-inline{font-family:var(--font-mono);font-size:11px;color:var(--accent);text-transform:uppercase}
+
+/* note + footer */
+.notes{padding:52px 0;background:var(--carta-2)}
+.notes ol{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 40px;padding-left:18px;font-size:12.5px;color:var(--pietra-d);line-height:1.5}
+footer{background:var(--grafite);color:var(--pietra);padding:44px 0 110px;font-size:14px}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px}
+footer .logo{color:var(--carta)}
+footer a{color:var(--carta)}
+footer ul{list-style:none;display:grid;gap:6px}
+.proto{grid-column:1/-1;padding-top:20px;border-top:1px solid #2A2D33;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+
+/* accessibilità */
+.skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--accent);color:var(--grafite);padding:10px 14px;border-radius:var(--r-sm);font-size:14px;transition:top .2s}
+.skip:focus{top:12px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* comparsa */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .track,.ring,.node span,.stat-chip,.scan i{animation:none}
+  .track{flex-wrap:wrap;justify-content:center;width:auto}
+  .marquee{-webkit-mask-image:none;mask-image:none}
+  .cushion,.part,.msg{transition:none}
+}
+
+/* responsive */
+@media (max-width:1024px){
+  .pain{grid-template-columns:repeat(3,1fr)}
+  .perks{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:960px){
+  .hero .grid,.lab .grid,.offer .grid,.eco .grid,.ctl .grid,.rep .grid,.rev .grid,.wl,.faq .grid,.head.split{grid-template-columns:1fr}
+  .product{margin:0 auto;max-width:360px}
+  .usp{grid-template-columns:1fr 1fr}
+  .usp .card,.usp .card:nth-child(4){grid-column:span 1}
+  .usp .card:nth-child(5){grid-column:span 2}
+  .obj,.quotes{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .top nav{display:none}
+  footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .pain,.perks,.usp,.obj,.quotes,.facts,.notes ol,footer .wrap{grid-template-columns:1fr}
+  .usp .card:nth-child(5){grid-column:span 1}
+  .sol .row{grid-template-columns:1fr;gap:8px}
+  .btns .btn{flex:1 1 100%}
+  .hero{min-height:auto}
+  .stat-chip{display:none}
+  .node span{font-size:9px;padding:5px 8px}
+  .orbit .ring:first-child .node{display:none}
+  .shot{min-height:300px}
+}
+@media (max-width:480px){.long{display:none}.short{display:inline}}
+</style>
+</head>
+<body>
+<a class="skip" href="#attenzione">Vai al contenuto</a>
+
+<header class="top">
+  <div class="bar">
+    <a href="#top" class="logo" aria-label="Vèrso">v<b>è</b>rso</a>
+    <nav aria-label="Sezioni">
+      <a href="#perche">Perché One</a><a href="#riparabilita">Riparabili</a><a href="#offerta">Prezzo</a><a href="#faq">FAQ</a>
+    </nav>
+    <a href="#lista" class="btn btn-accent" data-cta="nav"><span class="long" data-cta-text>Entra in lista d'attesa</span><span class="short" data-cta-short>Lista d'attesa</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 01 · ATTENZIONE -->
+<section class="hero dark" id="attenzione">
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="pill"><i></i><span data-phase-pill>Nuovo · Pre-ordini dal 15 gennaio</span></span>
+      <h1 class="title" id="hero-title" style="margin-top:22px">Più dettagli da ascoltare. Meno rumore da sopportare.</h1>
+      <p class="lead">Vèrso One: cancellazione del rumore fino a 42&nbsp;dB<sup>1</sup>, 38 ore con ANC acceso<sup>2</sup> e solo 268&nbsp;g. Progettate e accordate a Bologna. E quando qualcosa si consuma, lo cambi.</p>
+      <div class="btns">
+        <a href="#lista" class="btn btn-accent" data-cta="hero"><span data-cta-text>Entra in lista d'attesa</span></a>
+        <a href="#perche" class="btn btn-secondary">Scopri Vèrso One ↓</a>
+      </div>
+      <div class="ticks"><span>Spedizione gratuita</span><span>30 giorni per il reso</span><span>3 rate senza interessi</span></div>
+    </div>
+    <div class="product rv" id="hero-product" aria-hidden="true">
+      <svg viewBox="0 0 400 400" fill="none">
+        <defs>
+          <linearGradient id="g-cup" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3A3E46"/><stop offset="1" stop-color="#1A1C21"/></linearGradient>
+          <linearGradient id="g-band" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9D5CD"/><stop offset="1" stop-color="#8D8980"/></linearGradient>
+        </defs>
+        <path d="M96 210 C 86 70, 314 70, 304 210" stroke="url(#g-band)" stroke-width="10" stroke-linecap="round"/>
+        <path d="M104 206 C 98 92, 302 92, 296 206" stroke="#2A2D33" stroke-width="18" stroke-linecap="round"/>
+        <rect x="88" y="190" width="14" height="44" rx="5" fill="#B9B4AA"/><rect x="298" y="190" width="14" height="44" rx="5" fill="#B9B4AA"/>
+        <g transform="translate(92 282)"><ellipse rx="62" ry="78" fill="#0F1114"/><ellipse rx="56" ry="72" fill="url(#g-cup)"/><ellipse rx="40" ry="54" fill="none" stroke="#4A4F58"/><circle cx="36" cy="-48" r="4" fill="#FF5A1F"/></g>
+        <g transform="translate(308 282)"><ellipse rx="62" ry="78" fill="#0F1114"/><ellipse rx="56" ry="72" fill="url(#g-cup)"/><ellipse rx="40" ry="54" fill="none" stroke="#4A4F58"/><text x="0" y="6" text-anchor="middle" font-family="Archivo, Arial" font-weight="600" font-size="20" fill="#C9C4BA" letter-spacing="-1">vèrso</text></g>
+      </svg>
+      <span class="stat-chip" style="top:8%;left:2%"><b>42 dB</b> ANC</span>
+      <span class="stat-chip" style="top:42%;right:-2%;animation-delay:-3s"><b>268 g</b></span>
+      <span class="stat-chip" style="bottom:12%;left:-2%;animation-delay:-5s"><b>38 h</b> con ANC</span>
+      <span class="ph-tag">Illustrazione · render 4K in arrivo il 25/11</span>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-label="Compatibilità e caratteristiche">
+  <div class="marquee"><div class="track">
+    <span>Bluetooth 5.4</span><span>Multipoint · 2 dispositivi</span><span>LDAC · AAC · SBC</span><span>Audio via USB-C</span><span>Jack 3,5 mm</span><span>iOS + Android</span><span>Windows + Mac</span><span>Cuscinetti sostituibili</span><span>Ricambi per 5 anni</span><span>Accordate a Bologna</span>
+    <span aria-hidden="true">Bluetooth 5.4</span><span aria-hidden="true">Multipoint · 2 dispositivi</span><span aria-hidden="true">LDAC · AAC · SBC</span><span aria-hidden="true">Audio via USB-C</span><span aria-hidden="true">Jack 3,5 mm</span><span aria-hidden="true">iOS + Android</span><span aria-hidden="true">Windows + Mac</span><span aria-hidden="true">Cuscinetti sostituibili</span><span aria-hidden="true">Ricambi per 5 anni</span><span aria-hidden="true">Accordate a Bologna</span>
+  </div></div>
+</div>
+
+<!-- 02 · PROBLEMA -->
+<section class="light" id="problema">
+  <div class="wrap">
+    <div class="head split rv">
+      <div><div class="label">Il problema</div><h2>Le cuffie dovrebbero sparire. Invece te ne accorgi ogni giorno.</h2></div>
+      <p class="lead">Non lo diciamo noi. Sono le cose che ci scrivete più spesso.</p>
+    </div>
+    <ul class="pain rv">
+      <li><span class="n">01</span><b>Dopo un'ora fanno male.</b><span>Alle orecchie, alla testa. E se porti gli occhiali, ancora prima.</span></li>
+      <li><span class="n">02</span><b>In metro senti ancora tutto.</b><span>Il rombo dei vagoni passa sotto la cancellazione del rumore.</span></li>
+      <li><span class="n">03</span><b>In call ti sentono male.</b><span>Soprattutto all'aperto, con il vento.</span></li>
+      <li><span class="n">04</span><b>La batteria finisce a metà settimana.</b><span>E le ricarichi sempre quando servono.</span></li>
+      <li><span class="n">05</span><b>Se si rompe qualcosa, le butti.</b><span>Un cuscinetto consumato e cuffie da 200 € finiscono nel cassetto.</span></li>
+    </ul>
+    <p class="label source rv">Fonte: 1.240 recensioni e 3.100 richieste di assistenza degli ultimi 18 mesi</p>
+  </div>
+</section>
+
+<!-- 03 · TRANSIZIONE: IL LABORATORIO -->
+<section class="lab dark" id="laboratorio">
+  <div class="wrap grid">
+    <div class="rv">
+      <div class="label">Da dove arriviamo</div>
+      <h2 style="margin:20px 0 26px">Siamo in 14, a Bologna. Sei di noi passano le giornate ad ascoltare.</h2>
+      <div class="body">
+        <p>Dal 2021 facciamo auricolari: <strong>38.000 Vèrso Buds</strong> sono nelle orecchie di persone che ci scrivono ogni giorno. Abbiamo letto tutto, anche le critiche.</p>
+        <p>Vèrso One nasce da quelle lettere. Le progettiamo qui, le produciamo in Cina e <strong>ogni modello passa per l'accordatura finale nel nostro laboratorio di Bologna</strong>.</p>
+      </div>
+      <div class="coords"><span class="label">44,49° N · 11,34° E</span><span class="label">Laboratorio acustico Vèrso</span></div>
+    </div>
+    <div class="ph rv">Foto del team in laboratorio<br>— in arrivo dal cliente —</div>
+  </div>
+</section>
+
+<!-- 04 · OFFER -->
+<section class="offer light" id="offerta">
+  <div class="wrap">
+    <div class="head split rv">
+      <div><div class="label">Il prezzo</div><h2>Vèrso One. Scegli il colore, al resto pensiamo noi.</h2></div>
+      <p class="lead">Spedizione gratuita, 30 giorni per ripensarci e fino a 36 mesi di garanzia.</p>
+    </div>
+    <div class="grid">
+      <div class="shot rv">
+        <svg viewBox="0 0 400 400" fill="none" aria-hidden="true" id="offer-product">
+          <path d="M96 210 C 86 70, 314 70, 304 210" stroke="#B9B4AA" stroke-width="10" stroke-linecap="round"/>
+          <path d="M104 206 C 98 92, 302 92, 296 206" stroke-width="18" stroke-linecap="round" style="stroke:var(--cup-band,#2A2D33);transition:stroke .4s"/>
+          <rect x="88" y="190" width="14" height="44" rx="5" fill="#B9B4AA"/><rect x="298" y="190" width="14" height="44" rx="5" fill="#B9B4AA"/>
+          <g transform="translate(92 282)"><ellipse rx="62" ry="78" style="fill:var(--cup-edge,#0F1114);transition:fill .4s"/><ellipse rx="56" ry="72" style="fill:var(--cup,#2A2D33);transition:fill .4s"/><ellipse rx="40" ry="54" fill="none" stroke="rgba(0,0,0,.18)"/></g>
+          <g transform="translate(308 282)"><ellipse rx="62" ry="78" style="fill:var(--cup-edge,#0F1114);transition:fill .4s"/><ellipse rx="56" ry="72" style="fill:var(--cup,#2A2D33);transition:fill .4s"/><ellipse rx="40" ry="54" fill="none" stroke="rgba(0,0,0,.18)"/><circle cx="36" cy="-48" r="4" fill="#FF5A1F"/></g>
+        </svg>
+        <span class="ph-tag" style="right:16px;bottom:14px;color:var(--pietra-d)">Illustrazione · foto per colore in arrivo</span>
+      </div>
+      <div class="card rv">
+        <div class="label">Vèrso One · <span data-color-name>Grafite</span></div>
+        <div class="colors" role="group" aria-label="Colore">
+          <button class="sw" style="background:#2A2D33" data-color="grafite" aria-pressed="true" aria-label="Grafite"></button>
+          <button class="sw" style="background:#E9E4DA" data-color="carta" aria-pressed="false" aria-label="Carta"></button>
+          <button class="sw" style="background:#8FA89A" data-color="salvia" aria-pressed="false" aria-label="Salvia"></button>
+        </div>
+        <div class="price" aria-live="polite"><span class="now" data-price-now>279 €</span><s data-price-old hidden>279 €</s><span class="label">IVA inclusa</span></div>
+        <p class="price-note" data-price-note>In pre-ordine a 239 € dal 15 gennaio al 28 febbraio 2027.</p>
+        <span class="ship" data-ship>Pre-ordini dal 15 gennaio · spedizione dal 1° marzo 2027</span>
+        <ul class="box">
+          <li><span>Vèrso One</span><span>×1</span></li>
+          <li><span>Custodia rigida in tessuto riciclato</span><span>×1</span></li>
+          <li><span>Cavo USB-C e cavo jack 3,5 mm</span><span>×2</span></li>
+          <li><span>Adattatore aereo</span><span>×1</span></li>
+          <li><span>Guida rapida</span><span>×1</span></li>
+        </ul>
+        <div class="btns"><a href="#lista" class="btn btn-accent" data-cta="offer"><span data-cta-text>Entra in lista d'attesa</span></a></div>
+      </div>
+    </div>
+    <div class="perks rv">
+      <div><span class="label">Spedizione</span><p>Gratuita in Italia.</p></div>
+      <div><span class="label">Reso 30 giorni</span><p>Oltre i 14 di legge. Il reso è gratuito.</p></div>
+      <div><span class="label">Garanzia 24 + 12</span><p>12 mesi in più registrando le cuffie nell'app.</p></div>
+      <div><span class="label">3 rate</span><p>Klarna o PayPal, senza interessi.</p></div>
+      <div><span class="label">In italiano</span><p>Chat e telefono, risposta entro 4 ore lavorative.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · USP -->
+<section class="white" id="perche">
+  <div class="wrap">
+    <div class="head split rv">
+      <div><div class="label">Perché Vèrso One</div><h2>Cinque cose che abbiamo fatto diversamente.</h2></div>
+      <p class="lead">Ognuna con una piccola prova. Tocca i pulsanti nelle schede.</p>
+    </div>
+    <div class="usp">
+      <article class="card rv">
+        <div class="demo" id="d-weight" aria-hidden="true">
+          <div class="bar"><span>Bilancia</span><span>Tara 0 g</span></div>
+          <div class="row"><span class="big"><span data-w>268</span> g</span></div>
+          <div class="chips" style="margin-top:10px"><span>Memory foam</span><span>Rivestimento proteico</span><span>Ok con occhiali</span></div>
+        </div>
+        <span class="n">01</span><h3>Comode tutto il giorno</h3>
+        <p>268 g e cuscinetti in memory foam pensati per chi porta gli occhiali. Le dimentichi addosso.</p>
+      </article>
+      <article class="card rv">
+        <div class="demo" id="d-batt">
+          <div class="bar"><span>Autonomia</span><button class="tgl" aria-pressed="true">ANC acceso</button></div>
+          <div class="cells"></div>
+          <div class="row"><span class="big" data-h>38 h</span><span>10 min = 6 h<sup style="color:inherit">2</sup></span></div>
+        </div>
+        <span class="n">02</span><h3>38 ore con ANC acceso<sup>2</sup></h3>
+        <p>Più di molte cuffie che costano 100 € in più. Con ANC spento arrivi a 60 ore.</p>
+      </article>
+      <article class="card rv">
+        <div class="demo" id="d-cush">
+          <div class="bar"><span>Cuscinetto</span><span data-t>Agganciato</span></div>
+          <div class="cup-demo"><svg viewBox="0 0 160 100" fill="none" aria-hidden="true">
+            <ellipse cx="60" cy="50" rx="34" ry="44" fill="#2A2D33" stroke="#4A4F58"/>
+            <g class="cushion"><ellipse cx="78" cy="50" rx="14" ry="44" fill="#C9C4BA"/><ellipse cx="78" cy="50" rx="7" ry="30" fill="#8D8980"/></g>
+          </svg></div>
+          <div class="row"><span>Ricambio 29 €</span><button class="tgl" aria-pressed="false">Sgancia</button></div>
+        </div>
+        <span class="n">03</span><h3>Riparabili, davvero</h3>
+        <p>Cuscinetti, archetto e batteria si sostituiscono. Ricambi disponibili per almeno 5 anni.</p>
+      </article>
+      <article class="card rv">
+        <div class="demo" id="d-lab" aria-hidden="true">
+          <div class="bar"><span>Accordatura finale</span><span>Bologna</span></div>
+          <div class="scan"><i></i><i></i></div>
+          <div class="row"><span class="big" style="font-size:30px">44,49° N<br>11,34° E</span><span>Lab Vèrso</span></div>
+        </div>
+        <span class="n">04</span><h3>Accordate in Italia</h3>
+        <p>Le progettiamo a Bologna e ogni modello passa per la messa a punto finale nel nostro laboratorio.</p>
+      </article>
+      <article class="card rv">
+        <div class="demo" id="d-chat" aria-hidden="true">
+          <div class="bar"><span>Assistenza Vèrso</span><span>In italiano</span></div>
+          <div class="chat">
+            <span class="msg me">Ciao! Posso cambiare l'archetto da solo?</span>
+            <span class="msg us">Sì: ti mandiamo il ricambio e la guida passo passo.</span>
+          </div>
+        </div>
+        <span class="n">05</span><h3>Ti risponde una persona, in italiano</h3>
+        <p>Chat e telefono, con risposta entro 4 ore lavorative. Niente bot, niente inglese.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 05b · COMPATIBILITÀ -->
+<section class="eco dark" id="ecosistema">
+  <div class="wrap grid">
+    <div class="rv">
+      <div class="label">Compatibilità</div>
+      <h2 style="margin-top:20px">Telefono, PC, Mac. Tutto insieme.</h2>
+      <p class="body">Bluetooth 5.4 con multipoint: telefono e computer collegati insieme, passi dall'uno all'altro senza toccare niente. E in aereo usi il cavo.</p>
+      <a href="#faq" class="btn btn-secondary">Vedi le domande frequenti →</a>
+    </div>
+    <div class="orbit rv" aria-label="Dispositivi e tecnologie compatibili">
+      <div class="ring" style="--in:0;--t:120s">
+        <div class="node" style="--a:-90deg;--r:50cqw"><span>Bluetooth 5.4</span></div>
+        <div class="node" style="--a:-30deg;--r:50cqw"><span>LDAC</span></div>
+        <div class="node" style="--a:30deg;--r:50cqw"><span>Jack 3,5 mm</span></div>
+        <div class="node" style="--a:90deg;--r:50cqw"><span>USB-C audio</span></div>
+        <div class="node" style="--a:150deg;--r:50cqw"><span>AAC</span></div>
+        <div class="node" style="--a:210deg;--r:50cqw"><span>Multipoint</span></div>
+      </div>
+      <div class="ring rev" style="--in:16%;--t:90s">
+        <div class="node" style="--a:-45deg;--r:34cqw"><span>iPhone</span></div>
+        <div class="node" style="--a:45deg;--r:34cqw"><span>Android</span></div>
+        <div class="node" style="--a:135deg;--r:34cqw"><span>PC Windows</span></div>
+        <div class="node" style="--a:225deg;--r:34cqw"><span>Mac</span></div>
+      </div>
+      <div class="ring" style="--in:30%;--t:70s">
+        <div class="node" style="--a:0deg;--r:20cqw"><span>App Vèrso</span></div>
+        <div class="node" style="--a:180deg;--r:20cqw"><span>EQ 8 bande</span></div>
+      </div>
+      <div class="core" aria-hidden="true"><span>One</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 · SOLUZIONE -->
+<section class="light" id="soluzione">
+  <div class="wrap">
+    <div class="head split rv">
+      <div><div class="label">Come le abbiamo risolte</div><h2>Cinque lamentele. Cinque risposte.</h2></div>
+      <p class="lead">I problemi di prima, uno per uno, con la scelta tecnica che li chiude.</p>
+    </div>
+    <div class="sol">
+      <div class="row rv"><div><div class="from">Fanno male dopo un'ora</div><div class="to">Leggere e morbide</div></div><p>268 g in tutto, archetto in alluminio e cuscinetti in memory foam con rivestimento proteico, sagomati per lasciare spazio alle stanghette degli occhiali.</p></div>
+      <div class="row rv"><div><div class="from">In metro senti tutto</div><div class="to">Il rombo resta fuori</div></div><p>Cancellazione ibrida con 8 microfoni, 4 per lato: fino a 42 dB tra 100 e 1.000 Hz<sup>1</sup>, proprio dove stanno i rumori di treni e metro.</p></div>
+      <div class="row rv"><div><div class="from">In call ti sentono male</div><div class="to">La tua voce, non il vento</div></div><p>4 microfoni dedicati alle chiamate con riduzione del vento, separati da quelli della cancellazione del rumore.</p></div>
+      <div class="row rv"><div><div class="from">Batteria a metà settimana</div><div class="to">Una settimana di tragitti</div></div><p>38 ore con ANC acceso, 60 con ANC spento<sup>2</sup>. Se te ne dimentichi, 10 minuti di carica valgono 6 ore<sup>3</sup>.</p></div>
+      <div class="row rv"><div><div class="from">Si rompe e le butti</div><div class="to">Si rompe e la cambi</div></div><p>Cuscinetti, archetto e batteria sostituibili, con ricambi garantiti per almeno 5 anni. Il cambio dei cuscinetti richiede circa 20 secondi.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06b · COMANDI -->
+<section class="ctl dark" id="comandi">
+  <div class="wrap grid">
+    <div class="cupx rv">
+      <svg viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <path d="M150 26 C 150 6, 250 6, 250 26 L 250 70" stroke="#2A2D33" stroke-width="18" stroke-linecap="round"/>
+        <ellipse cx="200" cy="225" rx="128" ry="160" fill="#1D2026" stroke="#3A3E46"/>
+        <ellipse cx="200" cy="225" rx="92" ry="120" stroke="#2C3037"/>
+        <ellipse cx="200" cy="225" rx="60" ry="80" fill="#23262C" stroke="#3A3E46" stroke-dasharray="3 5"/>
+        <rect x="318" y="150" width="14" height="26" rx="5" fill="#2A2D33" stroke="#6E6A63"/>
+        <rect x="320" y="200" width="14" height="26" rx="5" fill="#2A2D33" stroke="#6E6A63"/>
+        <rect x="318" y="250" width="14" height="26" rx="5" fill="#2A2D33" stroke="#6E6A63"/>
+      </svg>
+      <button class="hot on" data-c="0" style="left:81%;top:41%" aria-label="Tasto 1">1</button>
+      <button class="hot" data-c="1" style="left:82%;top:53%" aria-label="Tasto 2">2</button>
+      <button class="hot" data-c="2" style="left:81%;top:66%" aria-label="Tasto 3">3</button>
+      <button class="hot" data-c="3" style="left:50%;top:56%" aria-label="Sensore touch">T</button>
+    </div>
+    <div class="rv">
+      <div class="label">I comandi</div>
+      <h2 style="margin-top:20px">Tre tasti veri e un tocco.</h2>
+      <div class="tabs" role="group" aria-label="Scegli un comando">
+        <button class="on" data-c="0">Tasto 1</button><button data-c="1">Tasto 2</button><button data-c="2">Tasto 3</button><button data-c="3">Touch</button>
+      </div>
+      <div class="ctl-panel" aria-live="polite">
+        <h3 data-ctl-title>Tasto 1</h3>
+        <p style="color:var(--muted)" data-ctl-text></p>
+        <span class="tbc">Funzione da confermare · schema del product manager</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06c · NUMERI -->
+<section class="white" id="numeri">
+  <div class="wrap">
+    <div class="label rv" style="margin-bottom:18px">In numeri</div>
+    <p class="statement rv">Pensate per durare anni. Non solo una stagione.</p>
+    <div class="stats">
+      <div class="card rv"><div class="v"><span class="count" data-to="38">38</span><small>h</small></div><div class="label">Con ANC acceso<sup>2</sup></div></div>
+      <div class="card rv"><div class="v"><span class="count" data-to="42">42</span><small>dB</small></div><div class="label">Cancellazione massima<sup>1</sup></div></div>
+      <div class="card rv"><div class="v"><span class="count" data-to="268">268</span><small>g</small></div><div class="label">Peso</div></div>
+      <div class="card rv"><div class="v"><span class="count" data-to="5">5</span><small>anni</small></div><div class="label">Di ricambi garantiti</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUOVA · RIPARABILITÀ -->
+<section class="rep dark" id="riparabilita">
+  <div class="wrap grid">
+    <div class="explode rv" id="explode">
+      <svg viewBox="0 0 520 400" fill="none" aria-hidden="true">
+        <g class="part" data-p="1"><path d="M150 120 C 140 30, 380 30, 370 120" stroke="#B9B4AA" stroke-width="10" stroke-linecap="round"/><path d="M158 118 C 150 46, 362 46, 354 118" stroke="#2A2D33" stroke-width="16" stroke-linecap="round"/></g>
+        <g class="part" data-p="2"><rect x="232" y="196" width="56" height="36" rx="6" fill="#2A2D33" stroke="#6E6A63"/><rect x="244" y="206" width="22" height="16" rx="2" fill="#FF5A1F" opacity=".9"/><rect x="288" y="208" width="5" height="12" rx="1" fill="#6E6A63"/></g>
+        <g class="part" data-p="0"><ellipse cx="110" cy="270" rx="22" ry="62" fill="#C9C4BA"/><ellipse cx="110" cy="270" rx="11" ry="42" fill="#8D8980"/><ellipse cx="410" cy="270" rx="22" ry="62" fill="#C9C4BA"/><ellipse cx="410" cy="270" rx="11" ry="42" fill="#8D8980"/></g>
+        <g class="part" data-p="9"><ellipse cx="170" cy="270" rx="40" ry="70" fill="#1D2026" stroke="#3A3E46"/><ellipse cx="350" cy="270" rx="40" ry="70" fill="#1D2026" stroke="#3A3E46"/></g>
+        <g class="part" data-p="3"><path d="M200 360 q 30 -24 60 0 t 60 0" stroke="#6E6A63" stroke-width="4" stroke-linecap="round"/><rect x="186" y="352" width="16" height="10" rx="2" fill="#B9B4AA"/><rect x="318" y="352" width="16" height="10" rx="2" fill="#B9B4AA"/></g>
+        <g font-family="IBM Plex Mono, monospace" font-size="12" fill="#C9C4BA"><text x="50" y="350">1</text><text x="250" y="24">2</text><text x="296" y="190">3</text><text x="256" y="392">4</text></g>
+      </svg>
+    </div>
+    <div class="rv">
+      <div class="label">Riparabilità</div>
+      <h2 style="margin:20px 0 22px">Ogni pezzo che si consuma, si cambia.</h2>
+      <ul class="parts">
+        <li><button data-p="0"><span class="k">1</span><span>Cuscinetti (coppia)</span><span class="pr">29 €</span></button></li>
+        <li><button data-p="1"><span class="k">2</span><span>Archetto</span><span class="pr tbd">Prezzo da definire</span></button></li>
+        <li><button data-p="2"><span class="k">3</span><span>Batteria</span><span class="pr tbd">Prezzo da definire</span></button></li>
+        <li><button data-p="3"><span class="k">4</span><span>Cavi USB-C e jack</span><span class="pr tbd">Prezzo da definire</span></button></li>
+      </ul>
+      <p class="rep-note">Ricambi disponibili per almeno 5 anni, con guida passo passo e assistenza in italiano.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NUOVA · RECENSIONI -->
+<section class="rev light" id="recensioni">
+  <div class="wrap">
+    <div class="head split rv">
+      <div><div class="label">Chi ci ha già scelto</div><h2>Ci conoscete già per Vèrso Buds.</h2></div>
+      <p class="lead">Le recensioni qui sotto parlano del nostro primo prodotto. Quelle di Vèrso One arriveranno dai primi clienti.</p>
+    </div>
+    <div class="grid">
+      <div class="card score rv">
+        <span class="label">Vèrso Buds · Trustpilot e Amazon</span>
+        <div class="v">4,6<span style="font-size:.4em;color:var(--muted)">/5</span></div>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p style="color:var(--muted);margin-top:10px">Su 2.870 recensioni verificate di <strong style="color:var(--fg);font-weight:500">Vèrso Buds</strong>, non di Vèrso One.</p>
+      </div>
+      <div class="rv">
+        <div class="quotes">
+          <div class="ph">Citazione beta tester 1<br>con nome e consenso<br>— in arrivo —</div>
+          <div class="ph">Citazione beta tester 2<br>con nome e consenso<br>— in arrivo —</div>
+          <div class="ph">Citazione beta tester 3<br>con nome e consenso<br>— in arrivo —</div>
+        </div>
+        <div class="facts">
+          <div class="card"><b>38.000</b><span class="label">Vèrso Buds vendute</span></div>
+          <div class="card"><b>60</b><span class="label">Beta tester di Vèrso One</span></div>
+          <div class="card"><b>2</b><span class="label">Testate tech · citazioni in arrivo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · OBIEZIONI -->
+<section class="dark" id="obiezioni">
+  <div class="wrap">
+    <div class="head split rv">
+      <div><div class="label">Lo stavi pensando</div><h2>Ok, ma…</h2></div>
+      <p class="lead">I dubbi più comuni prima di comprare. Risposte dirette.</p>
+    </div>
+    <div class="obj">
+      <article class="card rv"><q>Perché fidarmi di un marchio piccolo?</q><p>Perché 38.000 persone l'hanno già fatto: Vèrso Buds ha 4,6/5 su 2.870 recensioni verificate. Ti risponde una persona in italiano e hai 30 giorni per restituirle.</p></article>
+      <article class="card rv"><q>279 € sono tanti.</q><p>In pre-ordine sono 239 €, anche in 3 rate senza interessi con Klarna o PayPal. E le cuffie non le butti alla prima rottura: le ripari.</p></article>
+      <article class="card rv"><q>Porto gli occhiali.</q><p>Le abbiamo pensate anche per te: 268 g e cuscinetti in memory foam sagomati per lasciare spazio alle stanghette.</p></article>
+      <article class="card rv"><q>E se si rompono?</q><p>24 mesi di garanzia, più 12 registrandole nell'app. Dopo, i ricambi restano disponibili per almeno 5 anni: i cuscinetti costano 29 €.</p></article>
+      <article class="card rv"><q>Faccio tante call.</q><p>4 microfoni dedicati alla voce, con riduzione del vento. E con il multipoint sei collegato a telefono e PC insieme.</p></article>
+      <article class="card rv"><q>E se il pre-ordine non arriva?</q><p>Le spedizioni partono dal 1° marzo 2027. Fino alla spedizione puoi annullare e ricevere il rimborso completo.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- NUOVA · LISTA D'ATTESA (solo fino al 15/01/2027) -->
+<section class="light" id="lista">
+  <div class="wrap wl">
+    <div class="rv">
+      <div class="label">Lista d'attesa</div>
+      <h2 style="margin:20px 0 20px">I pre-ordini aprono il 15 gennaio. Tu lo sai prima.</h2>
+      <p class="lead">Ti scriviamo quando aprono, con il prezzo di pre-ordine a 239 € invece di 279 €. Una email, niente spam.</p>
+    </div>
+    <form class="form rv" id="wl-form" novalidate>
+      <label>Email<input type="email" name="email" autocomplete="email" required placeholder="nome@email.it"></label>
+      <label class="consent"><input type="checkbox" name="consent" required><span>Voglio ricevere l'avviso di apertura dei pre-ordini e la newsletter di Vèrso. Ho letto l'<a href="#" style="text-decoration:underline">informativa privacy</a>.</span></label>
+      <button class="btn btn-accent" type="submit">Avvisami</button>
+      <p class="err" role="alert" hidden></p>
+      <p class="msg-ok" role="status" hidden>Prototipo: iscrizione simulata. Nella versione finale ricevi un'email di conferma (doppio opt-in, Klaviyo).</p>
+    </form>
+  </div>
+</section>
+
+<!-- 08 · CTA (pre-ordine e vendita) -->
+<section class="cta light" id="cta" hidden>
+  <div class="wrap rv">
+    <div class="label" data-cta-label>Vèrso One · pre-ordine</div>
+    <h2>Meno rumore. Più anni insieme.</h2>
+    <p class="lead">42 dB di silenzio<sup>1</sup>, 38 ore con ANC<sup>2</sup>, 268 g. Progettate a Bologna, riparabili per almeno 5 anni.</p>
+    <div class="btns"><a href="#offerta" class="btn btn-accent" data-cta="final"><span data-cta-text>Pre-ordina a 239 €</span></a></div>
+    <div class="ticks"><span>Spedizione gratuita</span><span>30 giorni per il reso</span><span>Garanzia fino a 36 mesi</span></div>
+  </div>
+</section>
+
+<!-- 09 · FAQ -->
+<section class="faq white" id="faq">
+  <div class="wrap grid">
+    <div class="head rv" style="align-content:start">
+      <div class="label">Domande frequenti</div>
+      <h2>Quello che ci chiedete più spesso.</h2>
+    </div>
+    <div class="rv">
+      <details open><summary>Quando arrivano?</summary><p>I pre-ordini aprono il 15 gennaio 2027 e le spedizioni partono dal 1° marzo 2027, in ordine di arrivo.</p></details>
+      <details><summary>Posso annullare il pre-ordine?</summary><p>Sì. Fino alla spedizione puoi annullare e ricevere il rimborso completo.</p></details>
+      <details><summary>Funzionano con iPhone?</summary><p>Sì, con iPhone e con Android. L'app Vèrso è disponibile per entrambi.</p></details>
+      <details><summary>E con il PC in ufficio?</summary><p>Sì, con Windows e Mac via Bluetooth 5.4. Con il multipoint restano collegate a due dispositivi insieme, per esempio telefono e PC. Puoi anche usare il cavo USB-C.</p></details>
+      <details><summary>Si possono usare con il cavo, in aereo?</summary><p>Sì. Nella confezione trovi il cavo jack 3,5 mm e l'adattatore aereo.</p></details>
+      <details><summary>I cuscinetti si cambiano? Quanto costano?</summary><p>Sì, in circa 20 secondi. La coppia di ricambio costa 29 €.</p></details>
+      <details><summary>Quanto dura la garanzia? Dove si fanno le riparazioni?</summary><p>24 mesi, più 12 registrando le cuffie nell'app. Per le riparazioni scrivi all'assistenza: ti rispondiamo in italiano entro 4 ore lavorative. <span class="tbd-inline">Centro riparazioni da confermare</span></p></details>
+      <details><summary>Sono adatte per giocare?</summary><p>Per giocare ti consigliamo il cavo USB-C o jack, che non ha ritardi. <span class="tbd-inline">Latenza Bluetooth da confermare</span></p></details>
+      <details><summary>Le posso pagare a rate?</summary><p>Sì, in 3 rate senza interessi con Klarna o PayPal.</p></details>
+      <details><summary>Quanto dura la batteria?</summary><p>Fino a 38 ore con ANC acceso e 60 con ANC spento. 10 minuti di carica danno 6 ore di ascolto.<sup>2 3</sup></p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<aside class="notes" aria-label="Note legali">
+  <div class="wrap">
+    <div class="label" style="margin-bottom:18px">Note</div>
+    <ol>
+      <li>42 dB è il valore massimo misurato nel laboratorio Vèrso tra 100 e 1.000 Hz. La riduzione effettiva varia con l'ambiente e con la vestibilità.</li>
+      <li>Autonomia misurata al 50% del volume con codec AAC. I valori reali variano con l'uso, il volume e le funzioni attive.</li>
+      <li>Ricarica rapida: 10 minuti di carica per 6 ore di ascolto, nelle stesse condizioni della nota 2.</li>
+      <li>Pre-ordini: prezzo di 239 € dal 15 gennaio al 28 febbraio 2027 o fino ai primi 3.000 pezzi. Spedizione stimata dal 1° marzo 2027. Annullabile con rimborso completo prima della spedizione. Dettagli nelle condizioni di vendita.</li>
+    </ol>
+  </div>
+</aside>
+
+<footer>
+  <div class="wrap">
+    <div><span class="logo">v<b>è</b>rso</span><p style="margin-top:10px">Vèrso Audio S.r.l. · Bologna<br>P. IVA IT00000000000 (di esempio) · PEC da fornire</p></div>
+    <ul><li><a href="#">Privacy policy</a></li><li><a href="#">Cookie policy</a></li><li><a href="#">Condizioni di vendita</a></li></ul>
+    <ul><li><a href="#">Assistenza</a></li><li><a href="#">Ricambi</a></li><li><a href="#">Registra le tue cuffie</a></li></ul>
+    <p class="proto">Prototipo v1 · cliente simulato: azienda, dati e contatti sono di esempio</p>
+  </div>
+</footer>
+
+<script>
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  function loop(el, ms, fn) {
+    if (still) ms *= 1.6;
+    let t = null, done = false;
+    const ob = new IntersectionObserver(([e]) => {
+      if (done) return;
+      if (e.isIntersecting && !t) { fn(); t = setInterval(fn, ms); }
+      else if (!e.isIntersecting && t) { clearInterval(t); t = null; }
+    }, { threshold: .3 });
+    ob.observe(el);
+    return () => { done = true; clearInterval(t); ob.disconnect(); };
+  }
+
+  /* ===== Fasi della pagina (brief §1): lista d'attesa → pre-ordine → vendita =====
+     Cambiano da sole in base alla data. Per provarle: ?phase=waitlist | preorder | sale */
+  const PHASE_DATES = { preorder: '2027-01-15', sale: '2027-03-01' };
+  /* Carrello Shopify: sostituire con gli ID variante veri (formato https://NEGOZIO/cart/ID:1) */
+  const CART = { grafite: '#carrello-grafite', carta: '#carrello-carta', salvia: '#carrello-salvia' };
+  const P = {
+    waitlist: { cta: "Entra in lista d'attesa", short: "Lista d'attesa", href: '#lista', pill: 'Nuovo · Pre-ordini dal 15 gennaio', now: '279 €', old: false, note: 'In pre-ordine a 239 € dal 15 gennaio al 28 febbraio 2027.', ship: 'Pre-ordini dal 15 gennaio · spedizione dal 1° marzo 2027' },
+    preorder: { cta: 'Pre-ordina a 239 €', short: '239 €', href: 'cart', pill: 'Pre-ordini aperti · spedizione dal 1° marzo', now: '239 €', old: true, note: 'Prezzo di pre-ordine fino al 28 febbraio 2027 o ai primi 3.000 pezzi.⁴', ship: 'Spedizione dal 1° marzo 2027 · annullabile fino ad allora' },
+    sale: { cta: 'Acquista — 279 €', short: '279 €', href: 'cart', pill: 'Disponibili ora', now: '279 €', old: false, note: 'Spedizione gratuita in Italia.', ship: 'Disponibili · spedizione gratuita' }
+  };
+  let color = 'grafite', phase = 'waitlist';
+  const byDate = () => { const d = new Date().toISOString().slice(0, 10); return d >= PHASE_DATES.sale ? 'sale' : d >= PHASE_DATES.preorder ? 'preorder' : 'waitlist'; };
+  function setPhase(p) {
+    phase = P[p] ? p : byDate();
+    const c = P[phase];
+    document.querySelectorAll('[data-cta-text]').forEach(e => e.textContent = c.cta);
+    document.querySelectorAll('[data-cta-short]').forEach(e => e.textContent = c.short);
+    document.querySelectorAll('[data-cta]').forEach(a => {
+      const k = a.dataset.cta;
+      a.href = c.href === '#lista' ? '#lista' : (k === 'offer' ? CART[color] : '#offerta');
+    });
+    document.querySelector('[data-phase-pill]').textContent = c.pill;
+    document.querySelector('[data-price-now]').textContent = c.now;
+    document.querySelector('[data-price-old]').hidden = !c.old;
+    document.querySelector('[data-price-note]').textContent = c.note;
+    document.querySelector('[data-ship]').textContent = c.ship;
+    document.querySelector('[data-cta-label]').textContent = phase === 'sale' ? 'Vèrso One · disponibili' : 'Vèrso One · pre-ordine';
+    document.getElementById('lista').hidden = phase !== 'waitlist';
+    document.getElementById('cta').hidden = phase === 'waitlist';
+    document.documentElement.dataset.phase = phase;
+  }
+  const urlPhase = new URLSearchParams(location.search).get('phase');
+  setPhase(urlPhase);
+  /* dal menu Varianti della barra di presentazione; "auto" rispetta un eventuale ?phase= */
+  addEventListener('pz:phase', e => setPhase(e.detail === 'auto' ? urlPhase : e.detail));
+
+  /* ===== Colore ===== */
+  const COLORS = { grafite: ['Grafite', '#2A2D33', '#0F1114', '#2A2D33'], carta: ['Carta', '#E9E4DA', '#C9C4BA', '#D9D3C7'], salvia: ['Salvia', '#8FA89A', '#5E7366', '#7F978A'] };
+  document.querySelectorAll('.sw').forEach(b => b.addEventListener('click', () => {
+    color = b.dataset.color; const [n, cup, edge, band] = COLORS[color];
+    document.querySelectorAll('.sw').forEach(x => x.setAttribute('aria-pressed', x === b));
+    const svg = document.getElementById('offer-product');
+    svg.style.setProperty('--cup', cup); svg.style.setProperty('--cup-edge', edge); svg.style.setProperty('--cup-band', band);
+    document.querySelector('[data-color-name]').textContent = n;
+    setPhase(phase);
+  }));
+  document.querySelectorAll('[data-cta="offer"]').forEach(a => a.addEventListener('click', e => {
+    if (a.getAttribute('href').startsWith('#carrello')) { e.preventDefault(); alert('Prototipo: qui si apre il carrello Shopify con Vèrso One ' + COLORS[color][0] + '.'); }
+  }));
+
+  /* ===== Hero: leggera rotazione del prodotto allo scroll ===== */
+  if (!still) {
+    const pr = document.getElementById('hero-product'); let r = 0;
+    addEventListener('scroll', () => { if (r) return; r = requestAnimationFrame(() => { r = 0; const k = Math.min(1, scrollY / innerHeight); pr.style.transform = `rotate(${-4 + k * 10}deg) translateY(${k * 30}px)`; }); }, { passive: true });
+  }
+
+  /* ===== Navbar glass ===== */
+  (() => {
+    const top = document.querySelector('.top'), bar = top.querySelector('.bar'); let raf = 0;
+    function u() {
+      raf = 0; top.classList.toggle('scrolled', scrollY > 24);
+      const y = bar.getBoundingClientRect().bottom - 4;
+      const el = document.elementsFromPoint(innerWidth / 2, y).find(e => !top.contains(e) && e.closest('section, .strip, .notes, footer'));
+      const z = el && el.closest('section, .strip, .notes, footer');
+      const dark = !!z && (z.classList.contains('dark') || z.classList.contains('strip') || z.tagName === 'FOOTER');
+      top.classList.toggle('on-dark', dark); top.classList.toggle('on-light', !dark);
+    }
+    addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(u); }, { passive: true });
+    addEventListener('resize', u); u();
+  })();
+
+  /* ===== Demo USP ===== */
+  (() => { // 01 bilancia
+    const el = document.getElementById('d-weight'), w = el.querySelector('[data-w]');
+    if (still) return;
+    new IntersectionObserver(([e], ob) => { if (!e.isIntersecting) return; ob.disconnect(); const t0 = performance.now();
+      (function f(t) { const k = Math.min(1, (t - t0) / 1600); w.textContent = Math.round(268 * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(f); })(t0);
+    }, { threshold: .5 }).observe(el);
+  })();
+  (() => { // 02 autonomia
+    const el = document.getElementById('d-batt'), btn = el.querySelector('.tgl'), wrap = el.querySelector('.cells'), h = el.querySelector('[data-h]');
+    const cells = Array.from({ length: 20 }, () => wrap.appendChild(document.createElement('b')));
+    let anc = true;
+    function show() { const v = anc ? 38 : 60, k = Math.round(v / 60 * 20); cells.forEach((c, i) => c.classList.toggle('on', i < k)); h.textContent = v + ' h'; btn.textContent = anc ? 'ANC acceso' : 'ANC spento'; btn.setAttribute('aria-pressed', anc); }
+    show();
+    const stop = loop(el, 3200, () => { anc = !anc; show(); });
+    btn.addEventListener('click', () => { stop(); anc = !anc; show(); });
+  })();
+  (() => { // 03 cuscinetto
+    const el = document.getElementById('d-cush'), btn = el.querySelector('.tgl'), t = el.querySelector('[data-t]');
+    let off = false;
+    function show() { el.classList.toggle('off', off); btn.textContent = off ? 'Riaggancia' : 'Sgancia'; btn.setAttribute('aria-pressed', off); t.textContent = off ? 'Sganciato · ~20 s' : 'Agganciato'; }
+    const stop = loop(el, 2600, () => { off = !off; show(); });
+    btn.addEventListener('click', () => { stop(); off = !off; show(); });
+  })();
+  (() => { // 05 chat
+    const el = document.getElementById('d-chat'), m = el.querySelectorAll('.msg'); let i = 0;
+    loop(el, 1800, () => { if (i === 0) m.forEach(x => x.classList.remove('in')); if (i < m.length) m[i].classList.add('in'); i = (i + 1) % (m.length + 1); });
+  })();
+
+  /* ===== Comandi (funzioni da confermare con lo schema ufficiale) ===== */
+  (() => {
+    const C = [['Tasto 1', 'Accensione e abbinamento Bluetooth.'], ['Tasto 2', 'Cancellazione del rumore / modalità Trasparenza.'], ['Tasto 3', 'Assistente vocale del telefono.'], ['Touch', 'Sul padiglione destro: volume, brani e chiamate con un tocco o uno scorrimento.']];
+    const root = document.getElementById('comandi'), title = root.querySelector('[data-ctl-title]'), text = root.querySelector('[data-ctl-text]');
+    const all = root.querySelectorAll('[data-c]');
+    function set(i) { all.forEach(b => { const on = +b.dataset.c === i; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }); title.textContent = C[i][0]; text.textContent = C[i][1]; }
+    all.forEach(b => b.addEventListener('click', () => set(+b.dataset.c))); set(0);
+  })();
+
+  /* ===== Riparabilità: evidenzia il pezzo ===== */
+  (() => {
+    const ex = document.getElementById('explode'), btns = document.querySelectorAll('.parts button');
+    function set(p) { ex.classList.add('focus'); ex.querySelectorAll('.part').forEach(g => g.classList.toggle('on', g.dataset.p === p)); btns.forEach(b => { b.classList.toggle('on', b.dataset.p === p); b.setAttribute('aria-pressed', b.dataset.p === p); }); }
+    btns.forEach(b => { b.addEventListener('click', () => set(b.dataset.p)); b.addEventListener('mouseenter', () => set(b.dataset.p)); });
+    ex.querySelectorAll('.part[data-p]').forEach(g => g.addEventListener('click', () => g.dataset.p !== '9' && set(g.dataset.p)));
+  })();
+
+  /* ===== Numeri ===== */
+  document.querySelectorAll('.count').forEach(el => {
+    const to = +el.dataset.to; if (still) return; el.textContent = '0';
+    new IntersectionObserver(([e], ob) => { if (!e.isIntersecting) return; ob.disconnect(); const t0 = performance.now();
+      (function f(t) { const k = Math.min(1, (t - t0) / 1400); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(f); })(t0);
+    }, { threshold: .5 }).observe(el);
+  });
+
+  /* ===== Lista d'attesa (prototipo: nessun invio; in produzione → Klaviyo con doppio opt-in) ===== */
+  (() => {
+    const f = document.getElementById('wl-form'), err = f.querySelector('.err'), ok = f.querySelector('.msg-ok');
+    f.addEventListener('submit', e => {
+      e.preventDefault(); err.hidden = true; ok.hidden = true;
+      const email = f.email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = "Controlla l'indirizzo email."; err.hidden = false; f.email.focus(); return; }
+      if (!f.consent.checked) { err.textContent = 'Per avvisarti ci serve il tuo consenso.'; err.hidden = false; f.consent.focus(); return; }
+      ok.hidden = false; f.reset();
+    });
+  })();
+</script>
+<!-- Strumenti di presentazione (Strategia, Feedback, Varianti). Per la versione finale: rimuovere questo tag e il <link> di present.css -->
+<script src="../present/present.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+{
+  "_info": "Configurazione del prototipo Vèrso One (cliente simulato: Vèrso Audio S.r.l.). Brief in docs/brief-cliente-compilato-esempio.md.",
+  "project": "Vèrso One — landing di lancio (prototipo v1)",
+  "feedbackEmail": "feedback-landing@verso-audio.example.com",
+  "titleVar": "--font-title",
+  "variants": {
+    "headlines": [
+      "Più dettagli da ascoltare. Meno rumore da sopportare.",
+      "Tutto il giorno in cuffia. Nessun giorno di troppo.",
+      "Il silenzio pesa 268 grammi.",
+      "Progettate a Bologna per durare anni, non stagioni."
+    ],
+    "accents": [
+      { "name": "Arancio Vèrso (brand)", "value": "#FF5A1F" },
+      { "name": "Salvia", "value": "#8FA89A" },
+      { "name": "Pietra", "value": "#C9C4BA" }
+    ],
+    "titleFonts": [
+      { "name": "Wide grotesk (sostituto di Söhne Breit)", "value": "\"Söhne Breit\", \"Archivo\", Arial, sans-serif" },
+      { "name": "Grotesk normale (sostituto di Söhne)", "value": "\"Söhne\", \"Inter\", Arial, sans-serif" },
+      { "name": "Mono (sostituto di Söhne Mono)", "value": "\"Söhne Mono\", \"IBM Plex Mono\", monospace" }
+    ],
+    "phases": [
+      { "name": "Automatica (in base alla data)", "value": "auto" },
+      { "name": "Lista d'attesa (fino al 15/01/2027)", "value": "waitlist" },
+      { "name": "Pre-ordine (15/01 – 28/02/2027)", "value": "preorder" },
+      { "name": "Vendita (dal 01/03/2027)", "value": "sale" }
+    ],
+    "themes": [
+      { "name": "Alternato caldo/grafite", "value": "alt" },
+      { "name": "Tutto grafite", "value": "dark" }
+    ]
+  },
+  "strategy": {
+    "attenzione": {
+      "step": "01 · Attenzione",
+      "role": "Fermare lo scroll con il beneficio principale e i tre numeri che contano.",
+      "why": "Titolo scelto nel feedback, prova immediata (42 dB, 38 h, 268 g) e una sola azione, che cambia da sola con la fase: lista d'attesa, pre-ordine, acquisto.",
+      "client": "Render 4K in Grafite (in arrivo il 25/11) per sostituire l'illustrazione."
+    },
+    "problema": {
+      "step": "02 · Problema",
+      "role": "Far riconoscere al cliente i 5 fastidi emersi da recensioni e ticket.",
+      "why": "Sono le parole dei vostri clienti (1.240 recensioni, 3.100 ticket): chi li ha vissuti si sente capito.",
+      "client": "Conferma che l'ordine dei problemi riflette la frequenza reale."
+    },
+    "laboratorio": {
+      "step": "03 · Transizione",
+      "role": "Ponte tra problema e soluzione: chi siete e perché potete risolverli.",
+      "why": "Il laboratorio di Bologna è la vostra autorità: rende credibile un marchio giovane prima di mostrare il prodotto.",
+      "client": "Foto del team in laboratorio (promessa nel feedback)."
+    },
+    "offerta": {
+      "step": "04 · Offer",
+      "role": "Mostrare cosa si compra, a che prezzo e quando arriva.",
+      "why": "Scelta del colore con anteprima, prezzo pre-ordine con data di fine reale, data di spedizione chiara: niente urgenza finta.",
+      "client": "ID varianti Shopify dei 3 colori per collegare il pulsante al carrello."
+    },
+    "perche": {
+      "step": "05 · USP",
+      "role": "Le 5 differenze, dimostrate con una piccola demo ciascuna.",
+      "why": "Comfort, autonomia, riparabilità, accordatura in Italia e assistenza: ognuna si vede funzionare invece di essere descritta.",
+      "client": "Video di 15 secondi del cambio cuscinetti per sostituire la demo animata."
+    },
+    "ecosistema": {
+      "step": "05b · Compatibilità",
+      "role": "Rispondere a 'funzionano con quello che ho?'.",
+      "why": "Telefono, PC e Mac nello stesso schema: toglie la domanda più frequente alla customer care.",
+      "client": "Conferma della lista ufficiale dei dispositivi testati."
+    },
+    "soluzione": {
+      "step": "06 · Soluzione",
+      "role": "Chiudere uno per uno i 5 problemi della sezione 2.",
+      "why": "Schema prima/dopo con i dati verificati dal product manager il 6/11.",
+      "client": "Revisione dei claim da parte del legale."
+    },
+    "comandi": {
+      "step": "06b · Comandi",
+      "role": "Far provare i comandi prima di avere le cuffie in mano.",
+      "why": "Tre tasti e un sensore touch: un esploratore cliccabile è più chiaro di un elenco.",
+      "client": "Schema ufficiale delle funzioni di tasti e touch: le funzioni mostrate sono da confermare."
+    },
+    "numeri": {
+      "step": "06c · Numeri",
+      "role": "Fissare i 4 numeri più forti prima delle obiezioni.",
+      "why": "38 h, 42 dB, 268 g, 5 anni di ricambi: i numeri scelti nel feedback.",
+      "client": "Nessuna azione: approvata."
+    },
+    "riparabilita": {
+      "step": "Nuova · Riparabilità",
+      "role": "Trasformare la riparabilità in un motivo d'acquisto.",
+      "why": "Un esploso con i ricambi e i prezzi rende concreta la promessa dei 5 anni e risponde al problema n. 5.",
+      "client": "Prezzi di archetto, batteria e kit cerniere; conferma dei 5 anni di disponibilità."
+    },
+    "recensioni": {
+      "step": "Nuova · Recensioni",
+      "role": "Dare fiducia a un marchio piccolo con prove reali.",
+      "why": "Valutazione di Vèrso Buds indicata come tale e citazioni dei beta tester con consenso: credibile e corretto.",
+      "client": "Le 18 citazioni dei beta tester con le liberatorie firmate."
+    },
+    "obiezioni": {
+      "step": "07 · Obiezioni",
+      "role": "Sciogliere i dubbi che bloccano il pre-ordine.",
+      "why": "Aggiunta la domanda richiesta: 'Perché fidarmi di un marchio piccolo?'.",
+      "client": "Nessuna azione: testi da approvare."
+    },
+    "cta": {
+      "step": "08 · CTA",
+      "role": "Un'unica azione finale in Arancio Vèrso.",
+      "why": "Il testo del pulsante cambia con la fase: 'Entra in lista d'attesa', poi 'Pre-ordina a 239 €', poi 'Acquista'.",
+      "client": "Conferma del limite dei 3.000 pezzi e collegamento alle giacenze Shopify."
+    },
+    "lista": {
+      "step": "Nuova · Lista d'attesa",
+      "role": "Raccogliere i contatti di chi non compra subito.",
+      "why": "Email + consenso con doppio opt-in. Il 15 gennaio la sezione lascia il posto al pre-ordine da sola.",
+      "client": "Account Klaviyo e testo dell'email di conferma."
+    },
+    "faq": {
+      "step": "09 · FAQ",
+      "role": "Rispondere ai dubbi residui con le domande della customer care.",
+      "why": "Aggiunte 'Quando arrivano?' e 'Posso annullare il pre-ordine?', richieste nel feedback.",
+      "client": "Testo definitivo della clausola sui pre-ordini dalle condizioni di vendita."
+    }
+  }
+}
