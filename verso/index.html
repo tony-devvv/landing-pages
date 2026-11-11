@@ -12,17 +12,26 @@
 <meta property="og:title" content="Vèrso One — Più dettagli da ascoltare. Meno rumore da sopportare.">
 <meta property="og:description" content="42 dB di cancellazione del rumore, 38 ore con ANC acceso, 268 g. Progettate a Bologna.">
 <meta property="og:locale" content="it_IT">
-<meta name="twitter:card" content="summary">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Sostituti gratuiti dei font del cliente (Söhne Breit / Söhne / Söhne Mono): da sostituire con i WOFF2 con licenza -->
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta property="og:url" content="https://nothing-landing-rho.vercel.app/verso/">
+<meta property="og:image" content="https://nothing-landing-rho.vercel.app/verso/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vèrso One — Più dettagli da ascoltare. Meno rumore.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/verso/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/verso/assets/apple-touch-icon.png">
+<!-- Font ospitati sul sito (nessuna richiesta a Google). Sostituti gratuiti di Söhne Breit / Söhne / Söhne Mono:
+     con i WOFF2 con licenza del cliente basta aggiungere i loro @font-face in /fonts/fonts.css -->
+<link rel="preload" href="/fonts/archivo-400_700-62_125.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/shared/landing.css">
 <link rel="stylesheet" href="../present/present.css">
 <style>
 /* ===== Token di brand — Vèrso Audio (brief §3) ===== */
 :root{
   --grafite:#14161A; --grafite-2:#1D2026; --grafite-3:#2A2D33;
-  --carta:#F5F2EC; --carta-2:#ECE7DE; --pietra:#C9C4BA; --pietra-d:#6E6A63;
+  --carta:#F5F2EC; --carta-2:#ECE7DE; --pietra:#C9C4BA; --pietra-d:#5F5B55;
   --accent:#FF5A1F; --salvia:#8FA89A; --white:#FFFFFF;
   --font-title:"Söhne Breit","Archivo",Arial,sans-serif;
   --font-text:"Söhne","Inter",Arial,sans-serif;
@@ -331,18 +340,15 @@ footer ul{list-style:none;display:grid;gap:6px}
 .cart .sum .tot{font-family:var(--font-title);font-stretch:112%;font-weight:600;font-size:22px}
 .cart .demo-note{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--pietra-d);background:var(--carta-2);border-radius:var(--r-sm);padding:10px 12px;line-height:1.5}
 
-/* accessibilità */
-.skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--accent);color:var(--grafite);padding:10px 14px;border-radius:var(--r-sm);font-size:14px;transition:top .2s}
-.skip:focus{top:12px}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+/* accessibilità e comparsa: in /shared/landing.css. Qui solo le differenze della pagina */
+:root{--focus-ink:var(--grafite);--motion-font:var(--font-text)}
+/* contrasto: su fondi chiari l'arancio dei testi piccoli diventa più scuro (≥ 4,5:1) */
+:root,.light,.white{--accent-ink:#B83A0B}
+.dark{--accent-ink:var(--accent)}
+.pain .n,.usp .n,.ticks span::before,summary::after,.tbd-inline,.parts .pr.tbd,.stats .v small{color:var(--accent-ink)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* comparsa */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
-  .rv{opacity:1;transform:none;transition:none}
-  html{scroll-behavior:auto}
   .track,.ring,.node span,.stat-chip,.scan i{animation:none}
   .track{flex-wrap:wrap;justify-content:center;width:auto}
   .marquee{-webkit-mask-image:none;mask-image:none}
@@ -381,7 +387,7 @@ footer ul{list-style:none;display:grid;gap:6px}
 @media (max-width:480px){.long{display:none}.short{display:inline}}
 </style>
 </head>
-<body>
+<body data-motion>
 <a class="skip" href="#attenzione">Vai al contenuto</a>
 
 <header class="top">
@@ -531,7 +537,7 @@ footer ul{list-style:none;display:grid;gap:6px}
       <article class="card rv">
         <div class="demo" id="d-weight" aria-hidden="true">
           <div class="bar"><span>Bilancia</span><span>Tara 0 g</span></div>
-          <div class="row"><span class="big"><span data-w>268</span> g</span></div>
+          <div class="row"><span class="big"><span class="count" data-to="268">268</span> g</span></div>
           <div class="chips" style="margin-top:10px"><span>Memory foam</span><span>Rivestimento proteico</span><span>Ok con occhiali</span></div>
         </div>
         <span class="n">01</span><h3>Comode tutto il giorno</h3>
@@ -850,22 +856,10 @@ footer ul{list-style:none;display:grid;gap:6px}
   </div>
 </div>
 
+<!-- Base condivisa: comparsa, navbar in vetro, numeri, pulsante "Ferma animazioni", loop() -->
+<script src="/shared/landing.js"></script>
 <script>
-  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
-  document.querySelectorAll('.rv').forEach(el => io.observe(el));
-
-  function loop(el, ms, fn) {
-    if (still) ms *= 1.6;
-    let t = null, done = false;
-    const ob = new IntersectionObserver(([e]) => {
-      if (done) return;
-      if (e.isIntersecting && !t) { fn(); t = setInterval(fn, ms); }
-      else if (!e.isIntersecting && t) { clearInterval(t); t = null; }
-    }, { threshold: .3 });
-    ob.observe(el);
-    return () => { done = true; clearInterval(t); ob.disconnect(); };
-  }
+  const { still, loop } = Landing;
 
   /* ===== Fasi della pagina (brief §1): lista d'attesa → pre-ordine → vendita =====
      Cambiano da sole in base alla data. Per provarle: ?phase=waitlist | preorder | sale */
@@ -989,29 +983,7 @@ footer ul{list-style:none;display:grid;gap:6px}
     addEventListener('scroll', () => { if (r) return; r = requestAnimationFrame(() => { r = 0; const k = Math.min(1, scrollY / innerHeight); pr.style.transform = `rotate(${-4 + k * 10}deg) translateY(${k * 30}px)`; }); }, { passive: true });
   }
 
-  /* ===== Navbar glass ===== */
-  (() => {
-    const top = document.querySelector('.top'), bar = top.querySelector('.bar'); let raf = 0;
-    function u() {
-      raf = 0; top.classList.toggle('scrolled', scrollY > 24);
-      const y = bar.getBoundingClientRect().bottom - 4;
-      const el = document.elementsFromPoint(innerWidth / 2, y).find(e => !top.contains(e) && e.closest('section, .strip, .notes, footer'));
-      const z = el && el.closest('section, .strip, .notes, footer');
-      const dark = !!z && (z.classList.contains('dark') || z.classList.contains('strip') || z.tagName === 'FOOTER');
-      top.classList.toggle('on-dark', dark); top.classList.toggle('on-light', !dark);
-    }
-    addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(u); }, { passive: true });
-    addEventListener('resize', u); u();
-  })();
-
-  /* ===== Demo USP ===== */
-  (() => { // 01 bilancia
-    const el = document.getElementById('d-weight'), w = el.querySelector('[data-w]');
-    if (still) return;
-    new IntersectionObserver(([e], ob) => { if (!e.isIntersecting) return; ob.disconnect(); const t0 = performance.now();
-      (function f(t) { const k = Math.min(1, (t - t0) / 1600); w.textContent = Math.round(268 * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(f); })(t0);
-    }, { threshold: .5 }).observe(el);
-  })();
+  /* ===== Demo USP (la bilancia 01 usa .count della base condivisa) ===== */
   (() => { // 02 autonomia
     const el = document.getElementById('d-batt'), btn = el.querySelector('.tgl'), wrap = el.querySelector('.cells'), h = el.querySelector('[data-h]');
     const cells = Array.from({ length: 20 }, () => wrap.appendChild(document.createElement('b')));
@@ -1059,13 +1031,6 @@ footer ul{list-style:none;display:grid;gap:6px}
     ex.querySelectorAll('.part[data-p]').forEach(g => g.addEventListener('click', () => g.dataset.p !== '9' && set(g.dataset.p)));
   })();
 
-  /* ===== Numeri ===== */
-  document.querySelectorAll('.count').forEach(el => {
-    const to = +el.dataset.to; if (still) return; el.textContent = '0';
-    new IntersectionObserver(([e], ob) => { if (!e.isIntersecting) return; ob.disconnect(); const t0 = performance.now();
-      (function f(t) { const k = Math.min(1, (t - t0) / 1400); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(f); })(t0);
-    }, { threshold: .5 }).observe(el);
-  });
 
   /* ===== Lista d'attesa → Klaviyo =====
      Compilare con la chiave PUBBLICA del sito (Klaviyo → Impostazioni → Chiavi API → "Public API key", 6 caratteri)
