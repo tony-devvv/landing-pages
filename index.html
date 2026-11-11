@@ -168,6 +168,142 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
 footer .logo{color:var(--white)}
 sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
 
+/* ===== Pacchetto 1 — hero viva ===== */
+.hero-dots{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:9999px;box-shadow:inset 0 0 0 1px #2e2e2e;color:var(--white)}
+.pill i{width:6px;height:6px;border-radius:50%;background:var(--white);animation:blink 2.4s steps(1) infinite}
+@keyframes blink{50%{opacity:.25}}
+.chip{position:absolute;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:9999px;background:rgba(20,20,20,.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px #2e2e2e;color:var(--white);white-space:nowrap;animation:float 7s ease-in-out infinite}
+.chip::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+.chip.c1{top:6%;left:4%}
+.chip.c2{top:30%;right:-2%;animation-delay:-2s;animation-duration:8s}
+.chip.c3{bottom:16%;left:-4%;animation-delay:-4s;animation-duration:9s}
+.chip.c4{bottom:2%;right:12%;animation-delay:-1s}
+.chip.c4::before{background:var(--accent)}
+@keyframes float{0%,100%{transform:translate(0,0)}33%{transform:translate(6px,-10px)}66%{transform:translate(-5px,6px)}}
+
+/* ===== Pacchetto 1 — striscia certificazioni ===== */
+.strip{padding:22px 0;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a}
+.strip .cap{text-align:center;margin-bottom:16px}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.track{display:flex;gap:10px;width:max-content;animation:scroll 38s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:9999px;box-shadow:inset 0 0 0 1px #2a2a2a;color:var(--g300);white-space:nowrap}
+.track span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--white)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ===== Pacchetto 1 — demo nelle card USP ===== */
+.demo{background:var(--ink);color:var(--white);border-radius:6px;height:150px;padding:14px;position:relative;overflow:hidden;font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;display:flex;flex-direction:column}
+.demo .bar{display:flex;justify-content:space-between;align-items:center;color:var(--g300)}
+.demo .live{display:inline-flex;align-items:center;gap:6px;color:var(--white)}
+.demo .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#E5322D;animation:blink 1.6s steps(1) infinite}
+.demo .big{font-family:var(--font-dot);font-weight:800;font-size:34px;letter-spacing:.02em;line-height:1;text-transform:none}
+/* 01 bande dei driver */
+.bands{flex:1;display:grid;grid-template-columns:2fr 1.6fr 1.2fr;gap:6px;align-items:end;margin-top:12px}
+.band{display:grid;gap:6px}
+.band .cols{height:62px;display:flex;align-items:end;gap:3px}
+.band .cols b{flex:1;background:#2a2a2a;border-radius:1px;transition:background .3s,height .3s}
+.band.on .cols b{background:var(--white)}
+.band small{color:var(--g600);transition:color .3s}
+.band.on small{color:var(--white)}
+/* 02 modi sonori */
+.modes{display:flex;gap:4px;flex-wrap:wrap}
+.modes button{font:inherit;text-transform:inherit;letter-spacing:inherit;color:var(--g300);background:transparent;border:0;box-shadow:inset 0 0 0 1px #2e2e2e;border-radius:9999px;padding:4px 8px;cursor:pointer}
+.modes button.on{background:var(--white);color:var(--ink)}
+.eq{flex:1;margin-top:8px;width:100%}
+.eq path{transition:d .6s cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion:reduce){.eq path,.meter b,.band .cols b{transition:none}}
+/* 03 ANC */
+.meter{flex:1;display:flex;align-items:end;gap:3px;margin:10px 0 8px}
+.meter b{flex:1;background:var(--white);border-radius:1px;transition:height .5s cubic-bezier(.2,.7,.2,1),opacity .5s}
+.anc-row{display:flex;justify-content:space-between;align-items:end}
+.toggle{font:inherit;letter-spacing:inherit;text-transform:inherit;border:0;cursor:pointer;border-radius:9999px;padding:5px 10px;background:#1e1e1e;color:var(--g300)}
+.toggle.on{background:var(--white);color:var(--ink)}
+/* 04 batteria */
+.cells{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;margin:10px 0}
+.cells b{height:12px;border-radius:1px;background:#222;transition:background .25s}
+.cells b.on{background:var(--white)}
+.charge{display:flex;justify-content:space-between;color:var(--g300)}
+/* 05 comandi */
+.ctrls{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
+.ctrls span{display:grid;place-items:center;gap:6px;padding:10px 4px;border-radius:4px;box-shadow:inset 0 0 0 1px #2a2a2a;color:var(--g600);transition:all .3s}
+.ctrls span.on{box-shadow:inset 0 0 0 1px var(--white);color:var(--white)}
+.ctrls svg{width:18px;height:18px}
+.ctrl-out{margin-top:auto;color:var(--white);min-height:2.4em;line-height:1.3;text-transform:none;font-size:11px;letter-spacing:0}
+.usp .card{min-height:0}
+.demo-note{font-family:var(--font-mono);font-size:9px;color:var(--g600);text-transform:uppercase;letter-spacing:.06em}
+
+/* ===== Pacchetto 2 — header divisi ===== */
+.head.split{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);column-gap:clamp(32px,6vw,96px);align-items:end}
+.head.split > div{display:grid;gap:20px}
+.head.split .lead{font-size:16px;max-width:42ch}
+
+/* ===== Pacchetto 2 — orbita ecosistema ===== */
+.eco .grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,80px);align-items:center}
+.eco .body{color:var(--muted);font-size:17px;margin:24px 0 32px}
+.orbit{position:relative;width:min(520px,100%);aspect-ratio:1;margin:0 auto;container-type:inline-size}
+.ring{position:absolute;inset:var(--in);border-radius:50%;border:1px dashed #2c2c2c;animation:spin var(--t) linear infinite}
+.ring.rev{animation-direction:reverse}
+.node{position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(var(--a)) translateX(var(--r)) rotate(calc(-1 * var(--a)))}
+.node span{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:6px 11px;border-radius:9999px;background:#0d0d0d;box-shadow:inset 0 0 0 1px #2e2e2e;color:var(--white);white-space:nowrap;animation:spin var(--t) linear infinite reverse}
+.ring.rev .node span{animation-direction:normal}
+.node span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--g300)}
+.core{position:absolute;inset:41%;border-radius:50%;background:var(--white);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(255,255,255,.06),0 0 60px rgba(255,255,255,.18)}
+.core svg{width:42%;height:42%}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ===== Pacchetto 2 — esploratore comandi ===== */
+.ctl .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:center}
+.cup{position:relative;width:min(440px,100%);aspect-ratio:1;margin:0 auto}
+.cup svg{width:100%;height:100%}
+.hot{position:absolute;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;border:0;cursor:pointer;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px #4a4a4a;display:grid;place-items:center;color:var(--white);font-family:var(--font-mono);font-size:11px}
+.hot::after{content:"";position:absolute;inset:-6px;border-radius:50%;box-shadow:0 0 0 1px rgba(255,255,255,.35);animation:ping 2.4s ease-out infinite}
+.hot.on{background:var(--white);color:var(--ink)}
+.hot.on::after{box-shadow:0 0 0 1px var(--white)}
+@keyframes ping{from{transform:scale(.8);opacity:1}to{transform:scale(1.6);opacity:0}}
+.ctl-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:24px 0}
+.ctl-tabs button{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--g300);background:transparent;border:0;box-shadow:inset 0 0 0 1px #2e2e2e;border-radius:9999px;padding:7px 12px;cursor:pointer}
+.ctl-tabs button.on{background:var(--white);color:var(--ink)}
+.ctl-panel h3{font-size:clamp(24px,2.6vw,32px);margin-bottom:6px}
+.ctl-panel .sub{color:var(--g300);margin-bottom:20px}
+.ctl-panel table{width:100%;border-collapse:collapse}
+.ctl-panel td{padding:14px 0;border-top:1px solid #1f1f1f;font-size:15px;vertical-align:top}
+.ctl-panel td:first-child{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--g300);width:42%;padding-top:17px}
+
+/* ===== Pacchetto 2 — numeri ===== */
+.statement{font-family:var(--font-dot);font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1.12;max-width:26ch;margin-bottom:clamp(36px,5vw,56px)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stats .card{display:grid;gap:18px;box-shadow:inset 0 0 0 1px var(--line)}
+.stats .v{font-family:var(--font-dot);font-weight:800;font-size:clamp(48px,5.6vw,76px);line-height:1;display:flex;align-items:baseline;gap:8px}
+.stats .v small{font-size:.42em}
+.stats .label{padding-top:14px;border-top:1px solid var(--line)}
+
+/* ===== Pacchetto 2 — card app ===== */
+.app{margin-top:28px;background:var(--ink);color:var(--white);border-radius:var(--r-lg);padding:20px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;max-width:440px}
+.qr{width:112px;height:112px;background:var(--white);border-radius:6px;padding:8px;display:grid;place-items:center}
+.qr svg{width:100%;height:100%}
+.app h3{font-size:18px;margin-bottom:6px}
+.app p{font-size:13px;color:var(--g300);margin-bottom:12px}
+.app .label{color:var(--g300)}
+
+@media (max-width:960px){
+  .head.split,.eco .grid,.ctl .grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .node span{font-size:8.5px;padding:5px 8px}
+  .orbit{width:100%;margin:8px auto 0}
+  .orbit .ring:first-child .node{display:none} /* su mobile restano iOS, Android, Laptop, Auracast, Nothing X, ChatGPT: le tecnologie sono già nella striscia */
+  .app{grid-template-columns:1fr;justify-items:start}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .ring,.node span,.hot::after{animation:none}
+  .chip,.track,.pill i,.demo .live::before{animation:none}
+  .track{flex-wrap:wrap;justify-content:center;width:auto}
+  .marquee{-webkit-mask-image:none;mask-image:none}
+}
+
 /* comparsa */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
@@ -191,6 +327,8 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
   .btns .btn{flex:1 1 100%;justify-content:center}
   .hero{min-height:auto}
   .spec-tag{display:none}
+  .chip.c2{right:0}.chip.c3{left:0}
+  .demo{height:160px}
 }
 @media (max-width:480px){.long{display:none}.short{display:inline}}
 </style>
@@ -210,10 +348,11 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
 <main id="top">
 
 <!-- 1 · ATTENZIONE -->
-<section class="hero dark dotgrid" id="attenzione">
+<section class="hero dark" id="attenzione">
+  <canvas class="hero-dots" aria-hidden="true"></canvas>
   <div class="wrap grid">
     <div class="rv">
-      <div class="label">Headphone (1) Pro — Nuovo</div>
+      <span class="pill"><i></i>Headphone (1) Pro — Precisione da studio</span>
       <h1 class="dot" style="margin-top:20px">Ascolta quello che ti stavi perdendo.</h1>
       <p class="lead">Tre driver. Messa a punto con Metropolis Studios di Londra. Fino a 46&nbsp;dB di silenzio.<sup>1</sup> Le nostre cuffie più avanzate di sempre.</p>
       <div class="btns">
@@ -247,19 +386,31 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
           <rect x="56" y="0" width="8" height="18" rx="2" fill="#FFC700"/>
         </g>
       </svg>
-      <span class="spec-tag" style="top:8%;left:0">Alluminio dal pieno</span>
-      <span class="spec-tag" style="top:46%;right:-4%;flex-direction:row-reverse">Rotella · Levetta</span>
-      <span class="spec-tag" style="bottom:2%;left:6%">Finestra in vetro 9H</span>
+      <span class="chip c1">46 dB ANC<sup style="color:inherit">1</sup></span>
+      <span class="chip c2">xMEMS</span>
+      <span class="chip c3">68 h</span>
+      <span class="chip c4">Flat EQ</span>
     </div>
   </div>
 </section>
 
+<!-- Striscia certificazioni (dati reali dalle specifiche) -->
+<div class="strip dark" style="background:var(--ink);color:var(--white)">
+  <div class="label cap">Certificato, compatibile, messo a punto</div>
+  <div class="marquee" aria-label="Certificazioni e compatibilità">
+    <div class="track">
+      <span>Hi-Res Audio</span><span>LDAC</span><span>Auracast™</span><span>Bluetooth 6.1</span><span>Google Fast Pair</span><span>Microsoft Swift Pair</span><span>iOS + Android</span><span>Lossless USB-C 24-bit/192 kHz</span><span>IP52</span><span>Metropolis Studios</span>
+      <span aria-hidden="true">Hi-Res Audio</span><span aria-hidden="true">LDAC</span><span aria-hidden="true">Auracast™</span><span aria-hidden="true">Bluetooth 6.1</span><span aria-hidden="true">Google Fast Pair</span><span aria-hidden="true">Microsoft Swift Pair</span><span aria-hidden="true">iOS + Android</span><span aria-hidden="true">Lossless USB-C 24-bit/192 kHz</span><span aria-hidden="true">IP52</span><span aria-hidden="true">Metropolis Studios</span>
+    </div>
+  </div>
+</div>
+
 <!-- 2 · PROBLEMA -->
 <section class="light" id="problema">
   <div class="wrap">
-    <div class="head rv">
-      <div class="label">Il problema</div>
-      <h2>La tua musica è migliore di come la senti.</h2>
+    <div class="head split rv">
+      <div><div class="label">Il problema</div>
+      <h2>La tua musica è migliore di come la senti.</h2></div>
       <p class="lead">Chi l'ha prodotta ha passato settimane in studio a sistemare ogni respiro, ogni charleston, ogni coda di riverbero. Poi arriva nelle tue cuffie e succede questo:</p>
     </div>
     <ul class="pain rv">
@@ -300,9 +451,10 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
 <!-- 4 · OFFER -->
 <section class="offer light" id="offerta">
   <div class="wrap">
-    <div class="head rv">
-      <div class="label">L'offerta</div>
-      <h2>Headphone (1) Pro. Tutto incluso, niente sorprese.</h2>
+    <div class="head split rv">
+      <div><div class="label">L'offerta</div>
+      <h2>Headphone (1) Pro. Tutto incluso, niente sorprese.</h2></div>
+      <p class="lead">Un prezzo, tutto in confezione. Consegna gratuita, 30 giorni per ripensarci e 24 mesi di garanzia.</p>
     </div>
     <div class="grid">
       <div class="card rv">
@@ -335,27 +487,107 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
 <!-- 5 · USP -->
 <section class="white" id="perche">
   <div class="wrap">
-    <div class="head rv">
-      <div class="label">Perché queste</div>
-      <h2>Cinque cose che altre cuffie non hanno insieme.</h2>
+    <div class="head split rv">
+      <div><div class="label">Perché queste</div>
+      <h2>Cinque cose che altre cuffie non hanno insieme.</h2></div>
+      <p class="lead">Non te le raccontiamo: guardale funzionare. Tocca i pulsanti nelle schede per provarle.</p>
     </div>
     <div class="usp">
-      <article class="card rv"><span class="n">01</span><h3>Tre driver, un compito ciascuno</h3><p>Un dinamico da 40 mm per i bassi, uno di precisione per le voci, un xMEMS a stato solido per gli acuti. Ognuno lavora sulla sua parte di frequenze.</p><div class="stat">20 – 40.000 Hz</div></article>
-      <article class="card rv"><span class="n">02</span><h3>Messe a punto da Metropolis Studios</h3><p>Flat EQ per ascoltare la traccia come esce dal mixer. Spaziale ispirato allo Studio B. Cinque EQ per Neo-Jazz, Rock, UK Rap + Grime, Electronica, Bass.</p><div class="stat">5 profili EQ firmati</div></article>
-      <article class="card rv"><span class="n">03</span><h3>Fino a 46 dB di silenzio<sup>1</sup></h3><p>10 microfoni e una parete acustica in silicone da 8 mm. L'ANC si adatta in tempo reale all'ambiente e a come le indossi. Anche col vento.</p><div class="stat">10 microfoni · ANC adattiva</div></article>
-      <article class="card rv"><span class="n">04</span><h3>Fino a 68 ore di musica<sup>2</sup></h3><p>68 ore con ANC spento, fino a 30 con ANC acceso. Cinque minuti di ricarica valgono quattro ore di ascolto.</p><div class="stat">5 min = 4 h</div></article>
-      <article class="card rv"><span class="n">05</span><h3>Comandi fisici, non gesture</h3><p>Rotella per il volume, levetta per i brani, pulsante personalizzabile e un interruttore dedicato al Flat EQ. Fai tutto senza tirare fuori il telefono.</p><div class="stat">Rotella · Levetta · Pulsante · Interruttore</div></article>
+      <article class="card rv">
+        <div class="demo" id="demo-drivers" aria-hidden="true">
+          <div class="bar"><span class="live">Driver attivo</span><span class="drv-name">Bassi</span></div>
+          <div class="bands">
+            <div class="band on"><div class="cols"><b style="height:70%"></b><b style="height:95%"></b><b style="height:80%"></b><b style="height:60%"></b><b style="height:75%"></b></div><small>40 mm · Bassi</small></div>
+            <div class="band"><div class="cols"><b style="height:45%"></b><b style="height:65%"></b><b style="height:55%"></b><b style="height:70%"></b></div><small>Precisione · Voci</small></div>
+            <div class="band"><div class="cols"><b style="height:35%"></b><b style="height:50%"></b><b style="height:30%"></b></div><small>xMEMS · Acuti</small></div>
+          </div>
+        </div>
+        <span class="n">01</span><h3>Tre driver, un compito ciascuno</h3><p>Un dinamico da 40 mm per i bassi, uno di precisione per le voci, un xMEMS a stato solido per gli acuti. Ognuno lavora sulla sua parte di frequenze.</p><div class="stat">20 – 40.000 Hz</div></article>
+      <article class="card rv">
+        <div class="demo" id="demo-modes">
+          <div class="modes" role="group" aria-label="Modalità audio spaziale">
+            <button class="on" data-m="0">Standard</button><button data-m="1">Studio B</button><button data-m="2">Live Club</button><button data-m="3">Concerto</button>
+          </div>
+          <svg class="eq" viewBox="0 0 300 70" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 35 H300" stroke="#2a2a2a" stroke-dasharray="2 4"/>
+            <path class="curve" d="M0 35 C 60 35, 90 35, 150 35 S 240 35, 300 35" stroke="#fff" stroke-width="2" fill="none"/>
+          </svg>
+          <div class="bar"><span class="demo-note">Curva illustrativa</span><span class="mode-out">Profilo predefinito</span></div>
+        </div>
+        <span class="n">02</span><h3>Messe a punto da Metropolis Studios</h3><p>Flat EQ per ascoltare la traccia come esce dal mixer. Spaziale ispirato allo Studio B. Cinque EQ per Neo-Jazz, Rock, UK Rap + Grime, Electronica, Bass.</p><div class="stat">5 profili EQ firmati</div></article>
+      <article class="card rv">
+        <div class="demo" id="demo-anc">
+          <div class="bar"><span class="live">Rumore ambiente</span><span class="anc-out">ANC off</span></div>
+          <div class="meter" aria-hidden="true"></div>
+          <div class="anc-row"><span class="big anc-db">0 dB</span><button class="toggle" aria-pressed="false">Attiva ANC</button></div>
+        </div>
+        <span class="n">03</span><h3>Fino a 46 dB di silenzio<sup>1</sup></h3><p>10 microfoni e una parete acustica in silicone da 8 mm. L'ANC si adatta in tempo reale all'ambiente e a come le indossi. Anche col vento.</p><div class="stat">10 microfoni · ANC adattiva</div></article>
+      <article class="card rv">
+        <div class="demo" id="demo-batt" aria-hidden="true">
+          <div class="bar"><span class="live">Ricarica rapida</span><span class="batt-t">0:00 / 5:00 min</span></div>
+          <div class="cells"></div>
+          <div class="anc-row"><span class="big batt-h">0 h</span><span class="charge"><span>ANC off · AAC</span></span></div>
+        </div>
+        <span class="n">04</span><h3>Fino a 68 ore di musica<sup>2</sup></h3><p>68 ore con ANC spento, fino a 30 con ANC acceso. Cinque minuti di ricarica valgono quattro ore di ascolto.</p><div class="stat">5 min = 4 h</div></article>
+      <article class="card rv">
+        <div class="demo" id="demo-ctrl">
+          <div class="bar"><span class="live">Comandi fisici</span><span class="ctrl-name">Rotella</span></div>
+          <div class="ctrls">
+            <span class="on" data-i="0" title="Rotella"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="5.5"/><circle cx="8" cy="8" r="1.5" fill="currentColor"/></svg>Rotella</span>
+            <span data-i="1" title="Levetta"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h10M10 5l3 3-3 3M6 5 3 8l3 3"/></svg>Levetta</span>
+            <span data-i="2" title="Pulsante"><svg viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="4"/></svg>Pulsante</span>
+            <span data-i="3" title="Interruttore"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="2" width="6" height="12" rx="2"/><rect x="6.5" y="9" width="3" height="3.5" rx="1" fill="#FFC700" stroke="none"/></svg>Interruttore</span>
+          </div>
+          <div class="ctrl-out">Ruota per il volume. Premi per play/pausa. Tieni premuto per ANC/Trasparenza.</div>
+        </div>
+        <span class="n">05</span><h3>Comandi fisici, non gesture</h3><p>Rotella per il volume, levetta per i brani, pulsante personalizzabile e un interruttore dedicato al Flat EQ. Fai tutto senza tirare fuori il telefono.</p><div class="stat">Rotella · Levetta · Pulsante · Interruttore</div></article>
     </div>
     <div class="mono-line specline rv"><span>Hi-Res Audio</span><span>Lossless USB-C 24-bit/192 kHz</span><span>Bluetooth 6.1</span><span>LDAC</span><span>IP52</span></div>
+  </div>
+</section>
+
+<!-- ECOSISTEMA (orbita) -->
+<section class="eco dark" id="ecosistema">
+  <div class="wrap grid">
+    <div class="rv">
+      <div class="label">Ecosistema</div>
+      <h2 style="margin-top:20px">Si collegano a tutto quello che usi già.</h2>
+      <p class="body">iOS o Android, telefono e laptop insieme, audio condiviso con Auracast™, cavo USB-C o jack. E l'app Nothing X per modellare il suono come vuoi.</p>
+      <a href="#faq" class="btn btn-secondary">Vedi compatibilità →</a>
+    </div>
+    <div class="orbit rv" aria-label="Dispositivi e tecnologie compatibili">
+      <div class="ring" style="--in:0;--t:120s">
+        <div class="node" style="--a:-90deg;--r:50cqw"><span>USB-C lossless</span></div>
+        <div class="node" style="--a:-30deg;--r:50cqw"><span>LDAC</span></div>
+        <div class="node" style="--a:30deg;--r:50cqw"><span>Jack 3,5 mm</span></div>
+        <div class="node" style="--a:90deg;--r:50cqw"><span>Google Fast Pair</span></div>
+        <div class="node" style="--a:150deg;--r:50cqw"><span>Swift Pair</span></div>
+        <div class="node" style="--a:210deg;--r:50cqw"><span>Bluetooth 6.1</span></div>
+      </div>
+      <div class="ring rev" style="--in:16%;--t:90s">
+        <div class="node" style="--a:-45deg;--r:34cqw"><span>iOS</span></div>
+        <div class="node" style="--a:45deg;--r:34cqw"><span>Android</span></div>
+        <div class="node" style="--a:135deg;--r:34cqw"><span>Laptop</span></div>
+        <div class="node" style="--a:225deg;--r:34cqw"><span>Auracast™</span></div>
+      </div>
+      <div class="ring" style="--in:30%;--t:70s">
+        <div class="node" style="--a:0deg;--r:20cqw"><span>Nothing X</span></div>
+        <div class="node" style="--a:180deg;--r:20cqw"><span>ChatGPT</span></div>
+      </div>
+      <div class="core" aria-hidden="true">
+        <svg viewBox="0 0 16 16" fill="#040404"><circle cx="5" cy="5" r="1.3"/><circle cx="11" cy="5" r="1.3"/><circle cx="8" cy="8" r="1.3"/><circle cx="5" cy="11" r="1.3"/><circle cx="11" cy="11" r="1.3"/></svg>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- 6 · SOLUZIONE -->
 <section class="light" id="soluzione">
   <div class="wrap">
-    <div class="head rv">
-      <div class="label">Come risolvono</div>
-      <h2>Ogni compromesso, tolto.</h2>
+    <div class="head split rv">
+      <div><div class="label">Come risolvono</div>
+      <h2>Ogni compromesso, tolto.</h2></div>
+      <p class="lead">I cinque problemi di prima, uno per uno. Con la soluzione tecnica che li chiude.</p>
     </div>
     <div class="sol">
       <div class="row rv"><div><div class="from">Bassi impastati</div><div class="to">Bassi che spingono, puliti</div></div><p>Un nuovo sistema a doppio magnete dà ai bassi il 15% di punch e il 26% di sensibilità in più rispetto a Headphone (1).<sup>7</sup> La cupola in PET con rivestimento metallo-ceramico riduce la distorsione anche ad alto volume.</p></div>
@@ -374,12 +606,64 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
   </div>
 </section>
 
+<!-- ESPLORATORE COMANDI -->
+<section class="ctl dark" id="comandi">
+  <div class="wrap grid">
+    <div class="cup rv">
+      <svg viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <defs><pattern id="dots2" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.2" fill="#fff" opacity=".14"/></pattern></defs>
+        <path d="M150 20 C 150 4, 250 4, 250 20 L 250 70" stroke="#2c2c2c" stroke-width="18" stroke-linecap="round"/>
+        <rect x="70" y="60" width="260" height="320" rx="120" fill="#0c0c0c" stroke="#333"/>
+        <rect x="70" y="60" width="260" height="320" rx="120" fill="url(#dots2)"/>
+        <circle cx="200" cy="220" r="92" stroke="#2a2a2a"/>
+        <circle cx="200" cy="220" r="60" stroke="#222"/>
+        <rect x="318" y="140" width="26" height="26" rx="13" fill="#1a1a1a" stroke="#666"/>
+        <rect x="324" y="196" width="18" height="34" rx="6" fill="#1a1a1a" stroke="#666"/>
+        <circle cx="331" cy="262" r="9" fill="#1a1a1a" stroke="#666"/>
+        <rect x="228" y="352" width="34" height="14" rx="5" fill="#1a1a1a" stroke="#666"/><rect x="232" y="355" width="12" height="8" rx="2" fill="#FFC700"/>
+      </svg>
+      <button class="hot on" data-c="0" style="left:83%;top:38%" aria-label="Rotella">1</button>
+      <button class="hot" data-c="1" style="left:83%;top:53%" aria-label="Levetta">2</button>
+      <button class="hot" data-c="2" style="left:83%;top:66%" aria-label="Pulsante">3</button>
+      <button class="hot" data-c="3" style="left:61%;top:90%" aria-label="Interruttore">4</button>
+    </div>
+    <div class="rv">
+      <div class="label">Controllo totale</div>
+      <h2 style="margin-top:20px">Quattro comandi. Zero schermi da toccare.</h2>
+      <div class="ctl-tabs" role="group" aria-label="Scegli un comando">
+        <button class="on" data-c="0">Rotella</button><button data-c="1">Levetta</button><button data-c="2">Pulsante</button><button data-c="3">Interruttore</button>
+      </div>
+      <div class="ctl-panel" aria-live="polite">
+        <h3 class="ctl-title">Rotella</h3>
+        <p class="sub ctl-sub"></p>
+        <table><tbody class="ctl-rows"></tbody></table>
+      </div>
+      <p class="label" style="margin-top:20px">Oltre 50.000 cicli di test su porta, comandi, archetto e cerniere<sup>11</sup></p>
+    </div>
+  </div>
+</section>
+
+<!-- NUMERI -->
+<section class="white" id="numeri">
+  <div class="wrap">
+    <div class="label rv" style="margin-bottom:20px">In numeri</div>
+    <p class="statement rv">Meno compromessi da sopportare. Più ore da ascoltare.</p>
+    <div class="stats">
+      <div class="card rv"><div class="v"><span class="count" data-to="68">68</span><small>h</small></div><div class="label">Di musica, ANC spento<sup>2</sup></div></div>
+      <div class="card rv"><div class="v"><span class="count" data-to="46">46</span><small>dB</small></div><div class="label">Cancellazione massima<sup>1</sup></div></div>
+      <div class="card rv"><div class="v"><span class="count" data-to="3">3</span><small>driver</small></div><div class="label">Bassi · voci · acuti</div></div>
+      <div class="card rv"><div class="v"><span class="count" data-to="327">327</span><small>g</small></div><div class="label">Peso</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- 7 · OBIEZIONI -->
 <section class="dark" id="obiezioni">
   <div class="wrap">
-    <div class="head rv">
-      <div class="label">Lo stavi pensando</div>
-      <h2 class="dot" style="font-size:clamp(40px,6vw,72px)">Ok, ma…</h2>
+    <div class="head split rv">
+      <div><div class="label">Lo stavi pensando</div>
+      <h2 class="dot" style="font-size:clamp(40px,6vw,72px)">Ok, ma…</h2></div>
+      <p class="lead">I dubbi più comuni prima di spendere €349. Risposte dirette.</p>
     </div>
     <div class="obj">
       <article class="card rv"><q>€349 sono tanti.</q><p>Lo sono. Per questo li abbiamo messi dove si sentono: tre driver invece di uno, 10 microfoni, alluminio ricavato dal pieno, vetro resistente ai graffi. Puoi pagare a rate a interessi 0%, e se lo trovi a meno adeguiamo il prezzo.</p></article>
@@ -412,6 +696,14 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
     <div class="head rv" style="align-content:start">
       <div class="label">Domande frequenti</div>
       <h2>Tutto quello che vuoi sapere prima di ordinarle.</h2>
+      <a class="app" id="app-card" href="#" target="_blank" rel="noopener">
+        <div class="qr" aria-hidden="true"></div>
+        <div>
+          <h3>Modella il suono con Nothing X</h3>
+          <p>Advanced EQ, Personal Sound ed EQ della community.</p>
+          <span class="label">Inquadra · iOS + Android</span>
+        </div>
+      </a>
     </div>
     <div class="rv">
       <details open><summary>Funzionano con iPhone e Android?</summary><p>Sì. Android 8.0 e successivi, iOS 13 e successivi. Abbinamento rapido con Google Fast Pair, Microsoft Swift Pair e configurazione in un tocco su Apple.</p></details>
@@ -438,6 +730,7 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
       <li value="1">46 dB è il limite massimo teorico misurato nel laboratorio Nothing. La cancellazione effettiva varia con l'ambiente.</li>
       <li value="2">68 ore con ANC spento, volume al 50%, codec AAC, impostazioni predefinite, test di laboratorio a 25 °C. Ricarica rapida: 5 minuti = 4 ore nelle stesse condizioni. L'autonomia reale dipende dall'uso.</li>
       <li value="3">Latenza fino a 120 ms con telefoni Nothing e Game Mode attivo.</li>
+      <li value="5">I comandi personalizzati si configurano dal telefono: nelle impostazioni Bluetooth su Nothing OS 1.5.6+, oppure con l'app Nothing X su Android 8.0+ e iOS 13+.</li>
       <li value="7">+15% punch e +26% sensibilità: valori relativi teorici rispetto a Headphone (1), test di laboratorio Nothing.</li>
       <li value="8">Test di affidabilità condotti in laboratorio; i risultati reali possono variare.</li>
       <li value="9">Test di caduta da 1,8 m in laboratorio. Evitare cadute su superfici dure o taglienti.</li>
@@ -455,9 +748,168 @@ sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
+  /* Link della card app: sostituire con il link ufficiale di Nothing X quando disponibile */
+  const APP_URL = 'https://play.google.com/store/search?q=Nothing%20X&c=apps';
+
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* Esegue fn ogni ms, solo quando el è visibile. Con "riduci movimento" cambia solo lo stato, senza animazioni */
+  function loop(el, ms, fn) {
+    if (still) ms *= 1.6;
+    let t = null, done = false;
+    const ob = new IntersectionObserver(([e]) => {
+      if (done) return;
+      if (e.isIntersecting && !t) { fn(); t = setInterval(fn, ms); }
+      else if (!e.isIntersecting && t) { clearInterval(t); t = null; }
+    }, { threshold: .3 });
+    ob.observe(el);
+    return () => { done = true; clearInterval(t); ob.disconnect(); };
+  }
+
+  /* ---- Hero: griglia di punti che si accende sotto il cursore ---- */
+  (() => {
+    const cv = document.querySelector('.hero-dots'), hero = cv.parentElement, ctx = cv.getContext('2d');
+    const gap = 16; let w, h, mx = -999, my = -999, raf = 0;
+    function size() {
+      const d = devicePixelRatio || 1; w = hero.clientWidth; h = hero.clientHeight;
+      cv.width = w * d; cv.height = h * d; ctx.setTransform(d, 0, 0, d, 0, 0); draw();
+    }
+    function draw() {
+      raf = 0; ctx.clearRect(0, 0, w, h);
+      for (let y = gap / 2; y < h; y += gap) for (let x = gap / 2; x < w; x += gap) {
+        const dist = Math.hypot(x - mx, y - my), k = Math.max(0, 1 - dist / 150);
+        const fade = Math.max(0, 1 - Math.hypot((x / w - .7) * 1.2, y / h - .45) * 1.4);
+        ctx.globalAlpha = .07 + fade * .07 + k * .6;
+        ctx.fillStyle = '#fff';
+        ctx.beginPath(); ctx.arc(x, y, 1 + k * 1.2, 0, 6.283); ctx.fill();
+      }
+    }
+    size(); addEventListener('resize', size);
+    if (fine && !still) {
+      hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; if (!raf) raf = requestAnimationFrame(draw); });
+      hero.addEventListener('pointerleave', () => { mx = my = -999; if (!raf) raf = requestAnimationFrame(draw); });
+    }
+  })();
+
+  /* ---- 01 Driver: le tre bande si accendono a turno ---- */
+  (() => {
+    const el = document.getElementById('demo-drivers'), bands = el.querySelectorAll('.band'), name = el.querySelector('.drv-name');
+    const names = ['Bassi', 'Voci', 'Acuti']; let i = 0;
+    loop(el, 1600, () => {
+      bands.forEach((b, j) => b.classList.toggle('on', j === i));
+      bands[i].querySelectorAll('b').forEach(c => c.style.height = (40 + Math.random() * 60) + '%');
+      name.textContent = names[i]; i = (i + 1) % 3;
+    });
+  })();
+
+  /* ---- 02 Modalità: la curva cambia forma (illustrativa) ---- */
+  (() => {
+    const el = document.getElementById('demo-modes'), btns = el.querySelectorAll('button'), curve = el.querySelector('.curve'), out = el.querySelector('.mode-out');
+    const modes = [
+      ['M0 35 C 60 33, 90 37, 150 35 S 240 33, 300 35', 'Profilo predefinito'],
+      ['M0 40 C 50 22, 110 30, 150 34 S 250 24, 300 30', 'Soundstage aperto e arioso'],
+      ['M0 14 C 40 12, 90 40, 150 44 S 240 30, 300 26', 'Bassi in primo piano'],
+      ['M0 30 C 60 20, 100 26, 150 24 S 240 18, 300 22', 'Ampio + bilanciato']
+    ];
+    let cur = 0;
+    function set(m) { cur = m; btns.forEach((b, j) => b.classList.toggle('on', j === m)); curve.setAttribute('d', modes[m][0]); out.textContent = modes[m][1]; }
+    const stop = loop(el, 2800, () => set((cur + 1) % 4));
+    btns.forEach(b => b.addEventListener('click', () => { stop && stop(); set(+b.dataset.m); }));
+  })();
+
+  /* ---- 03 ANC: il rumore si spegne ---- */
+  (() => {
+    const el = document.getElementById('demo-anc'), meter = el.querySelector('.meter'), btn = el.querySelector('.toggle'), db = el.querySelector('.anc-db'), out = el.querySelector('.anc-out');
+    const bars = Array.from({ length: 36 }, () => meter.appendChild(document.createElement('b')));
+    let on = false, n = null;
+    function noise() { bars.forEach(b => { b.style.height = on ? (3 + Math.random() * 6) + '%' : (25 + Math.random() * 75) + '%'; b.style.opacity = on ? .35 : 1; }); }
+    function count(to) {
+      clearInterval(n); let v = parseInt(db.textContent.replace('−', '-')) || 0;
+      n = setInterval(() => { v += v > to ? -2 : 2; if ((to <= 0 && v <= to) || (to >= 0 && v >= to)) { v = to; clearInterval(n); } db.textContent = (v < 0 ? '−' : '') + Math.abs(v) + ' dB'; }, 18);
+    }
+    function set(v) { on = v; btn.classList.toggle('on', on); btn.setAttribute('aria-pressed', on); btn.textContent = on ? 'Disattiva ANC' : 'Attiva ANC'; out.textContent = on ? 'ANC adattiva · max¹' : 'ANC off'; count(on ? -46 : 0); noise(); }
+    noise();
+    if (!still) setInterval(() => { if (!on) noise(); }, 160);
+    const stop = loop(el, 3200, () => set(!on));
+    btn.addEventListener('click', () => { stop && stop(); set(!on); });
+  })();
+
+  /* ---- 04 Batteria: 5 minuti di carica = 4 ore ---- */
+  (() => {
+    const el = document.getElementById('demo-batt'), wrap = el.querySelector('.cells'), hh = el.querySelector('.batt-h'), tt = el.querySelector('.batt-t');
+    const cells = Array.from({ length: 20 }, () => wrap.appendChild(document.createElement('b')));
+    function show(k) { cells.forEach((c, j) => c.classList.toggle('on', j < k)); const m = k / 20 * 5; tt.textContent = `${Math.floor(m)}:${String(Math.round((m % 1) * 60)).padStart(2, '0')} / 5:00 min`; hh.textContent = (k / 20 * 4).toFixed(k === 20 ? 0 : 1).replace('.', ',') + ' h'; }
+    if (still) { show(20); return; }
+    let k = 0; loop(el, 140, () => { k = k > 28 ? 0 : k + 1; show(Math.min(k, 20)); });
+  })();
+
+  /* ---- 05 Comandi: cosa fa ogni controllo ---- */
+  (() => {
+    const el = document.getElementById('demo-ctrl'), items = el.querySelectorAll('.ctrls span'), out = el.querySelector('.ctrl-out'), name = el.querySelector('.ctrl-name');
+    const txt = [
+      'Ruota per il volume. Premi per play/pausa. Tieni premuto per ANC/Trasparenza.',
+      'Spingi per cambiare brano. Tieni premuto per avanzare. Rispondi o rifiuta le chiamate.',
+      'Parla con ChatGPT, scatta foto e altro. Personalizzalo in Nothing X.',
+      'Passa dal Flat EQ al tuo EQ abituale. Novità di Headphone (1) Pro.'
+    ];
+    let i = 0;
+    function set(j) { i = j; items.forEach((s, k) => s.classList.toggle('on', k === j)); out.textContent = txt[j]; name.textContent = items[j].title; }
+    const stop = loop(el, 2600, () => set((i + 1) % 4));
+    items.forEach(s => { s.style.cursor = 'pointer'; s.addEventListener('click', () => { stop && stop(); set(+s.dataset.i); }); });
+  })();
+
+  /* ---- Esploratore comandi (dati dalla scheda tecnica) ---- */
+  (() => {
+    const C = [
+      ['Rotella', 'Volume e cancellazione del rumore, senza guardare.', [['Ruota', 'Volume su / giù'], ['Premi', 'Riproduci / pausa'], ['Tieni premuto', 'ANC / modalità Trasparenza']]],
+      ['Levetta', 'Brani e chiamate con una spinta.', [['Spingi a destra', 'Brano successivo / rispondi'], ['Spingi a sinistra', 'Brano precedente / rifiuta'], ['Tieni a destra', 'Avanti veloce'], ['Tieni a sinistra', 'Indietro veloce']]],
+      ['Pulsante', 'Una scorciatoia che decidi tu.', [['Premi', 'Assistente smart: parla con ChatGPT'], ['Personalizza', 'Scatto fotocamera e altro, in Nothing X⁵']]],
+      ['Interruttore', 'Novità di Headphone (1) Pro.', [['Verso l\'alto', 'Flat EQ disattivato'], ['Verso il basso', 'Flat EQ attivato']]]
+    ];
+    const root = document.getElementById('comandi'), title = root.querySelector('.ctl-title'), sub = root.querySelector('.ctl-sub'), rows = root.querySelector('.ctl-rows');
+    const ctrls = root.querySelectorAll('[data-c]');
+    function set(i) {
+      ctrls.forEach(b => { const on = +b.dataset.c === i; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+      title.textContent = C[i][0]; sub.textContent = C[i][1];
+      rows.innerHTML = C[i][2].map(([a, b]) => `<tr><td>${a}</td><td>${b}</td></tr>`).join('');
+    }
+    ctrls.forEach(b => b.addEventListener('click', () => set(+b.dataset.c)));
+    set(0);
+  })();
+
+  /* ---- Numeri che contano quando entrano in vista ---- */
+  document.querySelectorAll('.count').forEach(el => {
+    const to = +el.dataset.to;
+    if (still) return;
+    el.textContent = '0';
+    new IntersectionObserver(([e], ob) => {
+      if (!e.isIntersecting) return; ob.disconnect();
+      const t0 = performance.now(), d = 1400;
+      (function tick(t) { const k = Math.min(1, (t - t0) / d), v = Math.round(to * (1 - Math.pow(1 - k, 3))); el.textContent = v; if (k < 1) requestAnimationFrame(tick); })(t0);
+    }, { threshold: .5 }).observe(el);
+  });
+
+  /* ---- QR della card app, disegnato a punti ---- */
+  (() => {
+    const card = document.getElementById('app-card'), box = card.querySelector('.qr');
+    card.href = APP_URL;
+    if (typeof qrcode !== 'function') { box.style.display = 'none'; card.style.gridTemplateColumns = '1fr'; return; }
+    const qr = qrcode(0, 'M'); qr.addData(APP_URL); qr.make();
+    const n = qr.getModuleCount();
+    const finder = (r, c) => (r < 7 && c < 7) || (r < 7 && c >= n - 7) || (r >= n - 7 && c < 7);
+    let s = `<svg viewBox="0 0 ${n} ${n}" xmlns="http://www.w3.org/2000/svg" fill="#040404">`;
+    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) {
+      if (!qr.isDark(r, c)) continue;
+      s += finder(r, c) ? `<rect x="${c}" y="${r}" width="1.02" height="1.02"/>` : `<circle cx="${c + .5}" cy="${r + .5}" r=".46"/>`;
+    }
+    box.innerHTML = s + '</svg>';
+  })();
 </script>
 </body>
 </html>
