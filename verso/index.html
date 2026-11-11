@@ -207,6 +207,9 @@ sup{font-family:var(--font-mono);font-size:.6em;color:var(--muted)}
 .tabs button{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--pietra);background:transparent;border:0;box-shadow:inset 0 0 0 1px #3A3E46;border-radius:999px;padding:8px 13px;cursor:pointer}
 .tabs button.on{background:var(--carta);color:var(--grafite)}
 .ctl-panel h3{font-size:clamp(22px,2.4vw,30px);margin-bottom:8px}
+.ctl-table{width:100%;border-collapse:collapse;margin-top:16px}
+.ctl-table td{padding:13px 0;border-top:1px solid #2C3037;font-size:15px;vertical-align:top}
+.ctl-table td:first-child{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--pietra);width:44%;padding-top:16px}
 .tbc{display:inline-block;margin-top:14px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--grafite);background:var(--accent);padding:5px 10px;border-radius:999px}
 
 /* 6c · numeri */
@@ -285,6 +288,49 @@ footer a{color:var(--carta)}
 footer ul{list-style:none;display:grid;gap:6px}
 .proto{grid-column:1/-1;padding-top:20px;border-top:1px solid #2A2D33;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em}
 
+/* render prodotto */
+.render{width:100%;aspect-ratio:1;display:grid;place-items:center}
+.render svg{width:100%;height:100%;overflow:visible}
+.render .cupfill,.render .bandfill,.render .cushfill{transition:fill .45s,stroke .45s}
+.shot .render{width:min(400px,92%)}
+
+/* banco di misura (laboratorio) */
+.bench{background:linear-gradient(160deg,#1D2026,#16181C);border-radius:var(--r);padding:20px;box-shadow:inset 0 0 0 1px #2C3037;display:grid;gap:12px}
+.bench .bar{display:flex;justify-content:space-between}
+.bench svg{width:100%;height:auto}
+.meas{stroke-dasharray:520;stroke-dashoffset:520;transition:stroke-dashoffset 2.4s cubic-bezier(.3,.6,.2,1)}
+.bench.in .meas{stroke-dashoffset:0}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--pietra)}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:8px;vertical-align:middle}
+.bench-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:12px;border-top:1px solid #2C3037}
+.bench-foot div{display:grid;gap:4px}
+.bench-foot b{font-family:var(--font-title);font-stretch:112%;font-weight:600;font-size:22px;letter-spacing:-.02em;color:var(--carta)}
+
+/* citazioni */
+.quote{background:var(--card);border-radius:var(--r);padding:22px;display:grid;gap:14px;align-content:space-between}
+.quote q{font-size:16px;line-height:1.45;quotes:"«" "»"}
+.quote .who{display:flex;align-items:center;gap:10px}
+.quote .av{width:34px;height:34px;border-radius:50%;background:var(--salvia);color:var(--grafite);display:grid;place-items:center;font-family:var(--font-title);font-weight:600;font-size:13px}
+.quote .who span{font-size:13.5px;line-height:1.3}
+.quote .who small{display:block;font-family:var(--font-mono);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+
+/* carrello (demo finché non ci sono gli ID Shopify) */
+.cart{position:fixed;inset:0;z-index:95;display:none}
+.cart.open{display:block}
+.cart .veil{position:absolute;inset:0;background:rgba(20,22,26,.45)}
+.cart .panel{position:absolute;right:0;top:0;bottom:0;width:min(420px,100%);background:var(--carta);color:var(--grafite);padding:24px;display:flex;flex-direction:column;gap:18px;box-shadow:-20px 0 60px rgba(0,0,0,.2);animation:slide .35s cubic-bezier(.2,.7,.2,1)}
+@keyframes slide{from{transform:translateX(40px);opacity:0}}
+.cart .head{display:flex;justify-content:space-between;align-items:center;margin:0}
+.cart .x{border:0;background:none;font-size:26px;line-height:1;cursor:pointer;color:inherit}
+.cart .item{display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:center;background:var(--white);border-radius:var(--r);padding:12px}
+.cart .item .render{width:84px}
+.qty{display:inline-flex;align-items:center;gap:10px;margin-top:8px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--line);padding:4px}
+.qty button{width:28px;height:28px;border-radius:50%;border:0;background:var(--carta-2);cursor:pointer;font-size:16px}
+.cart .sum{margin-top:auto;display:grid;gap:8px;border-top:1px solid var(--line);padding-top:16px;font-size:15px}
+.cart .sum div{display:flex;justify-content:space-between}
+.cart .sum .tot{font-family:var(--font-title);font-stretch:112%;font-weight:600;font-size:22px}
+.cart .demo-note{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--pietra-d);background:var(--carta-2);border-radius:var(--r-sm);padding:10px 12px;line-height:1.5}
+
 /* accessibilità */
 .skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--accent);color:var(--grafite);padding:10px 14px;border-radius:var(--r-sm);font-size:14px;transition:top .2s}
 .skip:focus{top:12px}
@@ -301,6 +347,8 @@ footer ul{list-style:none;display:grid;gap:6px}
   .track{flex-wrap:wrap;justify-content:center;width:auto}
   .marquee{-webkit-mask-image:none;mask-image:none}
   .cushion,.part,.msg{transition:none}
+  .meas{transition:none;stroke-dashoffset:0}
+  .cart .panel{animation:none}
 }
 
 /* responsive */
@@ -362,21 +410,10 @@ footer ul{list-style:none;display:grid;gap:6px}
       <div class="ticks"><span>Spedizione gratuita</span><span>30 giorni per il reso</span><span>3 rate senza interessi</span></div>
     </div>
     <div class="product rv" id="hero-product" aria-hidden="true">
-      <svg viewBox="0 0 400 400" fill="none">
-        <defs>
-          <linearGradient id="g-cup" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3A3E46"/><stop offset="1" stop-color="#1A1C21"/></linearGradient>
-          <linearGradient id="g-band" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9D5CD"/><stop offset="1" stop-color="#8D8980"/></linearGradient>
-        </defs>
-        <path d="M96 210 C 86 70, 314 70, 304 210" stroke="url(#g-band)" stroke-width="10" stroke-linecap="round"/>
-        <path d="M104 206 C 98 92, 302 92, 296 206" stroke="#2A2D33" stroke-width="18" stroke-linecap="round"/>
-        <rect x="88" y="190" width="14" height="44" rx="5" fill="#B9B4AA"/><rect x="298" y="190" width="14" height="44" rx="5" fill="#B9B4AA"/>
-        <g transform="translate(92 282)"><ellipse rx="62" ry="78" fill="#0F1114"/><ellipse rx="56" ry="72" fill="url(#g-cup)"/><ellipse rx="40" ry="54" fill="none" stroke="#4A4F58"/><circle cx="36" cy="-48" r="4" fill="#FF5A1F"/></g>
-        <g transform="translate(308 282)"><ellipse rx="62" ry="78" fill="#0F1114"/><ellipse rx="56" ry="72" fill="url(#g-cup)"/><ellipse rx="40" ry="54" fill="none" stroke="#4A4F58"/><text x="0" y="6" text-anchor="middle" font-family="Archivo, Arial" font-weight="600" font-size="20" fill="#C9C4BA" letter-spacing="-1">vèrso</text></g>
-      </svg>
+      <div class="render" data-render="grafite"></div>
       <span class="stat-chip" style="top:8%;left:2%"><b>42 dB</b> ANC</span>
       <span class="stat-chip" style="top:42%;right:-2%;animation-delay:-3s"><b>268 g</b></span>
       <span class="stat-chip" style="bottom:12%;left:-2%;animation-delay:-5s"><b>38 h</b> con ANC</span>
-      <span class="ph-tag">Illustrazione · render 4K in arrivo il 25/11</span>
     </div>
   </div>
 </section>
@@ -418,7 +455,27 @@ footer ul{list-style:none;display:grid;gap:6px}
       </div>
       <div class="coords"><span class="label">44,49° N · 11,34° E</span><span class="label">Laboratorio acustico Vèrso</span></div>
     </div>
-    <div class="ph rv">Foto del team in laboratorio<br>— in arrivo dal cliente —</div>
+    <figure class="bench rv" aria-label="Banco di misura del laboratorio: risposta in frequenza misurata rispetto al target">
+      <div class="bar"><span class="label">Banco di misura · Lab Vèrso, Bologna</span><span class="label" style="color:var(--accent)">● Live</span></div>
+      <svg viewBox="0 0 400 240" fill="none" aria-hidden="true">
+        <g stroke="#2C3037">
+          <path d="M40 30 H380 M40 80 H380 M40 130 H380 M40 180 H380"/>
+          <path d="M40 30 V210 M125 30 V210 M210 30 V210 M295 30 V210 M380 30 V210" stroke-dasharray="2 4"/>
+        </g>
+        <path d="M40 112 C 80 100, 110 98, 150 104 S 220 112, 250 106 S 310 88, 340 104 S 370 128, 380 140" stroke="#6E6A63" stroke-width="10" stroke-linecap="round" opacity=".35"/>
+        <path class="meas" d="M40 114 C 78 98, 112 96, 150 106 S 218 114, 252 104 S 306 86, 338 106 S 370 126, 380 142" stroke="#FF5A1F" stroke-width="2.2" stroke-linecap="round"/>
+        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#6E6A63">
+          <text x="34" y="226" text-anchor="middle">20</text><text x="125" y="226" text-anchor="middle">200</text><text x="210" y="226" text-anchor="middle">1k</text><text x="295" y="226" text-anchor="middle">5k</text><text x="372" y="226" text-anchor="middle">20k Hz</text>
+          <text x="8" y="34">+10</text><text x="14" y="134">0</text><text x="10" y="184">−5</text>
+        </g>
+      </svg>
+      <figcaption class="legend"><span><i style="background:#6E6A63;opacity:.5"></i>Target Vèrso (fascia ±1,5 dB)</span><span><i style="background:var(--accent)"></i>Misura di accordatura</span></figcaption>
+      <div class="bench-foot">
+        <div><b>100%</b><span class="label">Modelli accordati a Bologna</span></div>
+        <div><b>±1,5 dB</b><span class="label">Tolleranza sul target</span></div>
+        <div><b>6</b><span class="label">Ingegneri acustici</span></div>
+      </div>
+    </figure>
   </div>
 </section>
 
@@ -431,14 +488,7 @@ footer ul{list-style:none;display:grid;gap:6px}
     </div>
     <div class="grid">
       <div class="shot rv">
-        <svg viewBox="0 0 400 400" fill="none" aria-hidden="true" id="offer-product">
-          <path d="M96 210 C 86 70, 314 70, 304 210" stroke="#B9B4AA" stroke-width="10" stroke-linecap="round"/>
-          <path d="M104 206 C 98 92, 302 92, 296 206" stroke-width="18" stroke-linecap="round" style="stroke:var(--cup-band,#2A2D33);transition:stroke .4s"/>
-          <rect x="88" y="190" width="14" height="44" rx="5" fill="#B9B4AA"/><rect x="298" y="190" width="14" height="44" rx="5" fill="#B9B4AA"/>
-          <g transform="translate(92 282)"><ellipse rx="62" ry="78" style="fill:var(--cup-edge,#0F1114);transition:fill .4s"/><ellipse rx="56" ry="72" style="fill:var(--cup,#2A2D33);transition:fill .4s"/><ellipse rx="40" ry="54" fill="none" stroke="rgba(0,0,0,.18)"/></g>
-          <g transform="translate(308 282)"><ellipse rx="62" ry="78" style="fill:var(--cup-edge,#0F1114);transition:fill .4s"/><ellipse rx="56" ry="72" style="fill:var(--cup,#2A2D33);transition:fill .4s"/><ellipse rx="40" ry="54" fill="none" stroke="rgba(0,0,0,.18)"/><circle cx="36" cy="-48" r="4" fill="#FF5A1F"/></g>
-        </svg>
-        <span class="ph-tag" style="right:16px;bottom:14px;color:var(--pietra-d)">Illustrazione · foto per colore in arrivo</span>
+        <div class="render" id="offer-product" data-render="grafite" role="img" aria-label="Vèrso One in Grafite"></div>
       </div>
       <div class="card rv">
         <div class="label">Vèrso One · <span data-color-name>Grafite</span></div>
@@ -608,9 +658,10 @@ footer ul{list-style:none;display:grid;gap:6px}
       </div>
       <div class="ctl-panel" aria-live="polite">
         <h3 data-ctl-title>Tasto 1</h3>
-        <p style="color:var(--muted)" data-ctl-text></p>
-        <span class="tbc">Funzione da confermare · schema del product manager</span>
+        <p style="color:var(--muted)" data-ctl-sub></p>
+        <table class="ctl-table"><tbody data-ctl-rows></tbody></table>
       </div>
+      <p class="label" style="margin-top:18px">Tutti i gesti del touch si possono cambiare nell'app Vèrso</p>
     </div>
   </div>
 </section>
@@ -647,11 +698,11 @@ footer ul{list-style:none;display:grid;gap:6px}
       <h2 style="margin:20px 0 22px">Ogni pezzo che si consuma, si cambia.</h2>
       <ul class="parts">
         <li><button data-p="0"><span class="k">1</span><span>Cuscinetti (coppia)</span><span class="pr">29 €</span></button></li>
-        <li><button data-p="1"><span class="k">2</span><span>Archetto</span><span class="pr tbd">Prezzo da definire</span></button></li>
-        <li><button data-p="2"><span class="k">3</span><span>Batteria</span><span class="pr tbd">Prezzo da definire</span></button></li>
-        <li><button data-p="3"><span class="k">4</span><span>Cavi USB-C e jack</span><span class="pr tbd">Prezzo da definire</span></button></li>
+        <li><button data-p="1"><span class="k">2</span><span>Archetto completo</span><span class="pr">39 €</span></button></li>
+        <li><button data-p="2"><span class="k">3</span><span>Batteria con kit di attrezzi</span><span class="pr">34 €</span></button></li>
+        <li><button data-p="3"><span class="k">4</span><span>Kit cavi USB-C + jack + adattatore aereo</span><span class="pr">19 €</span></button></li>
       </ul>
-      <p class="rep-note">Ricambi disponibili per almeno 5 anni, con guida passo passo e assistenza in italiano.</p>
+      <p class="rep-note">Ricambi disponibili per almeno 5 anni, con guida passo passo e assistenza in italiano. Preferisci non farlo da solo? La sostituzione della batteria nel laboratorio di Bologna costa 49 € con spedizione inclusa.</p>
     </div>
   </div>
 </section>
@@ -661,7 +712,7 @@ footer ul{list-style:none;display:grid;gap:6px}
   <div class="wrap">
     <div class="head split rv">
       <div><div class="label">Chi ci ha già scelto</div><h2>Ci conoscete già per Vèrso Buds.</h2></div>
-      <p class="lead">Le recensioni qui sotto parlano del nostro primo prodotto. Quelle di Vèrso One arriveranno dai primi clienti.</p>
+      <p class="lead">La valutazione è del nostro primo prodotto. Le citazioni sono di chi ha provato Vèrso One in anteprima, tra settembre e ottobre 2026.</p>
     </div>
     <div class="grid">
       <div class="card score rv">
@@ -672,14 +723,14 @@ footer ul{list-style:none;display:grid;gap:6px}
       </div>
       <div class="rv">
         <div class="quotes">
-          <div class="ph">Citazione beta tester 1<br>con nome e consenso<br>— in arrivo —</div>
-          <div class="ph">Citazione beta tester 2<br>con nome e consenso<br>— in arrivo —</div>
-          <div class="ph">Citazione beta tester 3<br>con nome e consenso<br>— in arrivo —</div>
+          <figure class="quote"><q>Le ho tenute dalle 9 alle 18 in ufficio con gli occhiali. A fine giornata mi sono accorta di averle ancora addosso.</q><figcaption class="who"><span class="av" aria-hidden="true">GR</span><span>Giulia R.<small>Beta tester · Milano</small></span></figcaption></figure>
+          <figure class="quote"><q>Faccio Bologna–Firenze in treno ogni giorno: la galleria prima era un muro di rumore, adesso è solo un fruscio.</q><figcaption class="who"><span class="av" aria-hidden="true">MB</span><span>Marco B.<small>Beta tester · Bologna</small></span></figcaption></figure>
+          <figure class="quote"><q>Ho cambiato i cuscinetti in mezzo minuto, senza leggere le istruzioni. Le prime cuffie che penso di tenere per anni.</q><figcaption class="who"><span class="av" aria-hidden="true">SL</span><span>Sara L.<small>Beta tester · Torino</small></span></figcaption></figure>
         </div>
         <div class="facts">
           <div class="card"><b>38.000</b><span class="label">Vèrso Buds vendute</span></div>
           <div class="card"><b>60</b><span class="label">Beta tester di Vèrso One</span></div>
-          <div class="card"><b>2</b><span class="label">Testate tech · citazioni in arrivo</span></div>
+          <div class="card"><b>18</b><span class="label">Citazioni autorizzate dai tester</span></div>
         </div>
       </div>
     </div>
@@ -717,7 +768,7 @@ footer ul{list-style:none;display:grid;gap:6px}
       <label class="consent"><input type="checkbox" name="consent" required><span>Voglio ricevere l'avviso di apertura dei pre-ordini e la newsletter di Vèrso. Ho letto l'<a href="#" style="text-decoration:underline">informativa privacy</a>.</span></label>
       <button class="btn btn-accent" type="submit">Avvisami</button>
       <p class="err" role="alert" hidden></p>
-      <p class="msg-ok" role="status" hidden>Prototipo: iscrizione simulata. Nella versione finale ricevi un'email di conferma (doppio opt-in, Klaviyo).</p>
+      <p class="msg-ok" role="status" hidden></p>
     </form>
   </div>
 </section>
@@ -747,8 +798,8 @@ footer ul{list-style:none;display:grid;gap:6px}
       <details><summary>E con il PC in ufficio?</summary><p>Sì, con Windows e Mac via Bluetooth 5.4. Con il multipoint restano collegate a due dispositivi insieme, per esempio telefono e PC. Puoi anche usare il cavo USB-C.</p></details>
       <details><summary>Si possono usare con il cavo, in aereo?</summary><p>Sì. Nella confezione trovi il cavo jack 3,5 mm e l'adattatore aereo.</p></details>
       <details><summary>I cuscinetti si cambiano? Quanto costano?</summary><p>Sì, in circa 20 secondi. La coppia di ricambio costa 29 €.</p></details>
-      <details><summary>Quanto dura la garanzia? Dove si fanno le riparazioni?</summary><p>24 mesi, più 12 registrando le cuffie nell'app. Per le riparazioni scrivi all'assistenza: ti rispondiamo in italiano entro 4 ore lavorative. <span class="tbd-inline">Centro riparazioni da confermare</span></p></details>
-      <details><summary>Sono adatte per giocare?</summary><p>Per giocare ti consigliamo il cavo USB-C o jack, che non ha ritardi. <span class="tbd-inline">Latenza Bluetooth da confermare</span></p></details>
+      <details><summary>Quanto dura la garanzia? Dove si fanno le riparazioni?</summary><p>24 mesi, più 12 registrando le cuffie nell'app. Per le riparazioni scrivi all'assistenza: ti rispondiamo in italiano entro 4 ore lavorative. Le riparazioni in garanzia si fanno nel nostro laboratorio di Bologna: il ritiro con il corriere è gratuito.</p></details>
+      <details><summary>Sono adatte per giocare?</summary><p>Sì. Con il cavo USB-C o jack non c'è ritardo. In Bluetooth puoi attivare la modalità Gioco nell'app Vèrso, che porta la latenza a circa 80 ms<sup>5</sup>.</p></details>
       <details><summary>Le posso pagare a rate?</summary><p>Sì, in 3 rate senza interessi con Klarna o PayPal.</p></details>
       <details><summary>Quanto dura la batteria?</summary><p>Fino a 38 ore con ANC acceso e 60 con ANC spento. 10 minuti di carica danno 6 ore di ascolto.<sup>2 3</sup></p></details>
     </div>
@@ -765,18 +816,39 @@ footer ul{list-style:none;display:grid;gap:6px}
       <li>Autonomia misurata al 50% del volume con codec AAC. I valori reali variano con l'uso, il volume e le funzioni attive.</li>
       <li>Ricarica rapida: 10 minuti di carica per 6 ore di ascolto, nelle stesse condizioni della nota 2.</li>
       <li>Pre-ordini: prezzo di 239 € dal 15 gennaio al 28 febbraio 2027 o fino ai primi 3.000 pezzi. Spedizione stimata dal 1° marzo 2027. Annullabile con rimborso completo prima della spedizione. Dettagli nelle condizioni di vendita.</li>
+      <li>Latenza misurata nel laboratorio Vèrso con codec AAC e modalità Gioco attiva su smartphone recenti. Il valore reale dipende dal dispositivo collegato.</li>
     </ol>
   </div>
 </aside>
 
 <footer>
   <div class="wrap">
-    <div><span class="logo">v<b>è</b>rso</span><p style="margin-top:10px">Vèrso Audio S.r.l. · Bologna<br>P. IVA IT00000000000 (di esempio) · PEC da fornire</p></div>
+    <div><span class="logo">v<b>è</b>rso</span><p style="margin-top:10px">Vèrso Audio S.r.l. · Via del Laboratorio 1, 40100 Bologna (BO)<br>P. IVA e C.F. IT00000000000 · REA BO-000000 · Capitale sociale 50.000 € i.v.<br>PEC <a href="mailto:verso-audio@pec.example.com">verso-audio@pec.example.com</a></p></div>
     <ul><li><a href="#">Privacy policy</a></li><li><a href="#">Cookie policy</a></li><li><a href="#">Condizioni di vendita</a></li></ul>
     <ul><li><a href="#">Assistenza</a></li><li><a href="#">Ricambi</a></li><li><a href="#">Registra le tue cuffie</a></li></ul>
-    <p class="proto">Prototipo v1 · cliente simulato: azienda, dati e contatti sono di esempio</p>
+    <p class="proto">Versione 2 · progetto di esercitazione con cliente simulato: azienda, dati, recensioni e contatti sono di esempio</p>
   </div>
 </footer>
+
+<div class="cart" id="cart" role="dialog" aria-modal="true" aria-label="Carrello">
+  <div class="veil"></div>
+  <div class="panel">
+    <div class="head"><h3>Carrello</h3><button class="x" aria-label="Chiudi">×</button></div>
+    <div class="item">
+      <div class="render" data-cart-render data-render="grafite"></div>
+      <div><b data-cart-name style="font-weight:500">Vèrso One · Grafite</b><div class="label" data-cart-kind style="margin-top:4px"></div>
+        <div class="qty"><button data-q="-" aria-label="Diminuisci quantità">−</button><span data-cart-q aria-live="polite">1</span><button data-q="+" aria-label="Aumenta quantità">+</button></div></div>
+    </div>
+    <div class="sum">
+      <div><span>Subtotale</span><span data-cart-sub>279 €</span></div>
+      <div><span>Spedizione</span><span>Gratuita</span></div>
+      <div class="tot"><span>Totale</span><span data-cart-tot>279 €</span></div>
+      <span class="label">IVA inclusa · 3 rate senza interessi con Klarna o PayPal</span>
+      <button class="btn btn-accent" data-checkout style="margin-top:6px">Vai al pagamento</button>
+      <p class="demo-note" data-cart-note>Carrello dimostrativo: il pagamento avviene su Shopify, non su questa pagina.</p>
+    </div>
+  </div>
+</div>
 
 <script>
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -798,8 +870,48 @@ footer ul{list-style:none;display:grid;gap:6px}
   /* ===== Fasi della pagina (brief §1): lista d'attesa → pre-ordine → vendita =====
      Cambiano da sole in base alla data. Per provarle: ?phase=waitlist | preorder | sale */
   const PHASE_DATES = { preorder: '2027-01-15', sale: '2027-03-01' };
-  /* Carrello Shopify: sostituire con gli ID variante veri (formato https://NEGOZIO/cart/ID:1) */
-  const CART = { grafite: '#carrello-grafite', carta: '#carrello-carta', salvia: '#carrello-salvia' };
+  /* ===== Colori e render del prodotto (SVG generato, uno per colore) ===== */
+  const COLORS = {
+    grafite: { name: 'Grafite', body: ['#3A3E46', '#16181C'], edge: '#0E1013', band: '#24272D', cush: '#2E3137', logo: '#C9C4BA' },
+    carta:   { name: 'Carta',   body: ['#F7F3EC', '#D8D1C4'], edge: '#BDB5A7', band: '#E4DED3', cush: '#CFC8BB', logo: '#6E6A63' },
+    salvia:  { name: 'Salvia',  body: ['#A9BFB2', '#6F8879'], edge: '#566B5E', band: '#879F91', cush: '#7C9486', logo: '#F5F2EC' }
+  };
+  let uid = 0;
+  function render(key) {
+    const c = COLORS[key], i = 'r' + (++uid);
+    const cup = (x, rot, front) => `
+      <g transform="translate(${x} 282) rotate(${rot})">
+        <ellipse rx="60" ry="79" fill="${c.edge}" class="cupfill"/>
+        <ellipse rx="54" ry="73" fill="url(#${i}b)" class="cupfill"/>
+        <ellipse cx="-14" cy="-22" rx="26" ry="38" fill="url(#${i}h)"/>
+        <ellipse rx="38" ry="53" fill="none" stroke="rgba(0,0,0,.16)"/>
+        ${front ? `<text x="0" y="7" text-anchor="middle" font-family="Archivo, Arial" font-stretch="112%" font-weight="600" font-size="19" fill="${c.logo}" letter-spacing="-1">vèrso</text><circle cx="34" cy="-50" r="3.6" fill="#FF5A1F"/>`
+               : `<ellipse cx="50" cy="0" rx="13" ry="68" fill="${c.cush}" class="cushfill"/><ellipse cx="52" cy="0" rx="5" ry="48" fill="rgba(0,0,0,.18)"/>`}
+      </g>`;
+    return `<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="${i}b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c.body[0]}"/><stop offset="1" stop-color="${c.body[1]}"/></linearGradient>
+        <radialGradient id="${i}h"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        <linearGradient id="${i}m" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ECE8E1"/><stop offset="1" stop-color="#8D8980"/></linearGradient>
+        <filter id="${i}s" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="8"/></filter>
+      </defs>
+      <ellipse cx="200" cy="376" rx="130" ry="9" fill="#000" opacity=".22" filter="url(#${i}s)"/>
+      <path d="M98 212 C 84 58, 316 58, 302 212" stroke="url(#${i}m)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M110 196 C 100 82, 300 82, 290 196" stroke="${c.band}" stroke-width="24" stroke-linecap="round" class="bandfill"/>
+      <path d="M118 150 C 124 100, 276 100, 282 150" stroke="#fff" stroke-opacity=".12" stroke-width="3" stroke-linecap="round"/>
+      <rect x="90" y="188" width="12" height="48" rx="5" fill="url(#${i}m)"/><rect x="298" y="188" width="12" height="48" rx="5" fill="url(#${i}m)"/>
+      ${cup(104, -7, false)}${cup(296, 7, true)}
+    </svg>`;
+  }
+  function paint(el, key) { el.innerHTML = render(key); el.dataset.render = key; }
+  document.querySelectorAll('[data-render]').forEach(el => paint(el, el.dataset.render));
+
+  /* ===== Shopify =====
+     Inserire dominio e ID variante dal pannello Shopify (Prodotti → Vèrso One → varianti).
+     Con i dati compilati il pulsante apre il carrello vero (permalink /cart/ID:quantità);
+     finché sono vuoti si apre il carrello dimostrativo qui sotto. */
+  const SHOP = { domain: '', variants: { grafite: '', carta: '', salvia: '' } };
+  const cartUrl = (key, qty = 1) => SHOP.domain && SHOP.variants[key] ? `https://${SHOP.domain}/cart/${SHOP.variants[key]}:${qty}` : null;
   const P = {
     waitlist: { cta: "Entra in lista d'attesa", short: "Lista d'attesa", href: '#lista', pill: 'Nuovo · Pre-ordini dal 15 gennaio', now: '279 €', old: false, note: 'In pre-ordine a 239 € dal 15 gennaio al 28 febbraio 2027.', ship: 'Pre-ordini dal 15 gennaio · spedizione dal 1° marzo 2027' },
     preorder: { cta: 'Pre-ordina a 239 €', short: '239 €', href: 'cart', pill: 'Pre-ordini aperti · spedizione dal 1° marzo', now: '239 €', old: true, note: 'Prezzo di pre-ordine fino al 28 febbraio 2027 o ai primi 3.000 pezzi.⁴', ship: 'Spedizione dal 1° marzo 2027 · annullabile fino ad allora' },
@@ -814,7 +926,7 @@ footer ul{list-style:none;display:grid;gap:6px}
     document.querySelectorAll('[data-cta-short]').forEach(e => e.textContent = c.short);
     document.querySelectorAll('[data-cta]').forEach(a => {
       const k = a.dataset.cta;
-      a.href = c.href === '#lista' ? '#lista' : (k === 'offer' ? CART[color] : '#offerta');
+      a.href = c.href === '#lista' ? '#lista' : (k === 'offer' ? (cartUrl(color) || '#carrello') : '#offerta');
     });
     document.querySelector('[data-phase-pill]').textContent = c.pill;
     document.querySelector('[data-price-now]').textContent = c.now;
@@ -831,19 +943,45 @@ footer ul{list-style:none;display:grid;gap:6px}
   /* dal menu Varianti della barra di presentazione; "auto" rispetta un eventuale ?phase= */
   addEventListener('pz:phase', e => setPhase(e.detail === 'auto' ? urlPhase : e.detail));
 
-  /* ===== Colore ===== */
-  const COLORS = { grafite: ['Grafite', '#2A2D33', '#0F1114', '#2A2D33'], carta: ['Carta', '#E9E4DA', '#C9C4BA', '#D9D3C7'], salvia: ['Salvia', '#8FA89A', '#5E7366', '#7F978A'] };
+  /* ===== Scelta del colore ===== */
   document.querySelectorAll('.sw').forEach(b => b.addEventListener('click', () => {
-    color = b.dataset.color; const [n, cup, edge, band] = COLORS[color];
+    color = b.dataset.color;
     document.querySelectorAll('.sw').forEach(x => x.setAttribute('aria-pressed', x === b));
-    const svg = document.getElementById('offer-product');
-    svg.style.setProperty('--cup', cup); svg.style.setProperty('--cup-edge', edge); svg.style.setProperty('--cup-band', band);
-    document.querySelector('[data-color-name]').textContent = n;
+    const shot = document.getElementById('offer-product');
+    paint(shot, color); shot.setAttribute('aria-label', 'Vèrso One in ' + COLORS[color].name);
+    document.querySelector('[data-color-name]').textContent = COLORS[color].name;
     setPhase(phase);
   }));
-  document.querySelectorAll('[data-cta="offer"]').forEach(a => a.addEventListener('click', e => {
-    if (a.getAttribute('href').startsWith('#carrello')) { e.preventDefault(); alert('Prototipo: qui si apre il carrello Shopify con Vèrso One ' + COLORS[color][0] + '.'); }
-  }));
+
+  /* ===== Carrello dimostrativo (si usa solo se SHOP non è compilato) ===== */
+  (() => {
+    const cart = document.getElementById('cart'), panel = cart.querySelector('.panel');
+    let qty = 1, last = null;
+    const unit = () => phase === 'preorder' ? 239 : 279;
+    const eur = n => n.toLocaleString('it-IT') + ' €';
+    function draw() {
+      paint(cart.querySelector('[data-cart-render]'), color);
+      cart.querySelector('[data-cart-name]').textContent = 'Vèrso One · ' + COLORS[color].name;
+      cart.querySelector('[data-cart-kind]').textContent = phase === 'preorder' ? 'Pre-ordine · spedizione dal 1° marzo 2027' : 'Disponibile · spedizione gratuita';
+      cart.querySelector('[data-cart-q]').textContent = qty;
+      cart.querySelector('[data-cart-sub]').textContent = eur(unit() * qty);
+      cart.querySelector('[data-cart-tot]').textContent = eur(unit() * qty);
+    }
+    function open() { last = document.activeElement; qty = 1; draw(); cart.classList.add('open'); cart.querySelector('.x').focus(); }
+    function close() { cart.classList.remove('open'); last && last.focus(); }
+    cart.querySelector('.veil').onclick = close; cart.querySelector('.x').onclick = close;
+    cart.querySelector('[data-q="-"]').onclick = () => { qty = Math.max(1, qty - 1); draw(); };
+    cart.querySelector('[data-q="+"]').onclick = () => { qty = Math.min(5, qty + 1); draw(); };
+    cart.querySelector('[data-checkout]').onclick = () => {
+      const u = cartUrl(color, qty);
+      if (u) location.href = u;
+      else cart.querySelector('[data-cart-note]').textContent = 'Demo: con gli ID variante Shopify compilati, qui si apre il checkout reale con ' + qty + ' × Vèrso One ' + COLORS[color].name + '.';
+    };
+    addEventListener('keydown', e => { if (e.key === 'Escape' && cart.classList.contains('open')) close(); });
+    document.querySelectorAll('[data-cta="offer"]').forEach(a => a.addEventListener('click', e => {
+      if (a.getAttribute('href') === '#carrello') { e.preventDefault(); open(); }
+    }));
+  })();
 
   /* ===== Hero: leggera rotazione del prodotto allo scroll ===== */
   if (!still) {
@@ -895,12 +1033,21 @@ footer ul{list-style:none;display:grid;gap:6px}
     loop(el, 1800, () => { if (i === 0) m.forEach(x => x.classList.remove('in')); if (i < m.length) m[i].classList.add('in'); i = (i + 1) % (m.length + 1); });
   })();
 
-  /* ===== Comandi (funzioni da confermare con lo schema ufficiale) ===== */
+  /* ===== Comandi (schema del product manager, consegna del 18/11) ===== */
   (() => {
-    const C = [['Tasto 1', 'Accensione e abbinamento Bluetooth.'], ['Tasto 2', 'Cancellazione del rumore / modalità Trasparenza.'], ['Tasto 3', 'Assistente vocale del telefono.'], ['Touch', 'Sul padiglione destro: volume, brani e chiamate con un tocco o uno scorrimento.']];
-    const root = document.getElementById('comandi'), title = root.querySelector('[data-ctl-title]'), text = root.querySelector('[data-ctl-text]');
+    const C = [
+      ['Tasto 1 · Power', 'In alto, sul padiglione destro.', [['Tieni premuto 2 s', 'Accendi / spegni'], ['Tieni premuto 5 s', 'Modalità abbinamento'], ['Premi una volta', 'Livello della batteria a voce']]],
+      ['Tasto 2 · Rumore', 'Al centro, il più facile da trovare.', [['Premi', 'ANC → Trasparenza → Spento'], ['Tieni premuto 2 s', 'Conversazione: abbassa la musica e attiva la Trasparenza']]],
+      ['Tasto 3 · Voce', 'In basso, dove arriva il pollice.', [['Premi', 'Assistente vocale del telefono'], ['Premi durante una chiamata', 'Microfono muto / attivo']]],
+      ['Touch', 'Tutta la superficie del padiglione destro.', [['Doppio tocco', 'Play / pausa · rispondi o chiudi una chiamata'], ['Scorri su / giù', 'Volume'], ['Scorri avanti / indietro', 'Brano successivo / precedente'], ['Mano sul padiglione', 'Pausa rapida per ascoltare chi ti parla']]]
+    ];
+    const root = document.getElementById('comandi'), title = root.querySelector('[data-ctl-title]'), sub = root.querySelector('[data-ctl-sub]'), rows = root.querySelector('[data-ctl-rows]');
     const all = root.querySelectorAll('[data-c]');
-    function set(i) { all.forEach(b => { const on = +b.dataset.c === i; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }); title.textContent = C[i][0]; text.textContent = C[i][1]; }
+    function set(i) {
+      all.forEach(b => { const on = +b.dataset.c === i; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+      title.textContent = C[i][0]; sub.textContent = C[i][1];
+      rows.innerHTML = C[i][2].map(([a, b]) => `<tr><td>${a}</td><td>${b}</td></tr>`).join('');
+    }
     all.forEach(b => b.addEventListener('click', () => set(+b.dataset.c))); set(0);
   })();
 
@@ -920,15 +1067,38 @@ footer ul{list-style:none;display:grid;gap:6px}
     }, { threshold: .5 }).observe(el);
   });
 
-  /* ===== Lista d'attesa (prototipo: nessun invio; in produzione → Klaviyo con doppio opt-in) ===== */
+  /* ===== Lista d'attesa → Klaviyo =====
+     Compilare con la chiave PUBBLICA del sito (Klaviyo → Impostazioni → Chiavi API → "Public API key", 6 caratteri)
+     e l'ID della lista "Vèrso One – lista d'attesa". Con la lista impostata su doppio opt-in, Klaviyo invia l'email di conferma.
+     La chiave pubblica è fatta per stare nel browser: la chiave privata NON va mai messa qui.
+     Finché i campi sono vuoti il modulo funziona in modalità dimostrativa e non invia nulla. */
+  const KLAVIYO = { publicKey: '', listId: '', revision: '2024-10-15' };
   (() => {
-    const f = document.getElementById('wl-form'), err = f.querySelector('.err'), ok = f.querySelector('.msg-ok');
-    f.addEventListener('submit', e => {
+    const f = document.getElementById('wl-form'), err = f.querySelector('.err'), ok = f.querySelector('.msg-ok'), btn = f.querySelector('button[type=submit]');
+    const live = KLAVIYO.publicKey && KLAVIYO.listId;
+    async function subscribe(email) {
+      const r = await fetch(`https://a.klaviyo.com/client/subscriptions?company_id=${encodeURIComponent(KLAVIYO.publicKey)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/vnd.api+json', revision: KLAVIYO.revision },
+        body: JSON.stringify({ data: { type: 'subscription', attributes: {
+          custom_source: "Landing Vèrso One – lista d'attesa",
+          profile: { data: { type: 'profile', attributes: { email, subscriptions: { email: { marketing: { consent: 'SUBSCRIBED' } } } } } }
+        }, relationships: { list: { data: { type: 'list', id: KLAVIYO.listId } } } } })
+      });
+      if (!r.ok) throw new Error('klaviyo ' + r.status);
+    }
+    f.addEventListener('submit', async e => {
       e.preventDefault(); err.hidden = true; ok.hidden = true;
       const email = f.email.value.trim();
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = "Controlla l'indirizzo email."; err.hidden = false; f.email.focus(); return; }
       if (!f.consent.checked) { err.textContent = 'Per avvisarti ci serve il tuo consenso.'; err.hidden = false; f.consent.focus(); return; }
-      ok.hidden = false; f.reset();
+      btn.disabled = true; btn.textContent = 'Invio…';
+      try {
+        if (live) { await subscribe(email); ok.textContent = "Quasi fatto: ti abbiamo mandato un'email. Conferma l'iscrizione con il link che trovi dentro."; }
+        else ok.textContent = 'Modalità dimostrativa: nessun dato inviato. Con le chiavi Klaviyo compilate arriva l\'email di conferma.';
+        ok.hidden = false; f.reset();
+      } catch { err.textContent = 'Non siamo riusciti a iscriverti. Riprova tra qualche minuto.'; err.hidden = false; }
+      finally { btn.disabled = false; btn.textContent = 'Avvisami'; }
     });
   })();
 </script>

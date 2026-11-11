@@ -1,6 +1,6 @@
 {
   "_info": "Configurazione del prototipo Vèrso One (cliente simulato: Vèrso Audio S.r.l.). Brief in docs/brief-cliente-compilato-esempio.md.",
-  "project": "Vèrso One — landing di lancio (prototipo v1)",
+  "project": "Vèrso One — landing di lancio (versione 2)",
   "feedbackEmail": "feedback-landing@verso-audio.example.com",
   "titleVar": "--font-title",
   "variants": {
@@ -36,7 +36,7 @@
       "step": "01 · Attenzione",
       "role": "Fermare lo scroll con il beneficio principale e i tre numeri che contano.",
       "why": "Titolo scelto nel feedback, prova immediata (42 dB, 38 h, 268 g) e una sola azione, che cambia da sola con la fase: lista d'attesa, pre-ordine, acquisto.",
-      "client": "Render 4K in Grafite (in arrivo il 25/11) per sostituire l'illustrazione."
+      "client": "Fatto: render vettoriale nei 3 colori. Da sostituire con i render 4K quando arrivano."
     },
     "problema": {
       "step": "02 · Problema",
@@ -48,13 +48,13 @@
       "step": "03 · Transizione",
       "role": "Ponte tra problema e soluzione: chi siete e perché potete risolverli.",
       "why": "Il laboratorio di Bologna è la vostra autorità: rende credibile un marchio giovane prima di mostrare il prodotto.",
-      "client": "Foto del team in laboratorio (promessa nel feedback)."
+      "client": "Fatto: grafico del banco di misura. Facoltativo: foto del team in laboratorio."
     },
     "offerta": {
       "step": "04 · Offer",
       "role": "Mostrare cosa si compra, a che prezzo e quando arriva.",
       "why": "Scelta del colore con anteprima, prezzo pre-ordine con data di fine reale, data di spedizione chiara: niente urgenza finta.",
-      "client": "ID varianti Shopify dei 3 colori per collegare il pulsante al carrello."
+      "client": "Inserire dominio e ID varianti Shopify in SHOP: fino ad allora si apre il carrello dimostrativo."
     },
     "perche": {
       "step": "05 · USP",
@@ -78,7 +78,7 @@
       "step": "06b · Comandi",
       "role": "Far provare i comandi prima di avere le cuffie in mano.",
       "why": "Tre tasti e un sensore touch: un esploratore cliccabile è più chiaro di un elenco.",
-      "client": "Schema ufficiale delle funzioni di tasti e touch: le funzioni mostrate sono da confermare."
+      "client": "Fatto: funzioni dallo schema del product manager."
     },
     "numeri": {
       "step": "06c · Numeri",
@@ -90,13 +90,13 @@
       "step": "Nuova · Riparabilità",
       "role": "Trasformare la riparabilità in un motivo d'acquisto.",
       "why": "Un esploso con i ricambi e i prezzi rende concreta la promessa dei 5 anni e risponde al problema n. 5.",
-      "client": "Prezzi di archetto, batteria e kit cerniere; conferma dei 5 anni di disponibilità."
+      "client": "Fatto: prezzi di tutti i ricambi e servizio di sostituzione batteria."
     },
     "recensioni": {
       "step": "Nuova · Recensioni",
       "role": "Dare fiducia a un marchio piccolo con prove reali.",
       "why": "Valutazione di Vèrso Buds indicata come tale e citazioni dei beta tester con consenso: credibile e corretto.",
-      "client": "Le 18 citazioni dei beta tester con le liberatorie firmate."
+      "client": "Fatto: 3 citazioni scelte tra le 18 autorizzate."
     },
     "obiezioni": {
       "step": "07 · Obiezioni",
@@ -114,7 +114,7 @@
       "step": "Nuova · Lista d'attesa",
       "role": "Raccogliere i contatti di chi non compra subito.",
       "why": "Email + consenso con doppio opt-in. Il 15 gennaio la sezione lascia il posto al pre-ordine da sola.",
-      "client": "Account Klaviyo e testo dell'email di conferma."
+      "client": "Inserire chiave pubblica e ID lista in KLAVIYO: fino ad allora il modulo è dimostrativo."
     },
     "faq": {
       "step": "09 · FAQ",
