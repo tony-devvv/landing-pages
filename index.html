@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headphone (1) Pro — Landing</title>
+<meta name="description" content="Tre driver. Messa a punto con Metropolis Studios. Fino a 46 dB di silenzio.">
+<meta name="theme-color" content="#F4F4F4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@600;800&family=Inter:wght@400;500&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+/* ===== Token dal brand (brand-guidelines/nothing/brand-guidelines.json) ===== */
+:root{
+  --black:#000; --ink:#040404; --white:#fff; --paper:#F4F4F4;
+  --g50:#EEEEEE; --g100:#D8D9D9; --g300:#B1B3B3; --g600:#595A5A; --g800:#333;
+  --accent:#FFC700;
+  --font-dot:"Ndot","Doto",monospace;
+  --font-primary:"NType 82","Inter",Arial,sans-serif;
+  --font-mono:"Lettera Mono LL","Space Mono",monospace;
+  --r-sm:4px; --r-lg:8px;
+  --max:1200px; --gut:clamp(16px,4vw,40px);
+  --fg:var(--ink); --muted:var(--g600); --line:var(--g100); --card:var(--white); --bg:var(--paper);
+}
+.dark{--fg:var(--white); --muted:var(--g300); --line:#1f1f1f; --card:#111; --bg:var(--ink)}
+.light{--bg:var(--paper)}
+.white{--bg:var(--white); --card:var(--paper)}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-primary);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+section{background:var(--bg);color:var(--fg);padding:clamp(72px,11vw,140px) 0;position:relative;overflow:hidden}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut);position:relative}
+
+/* tipografia */
+.label{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.dot{font-family:var(--font-dot);font-weight:800;letter-spacing:.01em;line-height:.98;text-transform:uppercase}
+h1.dot{font-size:clamp(40px,5.8vw,80px)}
+h2{font-weight:400;font-size:clamp(30px,4.4vw,48px);line-height:1.1;letter-spacing:-.01em;max-width:18ch}
+h3{font-weight:400;font-size:clamp(20px,2vw,24px);line-height:1.25}
+.lead{font-size:clamp(17px,1.6vw,20px);line-height:1.45;color:var(--muted);max-width:58ch}
+p{max-width:62ch}
+.head{display:grid;gap:20px;margin-bottom:clamp(40px,6vw,72px)}
+.mono-line{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
+.mono-line span::before{content:"● ";font-size:8px;vertical-align:2px}
+
+/* sfondo a griglia di punti */
+.dotgrid::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,currentColor 1px,transparent 1.5px);background-size:16px 16px;opacity:.09;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 10%,transparent 70%)}
+
+/* pulsanti */
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:16px;padding:12px 16px;border-radius:var(--r-sm);border:0;cursor:pointer;font-family:inherit;transition:transform .2s,opacity .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);opacity:.88}
+.btn-primary{background:var(--ink);color:var(--white)}
+.dark .btn-primary{background:var(--white);color:var(--ink)}
+.btn-secondary{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
+.dark .btn-secondary{box-shadow:inset 0 0 0 1px #3a3a3a}
+.btn-accent{background:var(--accent);color:var(--ink)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+
+/* header */
+.top{position:fixed;inset:0 0 auto;z-index:50;padding:12px var(--gut);pointer-events:none}
+.top .bar{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:8px 8px 8px 16px;border-radius:var(--r-lg);background:rgba(255,255,255,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);pointer-events:auto;box-shadow:0 0 0 1px rgba(0,0,0,.04)}
+.logo{font-family:var(--font-dot);font-weight:800;font-size:20px;letter-spacing:.06em}
+.top nav{display:flex;gap:24px}
+.top nav a{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--g600)}
+.top nav a:hover{color:var(--ink)}
+.top .btn{padding:9px 14px;font-size:14px}
+.short{display:none}
+
+/* 1 · hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding-top:120px}
+.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero .lead{margin:28px 0 36px}
+.hero .mono-line{margin-top:22px}
+.device{width:100%;max-width:460px;margin-left:auto;aspect-ratio:1;position:relative}
+.device svg{width:100%;height:100%}
+.spec-tag{position:absolute;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--g300);display:flex;align-items:center;gap:8px}
+.spec-tag::before{content:"";width:28px;height:1px;background:currentColor}
+.variants{margin-top:48px;padding-top:20px;border-top:1px solid var(--line)}
+
+/* 2 · problema */
+.pain{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.pain li{list-style:none;background:var(--bg);padding:28px 24px;display:grid;gap:12px;align-content:start}
+.pain .n{font-family:var(--font-dot);font-weight:800;font-size:28px}
+.pain b{font-weight:500;font-size:18px;line-height:1.25}
+.pain span{color:var(--muted);font-size:15px}
+.closing{margin-top:48px;font-size:clamp(20px,2.2vw,26px);line-height:1.35;max-width:36ch}
+
+/* 3 · transizione */
+.trans .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.trans p+p{margin-top:18px}
+.trans .body{color:var(--muted);font-size:18px}
+.trans .body strong{color:var(--fg);font-weight:400}
+.window{aspect-ratio:1;border-radius:50%;position:relative;background:radial-gradient(circle at 35% 30%,#1b1b1b,#060606 70%);box-shadow:inset 0 0 0 1px #2a2a2a,0 0 0 18px #0b0b0b,0 0 0 19px #222;max-width:420px;margin:0 auto;width:100%}
+.window .drv{position:absolute;border-radius:50%;box-shadow:inset 0 0 0 1px #3a3a3a;display:grid;place-items:center}
+.window .drv span{font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--g300);text-transform:uppercase;text-align:center;line-height:1.3}
+.d1{inset:14%;background:repeating-radial-gradient(circle,#141414 0 3px,#0c0c0c 3px 6px)}
+.d2{width:24%;height:15%;top:22%;right:14%;background:#161616;border-radius:40%!important}
+.d3{width:13%;height:13%;bottom:20%;left:22%;background:#1a1a1a}
+.glint{position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,.09),transparent 40%);pointer-events:none}
+.look{margin-top:28px;text-align:center}
+
+/* 4 · offer */
+.offer .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.card{background:var(--card);border-radius:var(--r-lg);padding:clamp(24px,3vw,40px)}
+.price{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:18px 0 6px}
+.price .dot{font-size:clamp(56px,7vw,88px)}
+.box{margin-top:32px;display:grid;gap:0}
+.box li{list-style:none;display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-size:15px}
+.box li span:last-child{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+.perks{display:grid;gap:0}
+.perks div{padding:18px 0;border-top:1px solid var(--line);display:grid;gap:4px}
+.perks div:first-child{border-top:0;padding-top:0}
+.perks p{font-size:15px;color:var(--muted)}
+.offer .btns{margin-top:32px}
+
+/* 5 · USP */
+.usp{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.usp .card{grid-column:span 2;display:grid;gap:14px;align-content:start;min-height:280px}
+.usp .card:nth-child(4),.usp .card:nth-child(5){grid-column:span 3}
+.usp .n{font-family:var(--font-dot);font-weight:800;font-size:clamp(48px,5vw,64px);line-height:1}
+.usp p{color:var(--muted);font-size:15px}
+.usp .stat{margin-top:auto;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;padding-top:14px;border-top:1px solid var(--line)}
+.specline{margin-top:40px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* 6 · soluzione */
+.sol{display:grid;gap:0}
+.sol .row{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,4vw,64px);padding:clamp(24px,3vw,36px) 0;border-top:1px solid var(--line)}
+.sol .from{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--g300)}
+.sol .to{font-size:clamp(20px,2vw,26px);margin-top:6px}
+.sol p{color:var(--muted)}
+.plus{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.plus .card{font-size:15px;display:grid;gap:10px}
+.plus svg{width:20px;height:20px}
+.sol-cta{margin-top:40px}
+
+/* 7 · obiezioni */
+.obj{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.obj .card{display:grid;gap:14px;align-content:start;box-shadow:inset 0 0 0 1px #1f1f1f}
+.obj q{font-size:20px;line-height:1.3;quotes:"«" "»"}
+.obj p{color:var(--g300);font-size:15px}
+
+/* 8 · CTA */
+.cta{text-align:center}
+.cta .wrap{display:grid;justify-items:center;gap:24px}
+.cta h1.dot{max-width:14ch}
+.cta .lead{text-align:center}
+.cta .btns{justify-content:center}
+
+/* 9 · FAQ */
+.faq .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,96px)}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font-size:18px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--font-mono);font-size:18px;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 24px;color:var(--muted);font-size:15px}
+
+/* note + footer */
+.notes{padding:56px 0;background:var(--paper)}
+.notes ol{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 40px;padding-left:18px;font-size:12px;color:var(--g600);line-height:1.5}
+.notes li::marker{font-family:var(--font-mono)}
+footer{background:var(--ink);color:var(--g300);padding:40px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .logo{color:var(--white)}
+sup{font-family:var(--font-mono);font-size:.55em;color:var(--muted)}
+
+/* comparsa */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:960px){
+  .hero .grid,.trans .grid,.offer .grid,.faq .grid{grid-template-columns:1fr}
+  .device{margin:0 auto;max-width:340px}
+  .usp{grid-template-columns:1fr 1fr}
+  .usp .card,.usp .card:nth-child(4),.usp .card:nth-child(5){grid-column:span 1;min-height:0}
+  .usp .card:nth-child(5){grid-column:span 2}
+  .obj{grid-template-columns:1fr 1fr}
+  .plus{grid-template-columns:1fr 1fr}
+  .top nav{display:none}
+}
+@media (max-width:600px){
+  .usp,.obj,.plus,.notes ol{grid-template-columns:1fr}
+  .usp .card:nth-child(5){grid-column:span 1}
+  .sol .row{grid-template-columns:1fr;gap:10px}
+  .btns .btn{flex:1 1 100%;justify-content:center}
+  .hero{min-height:auto}
+  .spec-tag{display:none}
+}
+@media (max-width:480px){.long{display:none}.short{display:inline}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="bar">
+    <a href="#top" class="logo" aria-label="Nothing">NOTHING</a>
+    <nav aria-label="Sezioni">
+      <a href="#suono">Suono</a><a href="#perche">Perché</a><a href="#offerta">Offerta</a><a href="#faq">FAQ</a>
+    </nav>
+    <a href="#offerta" class="btn btn-primary"><span class="long">Acquista — €349</span><span class="short">€349</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1 · ATTENZIONE -->
+<section class="hero dark dotgrid" id="attenzione">
+  <div class="wrap grid">
+    <div class="rv">
+      <div class="label">Headphone (1) Pro — Nuovo</div>
+      <h1 class="dot" style="margin-top:20px">Ascolta quello che ti stavi perdendo.</h1>
+      <p class="lead">Tre driver. Messa a punto con Metropolis Studios di Londra. Fino a 46&nbsp;dB di silenzio.<sup>1</sup> Le nostre cuffie più avanzate di sempre.</p>
+      <div class="btns">
+        <a href="#offerta" class="btn btn-primary">Acquista — €349</a>
+        <a href="#suono" class="btn btn-secondary">Scopri il suono ↓</a>
+      </div>
+      <div class="mono-line"><span>Consegna gratuita</span><span>Resi entro 30 giorni</span><span>0% interessi con Klarna o PayPal</span></div>
+    </div>
+    <div class="device rv" aria-hidden="true">
+      <svg viewBox="0 0 400 400" fill="none">
+        <defs>
+          <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.2" fill="#fff" opacity=".22"/></pattern>
+          <radialGradient id="cup" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#1e1e1e"/><stop offset="1" stop-color="#050505"/></radialGradient>
+        </defs>
+        <path d="M92 214 C 84 92, 316 92, 308 214" stroke="#2c2c2c" stroke-width="22" stroke-linecap="round"/>
+        <path d="M92 214 C 84 92, 316 92, 308 214" stroke="#d8d9d9" stroke-width="1" opacity=".5"/>
+        <rect x="80" y="196" width="10" height="44" rx="3" fill="#B1B3B3"/>
+        <rect x="310" y="196" width="10" height="44" rx="3" fill="#B1B3B3"/>
+        <g transform="translate(84 270)">
+          <rect x="-58" y="-74" width="116" height="148" rx="54" fill="#0c0c0c" stroke="#333"/>
+          <circle r="44" fill="url(#cup)" stroke="#3a3a3a"/>
+          <circle r="44" fill="url(#dots)"/>
+          <circle r="28" stroke="#4a4a4a"/><circle r="10" fill="#161616" stroke="#555"/>
+        </g>
+        <g transform="translate(316 270)">
+          <rect x="-58" y="-74" width="116" height="148" rx="54" fill="#0c0c0c" stroke="#333"/>
+          <circle r="44" fill="url(#cup)" stroke="#3a3a3a"/>
+          <circle r="44" fill="url(#dots)"/>
+          <circle r="28" stroke="#4a4a4a"/><circle r="10" fill="#161616" stroke="#555"/>
+          <circle cx="62" cy="-30" r="7" fill="#1a1a1a" stroke="#666"/>
+          <rect x="56" y="0" width="8" height="18" rx="2" fill="#FFC700"/>
+        </g>
+      </svg>
+      <span class="spec-tag" style="top:8%;left:0">Alluminio dal pieno</span>
+      <span class="spec-tag" style="top:46%;right:-4%;flex-direction:row-reverse">Rotella · Levetta</span>
+      <span class="spec-tag" style="bottom:2%;left:6%">Finestra in vetro 9H</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · PROBLEMA -->
+<section class="light" id="problema">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="label">Il problema</div>
+      <h2>La tua musica è migliore di come la senti.</h2>
+      <p class="lead">Chi l'ha prodotta ha passato settimane in studio a sistemare ogni respiro, ogni charleston, ogni coda di riverbero. Poi arriva nelle tue cuffie e succede questo:</p>
+    </div>
+    <ul class="pain rv">
+      <li><span class="n">01</span><b>I bassi si impastano.</b><span>Alzi il volume per sentirli, e tutto il resto distorce.</span></li>
+      <li><span class="n">02</span><b>Le voci perdono definizione.</b><span>Le "S" fischiano, le "T" spariscono, il testo diventa un suono generico.</span></li>
+      <li><span class="n">03</span><b>Il mondo entra comunque.</b><span>Metro, open space, vento: l'ANC copre un lato e lascia scoperto l'altro.</span></li>
+      <li><span class="n">04</span><b>Dopo un'ora ti fanno male.</b><span>Archetto che stringe, padiglioni che schiacciano gli occhiali.</span></li>
+      <li><span class="n">05</span><b>La batteria finisce sempre al momento sbagliato.</b><span>A metà volo, a metà call.</span></li>
+    </ul>
+    <p class="closing rv">Non è colpa della tua playlist. È che la maggior parte delle cuffie fa un compromesso. <span style="color:var(--g600)">E il compromesso lo senti.</span></p>
+  </div>
+</section>
+
+<!-- 3 · TRANSIZIONE -->
+<section class="trans dark" id="suono">
+  <div class="wrap grid">
+    <div class="rv">
+      <div class="label">E se non dovessi scegliere?</div>
+      <h2 style="margin:20px 0 28px">Abbiamo chiesto a chi il suono lo fa per mestiere.</h2>
+      <div class="body">
+        <p><strong>Metropolis Studios</strong>, a Londra, è la casa di alcuni dei tecnici del suono più influenti al mondo. Lavorano con artisti che vanno dalle scene underground alle classifiche internazionali.</p>
+        <p>Gli abbiamo dato un obiettivo semplice: portare la resa di una sala di registrazione dentro un paio di cuffie che puoi mettere nello zaino.</p>
+        <p><strong>Il risultato non è un altro paio di cuffie con l'ANC. È un modo diverso di ascoltare.</strong></p>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="window" aria-label="Finestra in vetro sui tre driver">
+        <div class="drv d1"><span>Dinamico<br>40 mm<br>Bassi</span></div>
+        <div class="drv d2"><span>Precisione<br>Voci</span></div>
+        <div class="drv d3"><span>xMEMS</span></div>
+        <div class="glint"></div>
+      </div>
+      <div class="look label">Guarda dentro — tre driver, un compito ciascuno</div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · OFFER -->
+<section class="offer light" id="offerta">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="label">L'offerta</div>
+      <h2>Headphone (1) Pro. Tutto incluso, niente sorprese.</h2>
+    </div>
+    <div class="grid">
+      <div class="card rv">
+        <div class="label">Headphone (1) Pro — White</div>
+        <div class="price"><span class="dot">€349</span><span class="label">IVA inclusa</span></div>
+        <p style="color:var(--muted)">Oppure a rate con Klarna o PayPal, interessi 0%.</p>
+        <ul class="box">
+          <li><span>Headphone (1) Pro</span><span>×1</span></li>
+          <li><span>Custodia rigida in TPU con anelli per tracolla</span><span>×1</span></li>
+          <li><span>Cavo audio da 3,5 mm</span><span>×1</span></li>
+          <li><span>Cavo USB-C</span><span>×1</span></li>
+          <li><span>Guida rapida</span><span>×1</span></li>
+        </ul>
+        <div class="btns"><a href="#" class="btn btn-primary">Aggiungi al carrello — €349</a></div>
+      </div>
+      <div class="card rv">
+        <div class="label" style="margin-bottom:24px">Perché su nothing.tech</div>
+        <div class="perks">
+          <div><span class="label">Consegna gratuita</span><p>Rapida e gratuita sopra i 50 €.</p></div>
+          <div><span class="label">Resi entro 30 giorni</span><p>Cambi idea? Le spese di reso le paghiamo noi.</p></div>
+          <div><span class="label">Pagamenti flessibili</span><p>In un'unica soluzione o a rate a interessi 0%.</p></div>
+          <div><span class="label">Miglior prezzo garantito</span><p>Lo trovi a meno? Diccelo e adeguiamo il prezzo.</p></div>
+          <div><span class="label">Garanzia 24 mesi</span><p>Inclusa.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · USP -->
+<section class="white" id="perche">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="label">Perché queste</div>
+      <h2>Cinque cose che altre cuffie non hanno insieme.</h2>
+    </div>
+    <div class="usp">
+      <article class="card rv"><span class="n">01</span><h3>Tre driver, un compito ciascuno</h3><p>Un dinamico da 40 mm per i bassi, uno di precisione per le voci, un xMEMS a stato solido per gli acuti. Ognuno lavora sulla sua parte di frequenze.</p><div class="stat">20 – 40.000 Hz</div></article>
+      <article class="card rv"><span class="n">02</span><h3>Messe a punto da Metropolis Studios</h3><p>Flat EQ per ascoltare la traccia come esce dal mixer. Spaziale ispirato allo Studio B. Cinque EQ per Neo-Jazz, Rock, UK Rap + Grime, Electronica, Bass.</p><div class="stat">5 profili EQ firmati</div></article>
+      <article class="card rv"><span class="n">03</span><h3>Fino a 46 dB di silenzio<sup>1</sup></h3><p>10 microfoni e una parete acustica in silicone da 8 mm. L'ANC si adatta in tempo reale all'ambiente e a come le indossi. Anche col vento.</p><div class="stat">10 microfoni · ANC adattiva</div></article>
+      <article class="card rv"><span class="n">04</span><h3>Fino a 68 ore di musica<sup>2</sup></h3><p>68 ore con ANC spento, fino a 30 con ANC acceso. Cinque minuti di ricarica valgono quattro ore di ascolto.</p><div class="stat">5 min = 4 h</div></article>
+      <article class="card rv"><span class="n">05</span><h3>Comandi fisici, non gesture</h3><p>Rotella per il volume, levetta per i brani, pulsante personalizzabile e un interruttore dedicato al Flat EQ. Fai tutto senza tirare fuori il telefono.</p><div class="stat">Rotella · Levetta · Pulsante · Interruttore</div></article>
+    </div>
+    <div class="mono-line specline rv"><span>Hi-Res Audio</span><span>Lossless USB-C 24-bit/192 kHz</span><span>Bluetooth 6.1</span><span>LDAC</span><span>IP52</span></div>
+  </div>
+</section>
+
+<!-- 6 · SOLUZIONE -->
+<section class="light" id="soluzione">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="label">Come risolvono</div>
+      <h2>Ogni compromesso, tolto.</h2>
+    </div>
+    <div class="sol">
+      <div class="row rv"><div><div class="from">Bassi impastati</div><div class="to">Bassi che spingono, puliti</div></div><p>Un nuovo sistema a doppio magnete dà ai bassi il 15% di punch e il 26% di sensibilità in più rispetto a Headphone (1).<sup>7</sup> La cupola in PET con rivestimento metallo-ceramico riduce la distorsione anche ad alto volume.</p></div>
+      <div class="row rv"><div><div class="from">Voci confuse</div><div class="to">Voci con texture</div></div><p>Una membrana in PEN dedicata alla gamma media. Senti il respiro, l'articolazione, le "S" e le "T" al loro posto. I testi tornano vicini alla resa live.</p></div>
+      <div class="row rv"><div><div class="from">Il mondo che entra</div><div class="to">Il mondo che resta fuori</div></div><p>Tre microfoni feed-forward e due feedback per lato attaccano il rumore da più direzioni. Quando vuoi sentire chi ti parla, la modalità Trasparenza lascia passare le voci in modo naturale.</p></div>
+      <div class="row rv"><div><div class="from">Male dopo un'ora</div><div class="to">Comode tutto il giorno</div></div><p>Cuscinetti il 50% più morbidi, che si adattano meglio agli occhiali. Archetto più largo del 10%, imbottitura più spessa del 12%, aste in titanio il 45% più leggere.</p></div>
+      <div class="row rv"><div><div class="from">Batteria a zero</div><div class="to">Batteria per giorni</div></div><p>Fino a 68 ore di riproduzione.<sup>2</sup> E se te ne dimentichi, 5 minuti di carica bastano per 4 ore.</p></div>
+    </div>
+    <div class="plus">
+      <div class="card rv"><svg viewBox="0 0 16 16" fill="currentColor"><circle cx="4" cy="8" r="1.5"/><circle cx="12" cy="8" r="1.5"/><circle cx="8" cy="8" r="1"/></svg>Doppia connessione: telefono e laptop insieme.</div>
+      <div class="card rv"><svg viewBox="0 0 16 16" fill="currentColor"><circle cx="4" cy="4" r="1"/><circle cx="8" cy="4" r="1"/><circle cx="12" cy="4" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="8" cy="12" r="1"/><circle cx="12" cy="12" r="1"/></svg>iOS e Android, con abbinamento rapido su entrambi.</div>
+      <div class="card rv"><svg viewBox="0 0 16 16" fill="currentColor"><rect x="4" y="3" width="2.5" height="10" rx="1"/><rect x="9.5" y="3" width="2.5" height="10" rx="1"/></svg>Si mettono in pausa da sole quando le togli.</div>
+      <div class="card rv"><svg viewBox="0 0 16 16" fill="currentColor"><circle cx="3" cy="11" r="1"/><circle cx="6" cy="8" r="1"/><circle cx="9" cy="10" r="1"/><circle cx="12" cy="5" r="1"/></svg>Personal Sound in Nothing X: un profilo costruito sul tuo udito.</div>
+    </div>
+    <div class="sol-cta rv"><a href="#offerta" class="btn btn-primary">Scegli il tuo colore</a></div>
+  </div>
+</section>
+
+<!-- 7 · OBIEZIONI -->
+<section class="dark" id="obiezioni">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="label">Lo stavi pensando</div>
+      <h2 class="dot" style="font-size:clamp(40px,6vw,72px)">Ok, ma…</h2>
+    </div>
+    <div class="obj">
+      <article class="card rv"><q>€349 sono tanti.</q><p>Lo sono. Per questo li abbiamo messi dove si sentono: tre driver invece di uno, 10 microfoni, alluminio ricavato dal pieno, vetro resistente ai graffi. Puoi pagare a rate a interessi 0%, e se lo trovi a meno adeguiamo il prezzo.</p></article>
+      <article class="card rv"><q>Uso un iPhone.</q><p>Nessun problema. Si collegano con iOS 13 e successivi, con configurazione in un tocco. L'app Nothing X è su App Store.</p></article>
+      <article class="card rv"><q>Le cuffie col vetro si rompono.</q><p>Il vetro è Panda 9H, resistente a graffi e rotture. Hanno superato test di caduta da 1,8 m e oltre 50.000 cicli di test su porta, comandi, archetto e cerniere.<sup>8 9 11</sup></p></article>
+      <article class="card rv"><q>Porto gli occhiali.</q><p>I cuscinetti a doppio strato sono il 50% più morbidi di quelli di Headphone (1) e pensati proprio per adattarsi meglio agli occhiali.</p></article>
+      <article class="card rv"><q>E se non mi piacciono?</q><p>Hai 30 giorni per restituirle. Le spese di reso sono a carico nostro.</p></article>
+      <article class="card rv"><q>Mi servono anche per lavorare.</q><p>Clear Voice, addestrata su trenta milioni di scenari, tiene la tua voce nitida in chiamata anche nel rumore. Fino a 33 ore di conversazione con ANC attivo.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · CTA -->
+<section class="cta light dotgrid" id="cta">
+  <div class="wrap rv">
+    <div class="label">Headphone (1) Pro — €349</div>
+    <h1 class="dot">Rimetti il suono al suo posto.</h1>
+    <p class="lead">Tre driver. 46&nbsp;dB di silenzio.<sup>1</sup> 68 ore di musica.<sup>2</sup> Messe a punto da chi il suono lo fa per mestiere.</p>
+    <div class="btns">
+      <a href="#offerta" class="btn btn-accent">Acquista ora — €349</a>
+      <a href="#" class="btn btn-secondary">Confronta con Headphone (a)</a>
+    </div>
+    <div class="mono-line" style="justify-content:center"><span>Consegna gratuita</span><span>30 giorni per cambiare idea</span><span>Garanzia 24 mesi</span><span>0% interessi</span></div>
+  </div>
+</section>
+
+<!-- 9 · FAQ -->
+<section class="faq white" id="faq">
+  <div class="wrap grid">
+    <div class="head rv" style="align-content:start">
+      <div class="label">Domande frequenti</div>
+      <h2>Tutto quello che vuoi sapere prima di ordinarle.</h2>
+    </div>
+    <div class="rv">
+      <details open><summary>Funzionano con iPhone e Android?</summary><p>Sì. Android 8.0 e successivi, iOS 13 e successivi. Abbinamento rapido con Google Fast Pair, Microsoft Swift Pair e configurazione in un tocco su Apple.</p></details>
+      <details><summary>Quanto dura la batteria?</summary><p>Con codec AAC: fino a 68 ore con ANC spento e 30 con ANC acceso. Con LDAC: fino a 53 e 28 ore. Ricarica completa in 2 ore via USB-C.<sup>2</sup></p></details>
+      <details><summary>Posso usarle con il cavo?</summary><p>Sì. Con il cavo USB-C hai audio lossless fino a 24-bit/192 kHz. Con il jack da 3,5 mm, audio Hi-Res fino a 24-bit/96 kHz e latenza sotto i 15 ms (Flat EQ attivo).</p></details>
+      <details><summary>Cos'è il Flat EQ?</summary><p>Un profilo neutro messo a punto da Metropolis Studios, senza colorazioni né elaborazioni. Pensato per ascolto critico, produzione e mixaggio. Si attiva con l'interruttore fisico sul padiglione.</p></details>
+      <details><summary>Posso collegarle a due dispositivi insieme?</summary><p>Sì, grazie alla doppia connessione Bluetooth 6.1. Con Auracast™ puoi anche condividere l'audio con più cuffie.</p></details>
+      <details><summary>Sono adatte al gaming?</summary><p>Sì. Puoi attivare la modalità a bassa latenza nell'app Nothing X; con un telefono Nothing e il Game Mode la latenza scende fino a 120 ms.<sup>3</sup> Via cavo AUX resta sotto i 15 ms.</p></details>
+      <details><summary>Resistono a pioggia e sudore?</summary><p>Hanno certificazione IP52: protezione limitata da polvere e gocce d'acqua. Non sono pensate per pioggia, immersione o sudorazione intensa.<sup>10</sup></p></details>
+      <details><summary>Quanto pesano?</summary><p>327 g.</p></details>
+      <details><summary>I cuscinetti si possono sostituire?</summary><p>Sì, sono progettati per essere rimossi e rimontati.<sup>13</sup></p></details>
+      <details><summary>Che garanzia hanno?</summary><p>24 mesi, più 30 giorni per il reso gratuito se acquisti su nothing.tech.</p></details>
+      <details><summary>Sono sostenibili?</summary><p>Imballaggio senza plastica al 99%, 100% di energia rinnovabile nell'assemblaggio finale. Impronta di carbonio: 18,3 kg CO2e, verificata da terze parti.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<aside class="notes" aria-label="Note legali">
+  <div class="wrap">
+    <div class="label" style="margin-bottom:20px">Note legali</div>
+    <ol>
+      <li value="1">46 dB è il limite massimo teorico misurato nel laboratorio Nothing. La cancellazione effettiva varia con l'ambiente.</li>
+      <li value="2">68 ore con ANC spento, volume al 50%, codec AAC, impostazioni predefinite, test di laboratorio a 25 °C. Ricarica rapida: 5 minuti = 4 ore nelle stesse condizioni. L'autonomia reale dipende dall'uso.</li>
+      <li value="3">Latenza fino a 120 ms con telefoni Nothing e Game Mode attivo.</li>
+      <li value="7">+15% punch e +26% sensibilità: valori relativi teorici rispetto a Headphone (1), test di laboratorio Nothing.</li>
+      <li value="8">Test di affidabilità condotti in laboratorio; i risultati reali possono variare.</li>
+      <li value="9">Test di caduta da 1,8 m in laboratorio. Evitare cadute su superfici dure o taglienti.</li>
+      <li value="10">IP52: protezione limitata da polvere e gocce verticali. Non impermeabili.</li>
+      <li value="11">50.000+ è il numero cumulativo di cicli su più test di durabilità.</li>
+      <li value="13">Rimontare correttamente i cuscinetti per non compromettere la tenuta dell'ANC.</li>
+    </ol>
+  </div>
+</aside>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">NOTHING</span>
+    <span class="label" style="color:var(--g300)">Landing di studio non ufficiale — Nothing è un marchio di Nothing Technology Ltd.</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

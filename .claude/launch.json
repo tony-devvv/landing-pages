@@ -1,0 +1,19 @@
+﻿{
+    "version":  "0.0.1",
+    "configurations":  [
+                           {
+                               "port":  5500,
+                               "runtimeExecutable":  "C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+                               "name":  "landing",
+                               "runtimeArgs":  [
+                                                   "-m",
+                                                   "http.server",
+                                                   "5500",
+                                                   "--bind",
+                                                   "127.0.0.1",
+                                                   "--directory",
+                                                   "."
+                                               ]
+                           }
+                       ]
+}
