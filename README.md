@@ -20,9 +20,11 @@ verso/                     Landing Vèrso One
   index.html
   site.config.json         Varianti, fasi, note di strategia, email per i feedback
   assets/                  Favicon, immagine di anteprima (og.png)
+  legale/                  Privacy, cookie e condizioni di vendita (bozza)
 shared/                    Base comune a tutte le landing
-  landing.css              Comparsa allo scroll, focus, pulsante "Ferma animazioni"
-  landing.js               Navbar in vetro, loop() delle demo, numeri che contano
+  landing.css              Comparsa allo scroll, focus, pulsante "Ferma animazioni", banner cookie, menu mobile
+  landing.js               Navbar in vetro, menu mobile, loop() delle demo, numeri che contano
+  consent.js               Banner cookie, Consent Mode v2, track() per GA4 e Meta Pixel
 present/                   Barra per le presentazioni ai clienti
   present.css · present.js Strategia, Feedback per sezione, Varianti, Riepilogo
 fonts/                     Font ospitati sul sito (licenza OFL, solo latin)
@@ -31,6 +33,7 @@ assets/                    Favicon e anteprima della landing principale
 brand-guidelines/nothing/  Brand guidelines in PDF, JSON e sorgente HTML
 copy/                      Copy in Markdown
 docs/                      Brief per i clienti, brief compilato, note di consegna
+404.html                   Pagina di errore
 vercel.json                Header di sicurezza, cache, URL puliti
 ```
 
@@ -78,6 +81,7 @@ In `verso/index.html`:
 - `const SHOP` — dominio Shopify e ID variante per colore. Vuoto = carrello dimostrativo
 - `const KLAVIYO` — chiave **pubblica** e ID lista. Vuoto = lista d'attesa dimostrativa
 - `const PHASE_DATES` — date di apertura dei pre-ordini e della vendita
+- `window.CONSENT` — ID GA4 e Meta Pixel. Vuoti = non si carica nessuno strumento. `?debug=events` scrive gli eventi in console
 
 ## Prima di andare online con un cliente reale
 

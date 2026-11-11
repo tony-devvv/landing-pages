@@ -25,6 +25,28 @@
 <link rel="preload" href="/fonts/archivo-400_700-62_125.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css">
+<!-- Dati strutturati per Google (utili quando si toglie il noindex) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Vèrso One",
+  "description": "Cuffie over-ear wireless con cancellazione attiva del rumore fino a 42 dB, 38 ore di autonomia con ANC acceso, 268 g. Progettate e accordate a Bologna, riparabili.",
+  "brand": { "@type": "Brand", "name": "Vèrso" },
+  "image": "https://nothing-landing-rho.vercel.app/verso/assets/og.png",
+  "color": ["Grafite", "Carta", "Salvia"],
+  "weight": { "@type": "QuantitativeValue", "value": 268, "unitCode": "GRM" },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://nothing-landing-rho.vercel.app/verso/",
+    "priceCurrency": "EUR",
+    "price": "279.00",
+    "availability": "https://schema.org/PreOrder",
+    "availabilityStarts": "2027-01-15",
+    "seller": { "@type": "Organization", "name": "Vèrso Audio S.r.l." }
+  }
+}
+</script>
 <link rel="stylesheet" href="/shared/landing.css">
 <link rel="stylesheet" href="../present/present.css">
 <style>
@@ -152,6 +174,11 @@ sup{font-family:var(--font-mono);font-size:.6em;color:var(--muted)}
 .box li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
 .box li span:last-child{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
 .offer .btns{margin-top:26px}
+.pay{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:16px}
+.pay .label{margin-right:4px}
+.pay span:not(.label){font-size:12.5px;padding:5px 10px;border-radius:6px;box-shadow:inset 0 0 0 1px var(--line);color:var(--muted)}
+.countdown{display:inline-flex;align-items:baseline;gap:10px;margin-top:22px;padding:12px 16px;border-radius:var(--r);background:var(--card)}
+.countdown b{font-family:var(--font-title);font-stretch:112%;font-weight:600;font-size:34px;letter-spacing:-.03em;line-height:1}
 .perks{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:20px}
 .perks div{background:var(--card);border-radius:var(--r);padding:18px;display:grid;gap:6px}
 .perks p{font-size:14px;color:var(--muted)}
@@ -514,6 +541,7 @@ footer ul{list-style:none;display:grid;gap:6px}
           <li><span>Guida rapida</span><span>×1</span></li>
         </ul>
         <div class="btns"><a href="#lista" class="btn btn-accent" data-cta="offer"><span data-cta-text>Entra in lista d'attesa</span></a></div>
+        <div class="pay"><span class="label">Paga con</span><span>Carta</span><span>PayPal</span><span>Klarna</span><span>Apple Pay</span><span>Google Pay</span></div>
       </div>
     </div>
     <div class="perks rv">
@@ -768,10 +796,11 @@ footer ul{list-style:none;display:grid;gap:6px}
       <div class="label">Lista d'attesa</div>
       <h2 style="margin:20px 0 20px">I pre-ordini aprono il 15 gennaio. Tu lo sai prima.</h2>
       <p class="lead">Ti scriviamo quando aprono, con il prezzo di pre-ordine a 239 € invece di 279 €. Una email, niente spam.</p>
+      <div class="countdown" data-countdown hidden><b data-days>0</b><span class="label" data-days-label>giorni all'apertura dei pre-ordini</span></div>
     </div>
     <form class="form rv" id="wl-form" novalidate>
       <label>Email<input type="email" name="email" autocomplete="email" required placeholder="nome@email.it"></label>
-      <label class="consent"><input type="checkbox" name="consent" required><span>Voglio ricevere l'avviso di apertura dei pre-ordini e la newsletter di Vèrso. Ho letto l'<a href="#" style="text-decoration:underline">informativa privacy</a>.</span></label>
+      <label class="consent"><input type="checkbox" name="consent" required><span>Voglio ricevere l'avviso di apertura dei pre-ordini e la newsletter di Vèrso. Ho letto l'<a href="/verso/legale/#privacy" style="text-decoration:underline">informativa privacy</a>.</span></label>
       <button class="btn btn-accent" type="submit">Avvisami</button>
       <p class="err" role="alert" hidden></p>
       <p class="msg-ok" role="status" hidden></p>
@@ -830,8 +859,8 @@ footer ul{list-style:none;display:grid;gap:6px}
 <footer>
   <div class="wrap">
     <div><span class="logo">v<b>è</b>rso</span><p style="margin-top:10px">Vèrso Audio S.r.l. · Via del Laboratorio 1, 40100 Bologna (BO)<br>P. IVA e C.F. IT00000000000 · REA BO-000000 · Capitale sociale 50.000 € i.v.<br>PEC <a href="mailto:verso-audio@pec.example.com">verso-audio@pec.example.com</a></p></div>
-    <ul><li><a href="#">Privacy policy</a></li><li><a href="#">Cookie policy</a></li><li><a href="#">Condizioni di vendita</a></li></ul>
-    <ul><li><a href="#">Assistenza</a></li><li><a href="#">Ricambi</a></li><li><a href="#">Registra le tue cuffie</a></li></ul>
+    <ul><li><a href="/verso/legale/#privacy">Privacy policy</a></li><li><a href="/verso/legale/#cookie">Cookie policy</a></li><li><a href="/verso/legale/#condizioni">Condizioni di vendita</a></li><li><a href="#" data-consent-open>Preferenze cookie</a></li></ul>
+    <ul><li><a href="mailto:assistenza@verso-audio.example.com">Assistenza</a></li><li><a href="#riparabilita">Ricambi</a></li><li><a href="#faq">Domande frequenti</a></li></ul>
     <p class="proto">Versione 2 · progetto di esercitazione con cliente simulato: azienda, dati, recensioni e contatti sono di esempio</p>
   </div>
 </footer>
@@ -858,6 +887,10 @@ footer ul{list-style:none;display:grid;gap:6px}
 
 <!-- Base condivisa: comparsa, navbar in vetro, numeri, pulsante "Ferma animazioni", loop() -->
 <script src="/shared/landing.js"></script>
+<!-- Cookie e tracciamento: inserire gli ID del cliente. Vuoti = non si carica nessuno strumento.
+     demo:true mostra il banner anche senza ID (per la presentazione); in produzione metterlo a false. -->
+<script>window.CONSENT = { ga4: '', metaPixel: '', demo: true, policyUrl: '/verso/legale/#cookie' };</script>
+<script src="/shared/consent.js"></script>
 <script>
   const { still, loop } = Landing;
 
@@ -945,6 +978,7 @@ footer ul{list-style:none;display:grid;gap:6px}
     paint(shot, color); shot.setAttribute('aria-label', 'Vèrso One in ' + COLORS[color].name);
     document.querySelector('[data-color-name]').textContent = COLORS[color].name;
     setPhase(phase);
+    track('color_select', { color });
   }));
 
   /* ===== Carrello dimostrativo (si usa solo se SHOP non è compilato) ===== */
@@ -961,13 +995,15 @@ footer ul{list-style:none;display:grid;gap:6px}
       cart.querySelector('[data-cart-sub]').textContent = eur(unit() * qty);
       cart.querySelector('[data-cart-tot]').textContent = eur(unit() * qty);
     }
-    function open() { last = document.activeElement; qty = 1; draw(); cart.classList.add('open'); cart.querySelector('.x').focus(); }
+    const item = () => ({ currency: 'EUR', value: unit() * qty, items: [{ item_name: 'Vèrso One', item_variant: COLORS[color].name, price: unit(), quantity: qty }] });
+    function open() { last = document.activeElement; qty = 1; draw(); cart.classList.add('open'); cart.querySelector('.x').focus(); track('add_to_cart', item()); }
     function close() { cart.classList.remove('open'); last && last.focus(); }
     cart.querySelector('.veil').onclick = close; cart.querySelector('.x').onclick = close;
     cart.querySelector('[data-q="-"]').onclick = () => { qty = Math.max(1, qty - 1); draw(); };
     cart.querySelector('[data-q="+"]').onclick = () => { qty = Math.min(5, qty + 1); draw(); };
     cart.querySelector('[data-checkout]').onclick = () => {
       const u = cartUrl(color, qty);
+      track('begin_checkout', item());
       if (u) location.href = u;
       else cart.querySelector('[data-cart-note]').textContent = 'Demo: con gli ID variante Shopify compilati, qui si apre il checkout reale con ' + qty + ' × Vèrso One ' + COLORS[color].name + '.';
     };
@@ -1032,6 +1068,30 @@ footer ul{list-style:none;display:grid;gap:6px}
   })();
 
 
+  /* ===== Conto alla rovescia vero: giorni all'apertura dei pre-ordini ===== */
+  (() => {
+    const box = document.querySelector('[data-countdown]');
+    const days = Math.ceil((new Date(PHASE_DATES.preorder + 'T00:00:00') - new Date()) / 864e5);
+    if (days < 1) return;
+    box.querySelector('[data-days]').textContent = days;
+    box.querySelector('[data-days-label]').textContent = (days === 1 ? 'giorno' : 'giorni') + " all'apertura dei pre-ordini";
+    box.hidden = false;
+  })();
+
+  /* ===== Eventi per GA4 / Meta (brief §7). Partono solo con il consenso: vedi shared/consent.js ===== */
+  document.addEventListener('click', e => {
+    const cta = e.target.closest('[data-cta]');
+    if (cta) return track('cta_click', { position: cta.dataset.cta, phase });
+    const demo = e.target.closest('.demo button');
+    if (demo) return track('demo_interact', { demo: demo.closest('.demo').id });
+    const ctl = e.target.closest('#comandi [data-c]');
+    if (ctl) return track('demo_interact', { demo: 'comandi', item: ctl.dataset.c });
+    const part = e.target.closest('.parts button');
+    if (part) return track('demo_interact', { demo: 'riparabilita', item: part.dataset.p });
+    const faq = e.target.closest('#faq summary');
+    if (faq) return track('faq_open', { question: faq.textContent.trim() });
+  });
+
   /* ===== Lista d'attesa → Klaviyo =====
      Compilare con la chiave PUBBLICA del sito (Klaviyo → Impostazioni → Chiavi API → "Public API key", 6 caratteri)
      e l'ID della lista "Vèrso One – lista d'attesa". Con la lista impostata su doppio opt-in, Klaviyo invia l'email di conferma.
@@ -1062,6 +1122,7 @@ footer ul{list-style:none;display:grid;gap:6px}
         if (live) { await subscribe(email); ok.textContent = "Quasi fatto: ti abbiamo mandato un'email. Conferma l'iscrizione con il link che trovi dentro."; }
         else ok.textContent = 'Modalità dimostrativa: nessun dato inviato. Con le chiavi Klaviyo compilate arriva l\'email di conferma.';
         ok.hidden = false; f.reset();
+        track('waitlist_signup', { mode: live ? 'live' : 'demo' });
       } catch { err.textContent = 'Non siamo riusciti a iscriverti. Riprova tra qualche minuto.'; err.hidden = false; }
       finally { btn.disabled = false; btn.textContent = 'Avvisami'; }
     });

@@ -28,3 +28,20 @@
 5. **Legale** — banner cookie (iubenda) prima di GA4 e Meta Pixel, link reali a privacy, cookie e condizioni di vendita, dati societari veri nel footer.
 6. **Pulizia** — togliere `noindex`, la barra di presentazione (`../present/`) e la riga "progetto di esercitazione" nel footer.
 7. **Verifiche** — Lighthouse > 90, WCAG 2.1 AA, test del pre-ordine su Shopify in modalità test.
+
+## Versione 3 — completamento
+
+Aggiunte dopo la revisione "con gli occhi del cliente":
+
+| Cosa | Dove |
+|---|---|
+| Banner cookie con Consent Mode v2, blocco preventivo di GA4 e Meta Pixel | `shared/consent.js`, config `window.CONSENT` nella pagina |
+| Eventi: `cta_click`, `color_select`, `waitlist_signup`, `demo_interact`, `faq_open`, `add_to_cart`, `begin_checkout` | `verso/index.html`. Per vederli: `?debug=events` e console del browser |
+| Menu su mobile | `shared/landing.js` (vale per tutte le landing) |
+| Conto alla rovescia dei giorni all'apertura dei pre-ordini | Sezione Lista d'attesa |
+| Metodi di pagamento sotto il prezzo, dati strutturati Product | Offer, `<head>` |
+| Privacy, cookie e condizioni di vendita in bozza | `verso/legale/` |
+| Pagina 404 | `404.html` |
+| Risposta alle 4 domande del brief | [risposta-al-cliente.md](risposta-al-cliente.md) |
+
+Per attivare il tracciamento: compilare `ga4` e `metaPixel` in `window.CONSENT` e mettere `demo: false`.

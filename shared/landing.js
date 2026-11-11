@@ -54,6 +54,25 @@
       update();
     }
 
+    /* menu su mobile: pulsante + pannello con gli stessi link di .top nav */
+    const nav = top && top.querySelector('nav');
+    if (bar && nav && nav.querySelector('a')) {
+      const mb = document.createElement('button');
+      mb.className = 'menu-btn'; mb.type = 'button';
+      mb.setAttribute('aria-expanded', 'false'); mb.setAttribute('aria-controls', 'menu-panel');
+      mb.innerHTML = '<span class="bars" aria-hidden="true"><i></i><i></i></span>Menu';
+      const panel = document.createElement('div');
+      panel.className = 'menu-panel'; panel.id = 'menu-panel';
+      nav.querySelectorAll('a').forEach(a => panel.appendChild(a.cloneNode(true)));
+      const set = o => { panel.classList.toggle('open', o); mb.setAttribute('aria-expanded', o); };
+      mb.addEventListener('click', () => set(!panel.classList.contains('open')));
+      panel.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
+      addEventListener('keydown', e => { if (e.key === 'Escape' && panel.classList.contains('open')) { set(false); mb.focus(); } });
+      addEventListener('resize', () => { if (innerWidth > 960) set(false); });
+      nav.after(mb);
+      top.after(panel);
+    }
+
     /* numeri che contano quando entrano in vista */
     document.querySelectorAll('.count[data-to]').forEach(el => {
       const to = +el.dataset.to;
